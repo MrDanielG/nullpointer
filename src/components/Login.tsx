@@ -1,72 +1,78 @@
 import React, { Component } from 'react';
 import { Form, Input, Button, Checkbox, Card } from 'antd';
+import { UserOutlined, LockOutlined } from '@ant-design/icons';
+import '../index.css';
 
-const layout = {
-    labelCol: { span: 8 },
-    wrapperCol: { span: 16 },
-};
-const tailLayout = {
-    wrapperCol: { offset: 8, span: 16 },
-};
 const onFinish = (values: any) => {
-    console.log('Success:', values);
+    console.log('Received values of form: ', values);
 };
-const onFinishFailed = (errorInfo: any) => {
-    console.log('Failed:', errorInfo);
-};
-
 export default class Login extends Component {
     render() {
         return (
             <div className="full-container">
-                <Card className="card">
+                <Card title="Inicia Sesión" className="card">
                     <Form
-                        {...layout}
-                        name="basic"
+                        name="normal_login"
+                        className="login-form"
                         initialValues={{ remember: true }}
                         onFinish={onFinish}
-                        onFinishFailed={onFinishFailed}
                     >
                         <Form.Item
-                            label="Usuario"
                             name="username"
                             rules={[
                                 {
                                     required: true,
-                                    message:
-                                        'Por favor ingresa un nombre de usuario!',
+                                    message: 'Ingresar tu nombre de Usuario',
                                 },
                             ]}
                         >
-                            <Input />
+                            <Input
+                                prefix={
+                                    <UserOutlined className="site-form-item-icon" />
+                                }
+                                placeholder="Nombre de Usuario"
+                            />
                         </Form.Item>
-
                         <Form.Item
-                            label="Contraseña"
                             name="password"
                             rules={[
                                 {
                                     required: true,
-                                    message:
-                                        'Por favor ingresa una constraseña!',
+                                    message: 'Ingresa tu contraseña',
                                 },
                             ]}
                         >
-                            <Input.Password />
+                            <Input
+                                prefix={
+                                    <LockOutlined className="site-form-item-icon" />
+                                }
+                                type="password"
+                                placeholder="Contrseña"
+                            />
+                        </Form.Item>
+                        <Form.Item>
+                            <Form.Item
+                                name="remember"
+                                valuePropName="checked"
+                                noStyle
+                            >
+                                <Checkbox>Recordarme</Checkbox>
+                            </Form.Item>
+
+                            <a className="login-form-forgot" href="">
+                                Olvide mi contraseña
+                            </a>
                         </Form.Item>
 
-                        <Form.Item
-                            {...tailLayout}
-                            name="remember"
-                            valuePropName="checked"
-                        >
-                            <Checkbox>Recordarme</Checkbox>
-                        </Form.Item>
-
-                        <Form.Item {...tailLayout}>
-                            <Button type="primary" htmlType="submit">
+                        <Form.Item>
+                            <Button
+                                type="primary"
+                                htmlType="submit"
+                                className="login-form-button"
+                            >
                                 Iniciar Sesión
                             </Button>
+                            O <a href="">Registrarse</a>
                         </Form.Item>
                     </Form>
                 </Card>
