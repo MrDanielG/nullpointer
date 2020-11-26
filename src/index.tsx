@@ -1,13 +1,17 @@
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './index.css';
 import App from './App';
+import Login from './components/Login';
 
 // import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
     <BrowserRouter>
-        <App />
+        <Switch>
+            <Route exact path="/" component={Login} />
+            <Route path="/incio" component={App} />
+        </Switch>
     </BrowserRouter>,
     document.getElementById('root')
 );
