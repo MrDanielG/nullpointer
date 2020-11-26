@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import Login from './components/Login';
+import Registro from './components/Registro';
 
 // import reportWebVitals from './reportWebVitals';
 
@@ -11,6 +12,7 @@ ReactDOM.render(
         <Switch>
             <Route exact path="/" component={Login} />
             <Route path="/inicio" component={App} />
+            <Route path="/registro" component={Registro} />
         </Switch>
     </BrowserRouter>,
     document.getElementById('root')
