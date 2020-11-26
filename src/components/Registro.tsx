@@ -3,11 +3,21 @@ import { Form, Input, Button, Checkbox, Card } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import '../index.css';
 import { Link } from 'react-router-dom';
+import { useAuth, AuthContext, authData } from '../contexts/AuthContext';
 
-const onFinish = (values: any) => {
-    console.log('Received values of form: ', values);
-};
-export default class Login extends Component {
+export default class Registro extends Component {
+    static contextType = AuthContext;
+
+    constructor(props: any) {
+        super(props);
+    }
+
+    onFinish = (values: any) => {
+        const { signUp, currentUser } = this.context as authData;
+        console.log('Received values of form: ', values);
+        signUp(values.email, values.password);
+    };
+
     render() {
         return (
             <div className="register-container">
@@ -16,7 +26,7 @@ export default class Login extends Component {
                         name="normal_login"
                         className="login-form"
                         initialValues={{ remember: true }}
-                        onFinish={onFinish}
+                        onFinish={this.onFinish}
                     >
                         <Form.Item
                             name="email"

@@ -4,17 +4,20 @@ import './index.css';
 import App from './App';
 import Login from './components/Login';
 import Registro from './components/Registro';
+import { AuthProvider } from './contexts/AuthContext';
 
 // import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-    <BrowserRouter>
-        <Switch>
-            <Route exact path="/" component={Login} />
-            <Route path="/inicio" component={App} />
-            <Route path="/registro" component={Registro} />
-        </Switch>
-    </BrowserRouter>,
+    <AuthProvider>
+        <BrowserRouter>
+            <Switch>
+                <Route exact path="/" component={Login} />
+                <Route path="/inicio" component={App} />
+                <Route path="/registro" component={Registro} />
+            </Switch>
+        </BrowserRouter>
+    </AuthProvider>,
     document.getElementById('root')
 );
 
