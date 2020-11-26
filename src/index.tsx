@@ -10,7 +10,7 @@ ReactDOM.render(
     <BrowserRouter>
         <Switch>
             <Route exact path="/" component={Login} />
-            <Route path="/incio" component={App} />
+            <Route path="/inicio" component={App} />
         </Switch>
     </BrowserRouter>,
     document.getElementById('root')
