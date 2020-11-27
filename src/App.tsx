@@ -1,12 +1,7 @@
 import { Component } from 'react';
 import { History } from 'history';
 import './App.css';
-<<<<<<< HEAD
-import { PreguntarBtn } from './components/CrearPublicacion';
-import { Layout, Menu } from 'antd';
-=======
 import { Layout, Menu, Button, message } from 'antd';
->>>>>>> Login
 import {
     FormOutlined,
     HomeOutlined,
@@ -20,11 +15,7 @@ const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 
 interface AppProps {
-<<<<<<< HEAD
-
-=======
     history: History;
->>>>>>> Login
 }
 interface AppState {
     collapsed: boolean;
@@ -64,20 +55,12 @@ class App extends Component<AppProps, AppState> {
         const { currentUser } = this.context as authData;
         return (
             <Layout style={{ minHeight: '100vh' }}>
-<<<<<<< HEAD
-                <Header className="header">
-                    <FileTextOutlined />
-                    <span style={{ paddingLeft: '5px' }}> Nullpointer </span>
-                    <div style={{marginLeft: 'auto'}}>
-                        <PreguntarBtn />
-=======
                 <Header   >
 
                     <div className="logo" >
                         <FileTextOutlined />
                         <span style={{ paddingLeft: '5px' }}> Nullpointer </span>
                         <Button type="primary" onClick={this.handleLogOut}> Salir </Button>
->>>>>>> Login
                     </div>
                 </Header>
                 <Layout >
