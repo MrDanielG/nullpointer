@@ -1,8 +1,14 @@
-.logo {
+.app-header {
     color: white;
     font-size: 24px;
-}
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 
+}
+.app-header-actions {
+    margin-left: auto;
+}
 .site-layout  .site-layout-background {
     background: white;
 }

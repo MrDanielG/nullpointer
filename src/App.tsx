@@ -1,32 +1,35 @@
 import { Component } from 'react';
+import { History } from 'history';
 import './App.css';
-import { Layout, Menu } from 'antd';
+import { Layout, Menu, Button, message, Space } from 'antd';
 import {
     FormOutlined,
     HomeOutlined,
     SettingOutlined,
     FileTextOutlined,
 } from '@ant-design/icons';
+import { AuthContext, authData } from './contexts/AuthContext'
+import { PreguntarBtn } from './components/CrearPublicacion';
 
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 
-
-
 interface AppProps {
-    
+    history: History;
 }
 interface AppState {
     collapsed: boolean;
 }
 
 class App extends Component<AppProps, AppState> {
+    static contextType = AuthContext;
 
     constructor(props: AppProps) {
         super(props);
         this.state = {
             collapsed: false,
         };
+        this.handleLogOut = this.handleLogOut.bind(this);
         this.onCollapse = this.onCollapse.bind(this);
     }
 
@@ -35,16 +38,32 @@ class App extends Component<AppProps, AppState> {
         this.setState({ collapsed });
     };
 
+    async handleLogOut() {
+        const { logOut } = this.context as authData;
+        try {
+            await logOut();
+            message.success('Sesión Terminada');
+            this.props.history.push('/');
+        } catch (error) {
+            message.error('Error al Cerrar Sesión');
+            console.log(error);
+        }
+    }
+
     render() {
         const { collapsed } = this.state;
+        const { currentUser } = this.context as authData;
         return (
             <Layout style={{ minHeight: '100vh' }}>
-                <Header   >
+                <Header className="app-header" >
+                    <FileTextOutlined />
+                    <span style={{ paddingLeft: '5px' }}> Nullpointer </span>
+                    <Space className="app-header-actions" size="large">
+                        <PreguntarBtn />
+                        <Button type="primary" onClick={this.handleLogOut}> Salir </Button>
+                    </Space>
 
-                    <div className="logo" >
-                        <FileTextOutlined />
-                        <span style={{paddingLeft: '5px'}}> Nullpointer </span>
-                    </div>
+
                 </Header>
                 <Layout >
                     <Sider
@@ -71,9 +90,9 @@ class App extends Component<AppProps, AppState> {
                             </SubMenu>
                         </Menu>
                     </Sider>
-                    <Layout className="site-layout">                   
+                    <Layout className="site-layout">
                         <Content style={{ margin: '0 16px' }}>
-                           
+                            <p>Current User: </p> {currentUser?.email}
                         </Content>
                         <Footer style={{ textAlign: 'center' }}>Nullpointer</Footer>
                     </Layout>

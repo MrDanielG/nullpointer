@@ -1,76 +1,103 @@
-import React, { Component } from 'react';
-import { Form, Input, Button, Checkbox, Card } from 'antd';
+import React, { useContext, useState } from 'react';
+import { Form, Input, Button, Checkbox, Card, message } from 'antd';
+import { UserOutlined, LockOutlined } from '@ant-design/icons';
+import { Link, useHistory } from 'react-router-dom';
+import { AuthContext, authData } from '../contexts/AuthContext';
 
-const layout = {
-    labelCol: { span: 8 },
-    wrapperCol: { span: 16 },
-};
-const tailLayout = {
-    wrapperCol: { offset: 8, span: 16 },
-};
-const onFinish = (values: any) => {
-    console.log('Success:', values);
-};
-const onFinishFailed = (errorInfo: any) => {
-    console.log('Failed:', errorInfo);
-};
+export const Login = () => {
+    const { logIn, currentUser } = useContext(AuthContext) as authData;
+    const [loading, setLoading] = useState(false);
+    const history = useHistory();
 
-export default class Login extends Component {
-    render() {
-        return (
-            <div className="full-container">
-                <Card className="card">
-                    <Form
-                        {...layout}
-                        name="basic"
-                        initialValues={{ remember: true }}
-                        onFinish={onFinish}
-                        onFinishFailed={onFinishFailed}
+    const onFinish = async (values: any) => {
+        console.log('Received values of form: ', values);
+
+        try {
+            setLoading(true);
+            await logIn(values.email, values.password);
+            message.success('Loggin Exitoso');
+            history.push('/inicio');
+        } catch (error) {
+            message.error('Contraseña o Correo Incorrecto');
+            console.log(error);
+        }
+        setLoading(false);
+    };
+
+    return (
+        <div className="login-container">
+            <Card title="Inicia Sesión" className="card">
+                <Form
+                    name="normal_login"
+                    className="login-form"
+                    initialValues={{ remember: true }}
+                    onFinish={onFinish}
+                >
+                    <Form.Item
+                        name="email"
+                        hasFeedback
+                        rules={[
+                            {
+                                required: true,
+                                message: 'Ingresa tu Correo',
+                            },
+                            {
+                                type: 'email',
+                                message: 'Ingresar un correo válido',
+                            },
+                        ]}
                     >
+                        <Input
+                            prefix={
+                                <UserOutlined className="site-form-item-icon" />
+                            }
+                            placeholder="Correo"
+                        />
+                    </Form.Item>
+                    <Form.Item
+                        name="password"
+                        rules={[
+                            {
+                                required: true,
+                                message: 'Ingresa tu Contraseña',
+                            },
+                        ]}
+                    >
+                        <Input
+                            prefix={
+                                <LockOutlined className="site-form-item-icon" />
+                            }
+                            type="password"
+                            placeholder="Contraseña"
+                        />
+                    </Form.Item>
+                    <Form.Item>
                         <Form.Item
-                            label="Usuario"
-                            name="username"
-                            rules={[
-                                {
-                                    required: true,
-                                    message:
-                                        'Por favor ingresa un nombre de usuario!',
-                                },
-                            ]}
-                        >
-                            <Input />
-                        </Form.Item>
-
-                        <Form.Item
-                            label="Contraseña"
-                            name="password"
-                            rules={[
-                                {
-                                    required: true,
-                                    message:
-                                        'Por favor ingresa una constraseña!',
-                                },
-                            ]}
-                        >
-                            <Input.Password />
-                        </Form.Item>
-
-                        <Form.Item
-                            {...tailLayout}
                             name="remember"
                             valuePropName="checked"
+                            noStyle
                         >
                             <Checkbox>Recordarme</Checkbox>
                         </Form.Item>
 
-                        <Form.Item {...tailLayout}>
-                            <Button type="primary" htmlType="submit">
-                                Iniciar Sesión
-                            </Button>
-                        </Form.Item>
-                    </Form>
-                </Card>
-            </div>
-        );
-    }
-}
+                        <a className="login-form-forgot" href="">
+                            Olvidé mi contraseña
+                        </a>
+                    </Form.Item>
+
+                    <Form.Item>
+                        <Button
+                            type="primary"
+                            htmlType="submit"
+                            className="login-form-button"
+                            disabled={loading}
+                        >
+                            Iniciar Sesión
+                        </Button>
+                        O <Link to="/registro">Registrarse</Link>
+                    </Form.Item>
+                </Form>
+            </Card>
+        </div>
+    );
+};
