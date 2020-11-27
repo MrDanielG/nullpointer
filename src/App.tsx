@@ -1,7 +1,12 @@
 import { Component } from 'react';
+import { History } from 'history';
 import './App.css';
+<<<<<<< HEAD
 import { PreguntarBtn } from './components/CrearPublicacion';
 import { Layout, Menu } from 'antd';
+=======
+import { Layout, Menu, Button, message } from 'antd';
+>>>>>>> Login
 import {
     FormOutlined,
     HomeOutlined,
@@ -9,14 +14,17 @@ import {
     FileTextOutlined,
 } from '@ant-design/icons';
 import { AuthContext, authData } from './contexts/AuthContext'
+import { useHistory } from 'react-router-dom';
 
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 
-
-
 interface AppProps {
+<<<<<<< HEAD
 
+=======
+    history: History;
+>>>>>>> Login
 }
 interface AppState {
     collapsed: boolean;
@@ -30,24 +38,46 @@ class App extends Component<AppProps, AppState> {
         this.state = {
             collapsed: false,
         };
+        this.handleLogOut = this.handleLogOut.bind(this);
         this.onCollapse = this.onCollapse.bind(this);
     }
-    
+
     onCollapse(collapsed: boolean) {
         console.log(collapsed);
         this.setState({ collapsed });
     };
-    
+
+    async handleLogOut() {
+        const { logOut } = this.context as authData;
+        try {
+            await logOut();
+            message.success('Sesión Terminada');
+            this.props.history.push('/');
+        } catch (error) {
+            message.error('Error al Cerrar Sesión');
+            console.log(error);
+        }
+    }
+
     render() {
         const { collapsed } = this.state;
-        const {  currentUser } = this.context as authData;
+        const { currentUser } = this.context as authData;
         return (
             <Layout style={{ minHeight: '100vh' }}>
+<<<<<<< HEAD
                 <Header className="header">
                     <FileTextOutlined />
                     <span style={{ paddingLeft: '5px' }}> Nullpointer </span>
                     <div style={{marginLeft: 'auto'}}>
                         <PreguntarBtn />
+=======
+                <Header   >
+
+                    <div className="logo" >
+                        <FileTextOutlined />
+                        <span style={{ paddingLeft: '5px' }}> Nullpointer </span>
+                        <Button type="primary" onClick={this.handleLogOut}> Salir </Button>
+>>>>>>> Login
                     </div>
                 </Header>
                 <Layout >
@@ -77,7 +107,7 @@ class App extends Component<AppProps, AppState> {
                     </Sider>
                     <Layout className="site-layout">
                         <Content style={{ margin: '0 16px' }}>
-                          {currentUser?.email} 
+                            <p>Current User: </p> {currentUser?.email}
                         </Content>
                         <Footer style={{ textAlign: 'center' }}>Nullpointer</Footer>
                     </Layout>

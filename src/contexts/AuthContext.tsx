@@ -11,6 +11,7 @@ export interface authData {
         email: string,
         password: string
     ): Promise<firebase.auth.UserCredential>;
+    logOut(): Promise<void>;
 }
 
 export const AuthContext = React.createContext<authData | null>(null);
@@ -31,6 +32,10 @@ export const AuthProvider = ({ children }: any) => {
         return auth.signInWithEmailAndPassword(email, password);
     };
 
+    const logOut = () => {
+        return auth.signOut();
+    };
+
     useEffect(() => {
         const unsuscribe = auth.onAuthStateChanged((user) => {
             setCurrentUser(user);
@@ -43,6 +48,7 @@ export const AuthProvider = ({ children }: any) => {
         currentUser: currentUser,
         signUp: signUp,
         logIn: logIn,
+        logOut: logOut,
     };
 
     return (
