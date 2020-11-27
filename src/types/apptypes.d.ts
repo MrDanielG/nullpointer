@@ -2,10 +2,9 @@ interface DocData {
     id?: string;
 }
 interface Usuario extends DocData {
-
     nombre: string;
     correo: string;
-    tipo: number;
+    isAdmin: boolean;
     semestre: number;
 }
 
