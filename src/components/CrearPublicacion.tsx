@@ -7,6 +7,7 @@ import {
 } from 'antd';
 import { Store } from 'antd/lib/form/interface';
 
+import { useFirebase } from '../contexts/FirebaseContext';
 
 
 interface CrearPublicacionProps {
@@ -49,14 +50,14 @@ const CrearPublicacion: React.FC<CrearPublicacionProps> = ({
                     layout="vertical"
                 >
                     <Form.Item
-                        name="cosa"
+                        name="titulo"
                         label="Título de la publicación"
                         rules={[{ required: true, message: 'Inserta la pegunta' }]}
                     >
                         <Input placeholder="Escribe tu pregunta" />
                     </Form.Item>
                     <Form.Item
-                        name="cuerpo"
+                        name="contenido"
                         label="Cuerpo de la publicación"
                         rules={[{ required: true, message: 'Inserta el cuerpo de la publicación' }]}
                     >
@@ -77,15 +78,32 @@ const CrearPublicacion: React.FC<CrearPublicacionProps> = ({
 
 export const PreguntarBtn: React.FC = () => {
     const [visible, setVisible] = React.useState(false);
+    const firebaseCtx = useFirebase();
 
     const onCreate = (values: Store) => {
         console.log('Received values of form: ', values);
+        let infoPublicacion: InfoPublicacion = {
+            fechaCreacion: new Date(),
+            fechaModificacion: new Date(),
+            titulo: values.titulo,
+            contenido: values.contenido,
+            autor_id: '',
+            estado: 'Abierta',
+        }
+        infoPublicacion = firebaseCtx.infoPublicacionM.create(infoPublicacion);
+        let pregunta: Pregunta = {
+            numVotos: 0,
+            resuelta: false,        
+            info_id: infoPublicacion.id ? infoPublicacion.id : ''
+        }
+        pregunta = firebaseCtx.preguntaM.create(pregunta);
+        console.log('Pregunta: ', pregunta);
         setVisible(false);
     };
 
     return (
         <>
-            <Button                
+            <Button
                 type="primary"
                 onClick={() => {
                     setVisible(true);

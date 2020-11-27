@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { History } from 'history';
 import './App.css';
-import { Layout, Menu, Button, message } from 'antd';
+import { Layout, Menu, Button, message, Space } from 'antd';
 import {
     FormOutlined,
     HomeOutlined,
@@ -9,7 +9,7 @@ import {
     FileTextOutlined,
 } from '@ant-design/icons';
 import { AuthContext, authData } from './contexts/AuthContext'
-import { useHistory } from 'react-router-dom';
+import { PreguntarBtn } from './components/CrearPublicacion';
 
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -55,13 +55,15 @@ class App extends Component<AppProps, AppState> {
         const { currentUser } = this.context as authData;
         return (
             <Layout style={{ minHeight: '100vh' }}>
-                <Header   >
-
-                    <div className="logo" >
-                        <FileTextOutlined />
-                        <span style={{ paddingLeft: '5px' }}> Nullpointer </span>
+                <Header className="app-header" >
+                    <FileTextOutlined />
+                    <span style={{ paddingLeft: '5px' }}> Nullpointer </span>
+                    <Space className="app-header-actions" size="large">
+                        <PreguntarBtn />
                         <Button type="primary" onClick={this.handleLogOut}> Salir </Button>
-                    </div>
+                    </Space>
+
+
                 </Header>
                 <Layout >
                     <Sider
