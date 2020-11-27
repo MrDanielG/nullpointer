@@ -8,6 +8,7 @@ import {
     SettingOutlined,
     FileTextOutlined,
 } from '@ant-design/icons';
+import { AuthContext, authData } from './contexts/AuthContext'
 
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -22,6 +23,7 @@ interface AppState {
 }
 
 class App extends Component<AppProps, AppState> {
+    static contextType = AuthContext;
 
     constructor(props: AppProps) {
         super(props);
@@ -30,14 +32,15 @@ class App extends Component<AppProps, AppState> {
         };
         this.onCollapse = this.onCollapse.bind(this);
     }
-
+    
     onCollapse(collapsed: boolean) {
         console.log(collapsed);
         this.setState({ collapsed });
     };
-
+    
     render() {
         const { collapsed } = this.state;
+        const {  currentUser } = this.context as authData;
         return (
             <Layout style={{ minHeight: '100vh' }}>
                 <Header className="header">
@@ -74,7 +77,7 @@ class App extends Component<AppProps, AppState> {
                     </Sider>
                     <Layout className="site-layout">
                         <Content style={{ margin: '0 16px' }}>
-
+                          {currentUser?.email} 
                         </Content>
                         <Footer style={{ textAlign: 'center' }}>Nullpointer</Footer>
                     </Layout>

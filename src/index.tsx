@@ -2,22 +2,22 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './index.css';
 import App from './App';
-import Login from './components/Login';
-import Registro from './components/Registro';
+import { Login } from './components/Login';
+import { Registro } from './components/Registro';
 import { AuthProvider } from './contexts/AuthContext';
 
 // import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-    <AuthProvider>
-        <BrowserRouter>
+    <BrowserRouter>
+        <AuthProvider>
             <Switch>
                 <Route exact path="/" component={Login} />
                 <Route path="/inicio" component={App} />
                 <Route path="/registro" component={Registro} />
             </Switch>
-        </BrowserRouter>
-    </AuthProvider>,
+        </AuthProvider>
+    </BrowserRouter>,
     document.getElementById('root')
 );
 
