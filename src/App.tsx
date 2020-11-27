@@ -12,7 +12,7 @@ import { useHistory } from 'react-router-dom';
 
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu; 
-const history = useHistory();
+// const history = useHistory();
 
 
 interface AppProps {
@@ -41,9 +41,9 @@ class App extends Component<AppProps, AppState> {
     async handleLogOut() {
         const { logOut } = this.context as authData;
         try {
-            await logOut()
+            await logOut();
             message.success('Sesión Terminada');
-            history.push('/');
+            // history.push('/');
         } catch (error) {
             message.error('Error al Cerrar Sesión');
             console.log(error);
