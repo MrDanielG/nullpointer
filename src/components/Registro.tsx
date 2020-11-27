@@ -1,13 +1,14 @@
 import React, { useContext, useState } from 'react';
 import { Form, Input, Button, Card, message } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { AuthContext, authData } from '../contexts/AuthContext';
 
 export const Registro = () => {
     const [form] = Form.useForm();
     const { signUp, currentUser } = useContext(AuthContext) as authData;
     const [loading, setLoading] = useState(false);
+    const history = useHistory();
 
     const onFinish = async (values: any) => {
         console.log('Received values of form: ', values);
@@ -16,6 +17,7 @@ export const Registro = () => {
             setLoading(true);
             await signUp(values.email, values.password);
             message.success('Usuario Registrado');
+            history.push('/inicio');
         } catch (error) {
             message.error('Error al Registrar Usuario');
             console.log(error);

@@ -1,11 +1,27 @@
-import React from 'react';
-import { Form, Input, Button, Checkbox, Card } from 'antd';
+import React, { useContext, useState } from 'react';
+import { Form, Input, Button, Checkbox, Card, message } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import { AuthContext, authData } from '../contexts/AuthContext';
 
 export const Login = () => {
-    const onFinish = (values: any) => {
+    const { logIn, currentUser } = useContext(AuthContext) as authData;
+    const [loading, setLoading] = useState(false);
+    const history = useHistory();
+
+    const onFinish = async (values: any) => {
         console.log('Received values of form: ', values);
+
+        try {
+            setLoading(true);
+            await logIn(values.email, values.password);
+            message.success('Loggin Exitoso');
+            history.push('/inicio');
+        } catch (error) {
+            message.error('Contraseña o Correo Incorrecto');
+            console.log(error);
+        }
+        setLoading(false);
     };
 
     return (
@@ -19,10 +35,15 @@ export const Login = () => {
                 >
                     <Form.Item
                         name="email"
+                        hasFeedback
                         rules={[
                             {
                                 required: true,
                                 message: 'Ingresa tu Correo',
+                            },
+                            {
+                                type: 'email',
+                                message: 'Ingresar un correo válido',
                             },
                         ]}
                     >
@@ -69,6 +90,7 @@ export const Login = () => {
                             type="primary"
                             htmlType="submit"
                             className="login-form-button"
+                            disabled={loading}
                         >
                             Iniciar Sesión
                         </Button>
