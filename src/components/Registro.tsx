@@ -1,29 +1,39 @@
 import React, { Component } from 'react';
 import { Form, Input, Button, Checkbox, Card } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
-import { Link } from 'react-router-dom';
 import '../index.css';
+import { Link } from 'react-router-dom';
+import { useAuth, AuthContext, authData } from '../contexts/AuthContext';
 
-const onFinish = (values: any) => {
-    console.log('Received values of form: ', values);
-};
-export default class Login extends Component {
+export default class Registro extends Component {
+    static contextType = AuthContext;
+
+    constructor(props: any) {
+        super(props);
+    }
+
+    onFinish = (values: any) => {
+        const { signUp, currentUser } = this.context as authData;
+        console.log('Received values of form: ', values);
+        signUp(values.email, values.password);
+    };
+
     render() {
         return (
-            <div className="login-container">
-                <Card title="Inicia Sesión" className="card">
+            <div className="register-container">
+                <Card title="Registro" className="card">
                     <Form
                         name="normal_login"
                         className="login-form"
                         initialValues={{ remember: true }}
-                        onFinish={onFinish}
+                        onFinish={this.onFinish}
                     >
                         <Form.Item
                             name="email"
                             rules={[
                                 {
                                     required: true,
-                                    message: 'Ingresa tu Correo',
+                                    message: 'Ingresar tu Correo',
                                 },
                             ]}
                         >
@@ -39,7 +49,7 @@ export default class Login extends Component {
                             rules={[
                                 {
                                     required: true,
-                                    message: 'Ingresa tu Contraseña',
+                                    message: 'Ingresa tu contraseña',
                                 },
                             ]}
                         >
@@ -51,18 +61,22 @@ export default class Login extends Component {
                                 placeholder="Contraseña"
                             />
                         </Form.Item>
-                        <Form.Item>
-                            <Form.Item
-                                name="remember"
-                                valuePropName="checked"
-                                noStyle
-                            >
-                                <Checkbox>Recordarme</Checkbox>
-                            </Form.Item>
-
-                            <a className="login-form-forgot" href="">
-                                Olvidé mi contraseña
-                            </a>
+                        <Form.Item
+                            name="confirmPassword"
+                            rules={[
+                                {
+                                    required: true,
+                                    message: 'Confirma tu contraseña',
+                                },
+                            ]}
+                        >
+                            <Input
+                                prefix={
+                                    <LockOutlined className="site-form-item-icon" />
+                                }
+                                type="password"
+                                placeholder="Confirmar Contraseña"
+                            />
                         </Form.Item>
 
                         <Form.Item>
@@ -73,7 +87,7 @@ export default class Login extends Component {
                             >
                                 Iniciar Sesión
                             </Button>
-                            O <Link to="/registro">Registrarse</Link>
+                            Ya tienes cuenta? <Link to="/">Inicia Sesión</Link>
                         </Form.Item>
                     </Form>
                 </Card>
