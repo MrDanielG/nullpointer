@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import './App.css';
+import { PreguntarBtn } from './components/CrearPublicacion';
 import { Layout, Menu } from 'antd';
 import {
     FormOutlined,
@@ -14,7 +15,7 @@ const { SubMenu } = Menu;
 
 
 interface AppProps {
-    
+
 }
 interface AppState {
     collapsed: boolean;
@@ -39,11 +40,11 @@ class App extends Component<AppProps, AppState> {
         const { collapsed } = this.state;
         return (
             <Layout style={{ minHeight: '100vh' }}>
-                <Header   >
-
-                    <div className="logo" >
-                        <FileTextOutlined />
-                        <span style={{paddingLeft: '5px'}}> Nullpointer </span>
+                <Header className="header">
+                    <FileTextOutlined />
+                    <span style={{ paddingLeft: '5px' }}> Nullpointer </span>
+                    <div style={{marginLeft: 'auto'}}>
+                        <PreguntarBtn />
                     </div>
                 </Header>
                 <Layout >
@@ -71,9 +72,9 @@ class App extends Component<AppProps, AppState> {
                             </SubMenu>
                         </Menu>
                     </Sider>
-                    <Layout className="site-layout">                   
+                    <Layout className="site-layout">
                         <Content style={{ margin: '0 16px' }}>
-                           
+
                         </Content>
                         <Footer style={{ textAlign: 'center' }}>Nullpointer</Footer>
                     </Layout>
