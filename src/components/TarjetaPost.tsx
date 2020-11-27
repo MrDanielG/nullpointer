@@ -1,26 +1,25 @@
 import React from 'react'
 import { Button, Card, message, Tag, Typography, Space } from 'antd';
-import { UpOutlined, AlignLeftOutlined, CheckCircleTwoTone } from '@ant-design/icons';
+import { UpOutlined, AlignLeftOutlined, CheckCircleTwoTone, QuestionCircleOutlined } from '@ant-design/icons';
 
 const { Text, Link } = Typography;
-export const TarjetaPost = () => {
+export const TarjetaPost = (props: {titulo: string, contenido: string, resuelto: boolean 
+                                    tags: string[], fecha: string}) => {
     return (
         <div>
             <Card
-                title="Título post"
+                title={props.titulo}
                 extra={<a href="#">Más</a>} style={{ width: 700 }}
                 actions={[
-                    <CheckCircleTwoTone twoToneColor="#52c41a" key="check"/>,
+                    props.resuelto ? <CheckCircleTwoTone twoToneColor="#52c41a" key="check"/>: <QuestionCircleOutlined />,
                     <UpOutlined key="up" about="12"/>,
                     <AlignLeftOutlined key="align"/>,
-                    <Text type="secondary">Fecha de publicación</Text>
+                    <Text type="secondary">{props.fecha}</Text>
                 ]}>
-                <p>Lorem ipsum</p>
-                <p>Card content</p>
-                <p>Card content</p>
-                <Tag>Tag 1</Tag>
-                <Tag>Tag 2</Tag>
-                <Tag>Tag 3</Tag>
+                <p>{props.contenido} </p>
+                {props.tags.map(function(item) {
+                    return <Tag>{item}</Tag>
+                })}
             </Card>
         </div>
     )
