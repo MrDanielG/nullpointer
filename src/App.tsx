@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import './App.css';
-import { Layout, Menu } from 'antd';
+import { Layout, Menu, message } from 'antd';
 import {
     FormOutlined,
     HomeOutlined,
@@ -8,10 +8,11 @@ import {
     FileTextOutlined,
 } from '@ant-design/icons';
 import { AuthContext, authData } from './contexts/AuthContext'
+import { useHistory } from 'react-router-dom';
 
 const { Header, Content, Footer, Sider } = Layout;
-const { SubMenu } = Menu;
-
+const { SubMenu } = Menu; 
+const history = useHistory();
 
 
 interface AppProps {
@@ -36,10 +37,22 @@ class App extends Component<AppProps, AppState> {
         console.log(collapsed);
         this.setState({ collapsed });
     };
+
+    async handleLogOut() {
+        const { logOut } = this.context as authData;
+        try {
+            await logOut()
+            message.success('Sesión Terminada');
+            history.push('/');
+        } catch (error) {
+            message.error('Error al Cerrar Sesión');
+            console.log(error);
+        }
+    }
     
     render() {
         const { collapsed } = this.state;
-        const {  currentUser } = this.context as authData;
+        const { currentUser } = this.context as authData;
         return (
             <Layout style={{ minHeight: '100vh' }}>
                 <Header   >
@@ -76,7 +89,7 @@ class App extends Component<AppProps, AppState> {
                     </Sider>
                     <Layout className="site-layout">                   
                         <Content style={{ margin: '0 16px' }}>
-                          {currentUser?.email} 
+                          <p>Current User: </p> {currentUser?.email} 
                         </Content>
                         <Footer style={{ textAlign: 'center' }}>Nullpointer</Footer>
                     </Layout>
