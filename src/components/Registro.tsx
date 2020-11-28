@@ -1,28 +1,32 @@
 import React, { useContext, useState } from 'react';
-import { Form, Input, Button, Card, message } from 'antd';
-import { UserOutlined, LockOutlined } from '@ant-design/icons';
+import { Form, Input, Button, Card, message, Select } from 'antd';
+import { UserOutlined, LockOutlined, MailOutlined } from '@ant-design/icons';
 import { Link, useHistory } from 'react-router-dom';
 import { AuthContext, authData } from '../contexts/AuthContext';
+const { Option } = Select;
 
 export const Registro = () => {
     const [form] = Form.useForm();
-    const { signUp, currentUser } = useContext(AuthContext) as authData;
+    const { signUp } = useContext(AuthContext) as authData;
     const [loading, setLoading] = useState(false);
     const history = useHistory();
 
-    const onFinish = async (values: any) => {
-        console.log('Received values of form: ', values);
-
+    const onFinish = async ({ username, password, email, semester }: any) => {
         try {
             setLoading(true);
-            await signUp(values.email, values.password);
+            const user = await signUp(email, password, username, semester);
+            console.log(user);
             message.success('Usuario Registrado');
             history.push('/app/inicio');
         } catch (error) {
             message.error('Error al Registrar Usuario');
             console.log(error);
+            setLoading(false);
         }
-        setLoading(false);
+    };
+
+    const onSemesterChange = (value: string) => {
+        console.log(value);
     };
 
     return (
@@ -51,9 +55,27 @@ export const Registro = () => {
                     >
                         <Input
                             prefix={
-                                <UserOutlined className="site-form-item-icon" />
+                                <MailOutlined className="site-form-item-icon" />
                             }
                             placeholder="Correo"
+                        />
+                    </Form.Item>
+
+                    <Form.Item
+                        name="username"
+                        hasFeedback
+                        rules={[
+                            {
+                                required: true,
+                                message: 'Ingresar Nombre de Usuario',
+                            },
+                        ]}
+                    >
+                        <Input
+                            prefix={
+                                <UserOutlined className="site-form-item-icon" />
+                            }
+                            placeholder="Nombre de Usuario"
                         />
                     </Form.Item>
 
@@ -117,6 +139,31 @@ export const Registro = () => {
                         />
                     </Form.Item>
 
+                    <Form.Item
+                        name="semester"
+                        rules={[
+                            {
+                                required: true,
+                                message: 'Ingresar Semestre en Curso',
+                            },
+                        ]}
+                    >
+                        <Select
+                            placeholder="Semestre en Curso"
+                            onChange={onSemesterChange}
+                        >
+                            <Option value="1">Primer Semestre</Option>
+                            <Option value="2">Segundo Semestre</Option>
+                            <Option value="3">Tercer Semestre</Option>
+                            <Option value="4">Cuarto Semestre</Option>
+                            <Option value="5">Quinto Semestre</Option>
+                            <Option value="6">Sexto Semestre</Option>
+                            <Option value="7">Septimo Semestre</Option>
+                            <Option value="8">Octavo Semestre</Option>
+                            <Option value="9">Noveno Semestre</Option>
+                        </Select>
+                    </Form.Item>
+
                     <Form.Item>
                         <Button
                             type="primary"
@@ -124,7 +171,7 @@ export const Registro = () => {
                             className="login-form-button"
                             disabled={loading}
                         >
-                            Iniciar Sesión
+                            Registrarse
                         </Button>
                         Ya tienes cuenta? <Link to="/">Inicia Sesión</Link>
                     </Form.Item>
