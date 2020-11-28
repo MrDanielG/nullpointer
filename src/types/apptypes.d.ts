@@ -21,5 +21,5 @@ interface  Pregunta extends DocData {
     numVotos: number;
     resuelta: boolean;
     respuesta_aceptada_id?: string;
-    info_id: string;
+    info_id: string; 
 }

@@ -17,7 +17,7 @@ export const Registro = () => {
             setLoading(true);
             await signUp(values.email, values.password);
             message.success('Usuario Registrado');
-            history.push('/inicio');
+            history.push('/app/inicio');
         } catch (error) {
             message.error('Error al Registrar Usuario');
             console.log(error);

@@ -94,7 +94,7 @@ export const PreguntarBtn: React.FC = () => {
         let pregunta: Pregunta = {
             numVotos: 0,
             resuelta: false,        
-            info_id: infoPublicacion.id ? infoPublicacion.id : ''
+            info_id: infoPublicacion.id ? infoPublicacion.id : '',
         }
         pregunta = firebaseCtx.preguntaM.create(pregunta);
         console.log('Pregunta: ', pregunta);

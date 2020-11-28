@@ -10,6 +10,8 @@ import {
 } from '@ant-design/icons';
 import { AuthContext, authData } from './contexts/AuthContext'
 import { PreguntarBtn } from './components/CrearPublicacion';
+import { Link, Route } from 'react-router-dom';
+import { ListaPublicaciones } from './components/ListaPublicaciones';
 
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -74,17 +76,17 @@ class App extends Component<AppProps, AppState> {
                     >
                         <div className="logo" />
                         <Menu
-                            defaultSelectedKeys={['1']}
+                            defaultSelectedKeys={[this.props.history.location.pathname]}
                             mode="inline"
                             theme="light"
                         >
-                            <Menu.Item key="1" icon={<HomeOutlined />}>
-                                Inicio
+                            <Menu.Item key="/app/inicio" icon={<HomeOutlined />}>
+                               <Link to="/app/inicio">Inicio</Link> 
                             </Menu.Item>
-                            <Menu.Item key="2" icon={<FormOutlined />}>
-                                Mis Posts
+                            <Menu.Item key="/app/misposts" icon={<FormOutlined />}>
+                               <Link to="/app/misposts">Mis Posts</Link>
                             </Menu.Item>
-                            <SubMenu key="sub1" icon={<SettingOutlined />} title="Panel de control">
+                            <SubMenu key="/app/ctrlpanel" icon={<SettingOutlined />} title="Panel de control">
                                 <Menu.Item key="3">Cuentas</Menu.Item>
                                 <Menu.Item key="4">Posts</Menu.Item>
                             </SubMenu>
@@ -92,7 +94,8 @@ class App extends Component<AppProps, AppState> {
                     </Sider>
                     <Layout className="site-layout">
                         <Content style={{ margin: '0 16px' }}>
-                            <p>Current User: </p> {currentUser?.email}
+                            <Route path="/app/inicio" ><p>Current User: </p> {currentUser?.email}</Route>
+                            <Route path="/app/misposts" component={ListaPublicaciones} />
                         </Content>
                         <Footer style={{ textAlign: 'center' }}>Nullpointer</Footer>
                     </Layout>

@@ -14,7 +14,7 @@ ReactDOM.render(
             <FirebaseProvider>
                 <Switch>
                     <Route exact path="/" component={Login} />
-                    <Route path="/inicio" component={App} />
+                    <Route path="/app" component={App} />
                     <Route path="/registro" component={Registro} />
                 </Switch>
             </FirebaseProvider>
