@@ -17,9 +17,23 @@ interface InfoPublicacion extends DocData {
     estado: 'Resuelta' | 'Abierta';
 }
 
-interface  Pregunta extends DocData {
+interface Pregunta extends DocData {
     numVotos: number;
     resuelta: boolean;
     respuesta_aceptada_id?: string;
-    info_id: string; 
+    info_id: string;
+}
+
+interface Post extends DocData {
+    fechaCreacion: Date;
+    fechaModificacion: Date;
+    titulo?: string;
+    contenido: string;
+    autor_id: string;
+    estado?: 'Resuelta' | 'Abierta';
+    numVotos: number;
+    resuelto: boolean;
+    respuesta_aceptada_id?: string;
+    tags?: string[];
+
 }

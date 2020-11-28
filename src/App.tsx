@@ -78,7 +78,7 @@ class App extends Component<AppProps, AppState> {
                         <Menu
                             defaultSelectedKeys={[this.props.history.location.pathname]}
                             mode="inline"
-                            theme="light"
+                            theme="light"                            
                         >
                             <Menu.Item key="/app/inicio" icon={<HomeOutlined />}>
                                <Link to="/app/inicio">Inicio</Link> 
@@ -94,8 +94,12 @@ class App extends Component<AppProps, AppState> {
                     </Sider>
                     <Layout className="site-layout">
                         <Content style={{ margin: '0 16px' }}>
-                            <Route path="/app/inicio" ><p>Current User: </p> {currentUser?.email}</Route>
-                            <Route path="/app/misposts" component={ListaPublicaciones} />
+                            <Route path="/app/inicio" >
+                                <ListaPublicaciones />
+                            </Route>
+                            <Route path="/app/misposts">
+                                <ListaPublicaciones autorId={currentUser?.uid} />
+                            </Route>
                         </Content>
                         <Footer style={{ textAlign: 'center' }}>Nullpointer</Footer>
                     </Layout>

@@ -4,7 +4,7 @@ import { UpOutlined, AlignLeftOutlined, CheckCircleTwoTone, QuestionCircleOutlin
 
 const { Text, Link } = Typography;
 export const TarjetaPost = (props: {titulo: string, contenido: string, resuelto: boolean 
-                                    tags: string[], fecha: string}) => {
+                                    tags?: string[], fecha: string}) => {
     return (
         <div>
             <Card
@@ -17,8 +17,9 @@ export const TarjetaPost = (props: {titulo: string, contenido: string, resuelto:
                     <Text type="secondary">{props.fecha}</Text>
                 ]}>                    
                 <p>{props.contenido} </p>
-                {props.tags.map(function(item, index) {
-                    return <Tag key={index}>{item}</Tag>
+                {props.tags &&
+                props.tags.map(function(item, index) {
+                    return <Tag key={index} color="blue">{item}</Tag>
                 })}
             </Card>
         </div>
