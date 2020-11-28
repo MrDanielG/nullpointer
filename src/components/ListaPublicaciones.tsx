@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { TarjetaPost } from './TarjetaPost';
 import { useFirebase } from '../contexts/FirebaseContext';
 
+
 interface Props {
 
 }
@@ -22,11 +23,12 @@ export const ListaPublicaciones = (props: Props) => {
     return (
         <div>
             {
+                
                 posts.map((post, index) =>
-                    <>
-                        <br />
+                    <div key={index}>
+                        <br/>
                         <TarjetaPost
-                            key={index}
+                            
                             titulo={post.titulo}
                             contenido={post.contenido}
                             resuelto={false}
@@ -38,7 +40,7 @@ export const ListaPublicaciones = (props: Props) => {
                             tags={['React', 'Context']}
                         />
                         <br />
-                    </>
+                    </div>
                 )
             }
 

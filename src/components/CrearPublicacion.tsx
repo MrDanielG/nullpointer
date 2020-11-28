@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import {
     Form,
     Input,
     Button,
     Modal
 } from 'antd';
+import EditableTagGroup from './EditableTagGroup';
+
 import { Store } from 'antd/lib/form/interface';
 
 import { useFirebase } from '../contexts/FirebaseContext';
@@ -21,6 +23,7 @@ const CrearPublicacion: React.FC<CrearPublicacionProps> = ({
     onCreate,
     onCancel,
 }) => {
+
     const [form] = Form.useForm();
     return (
         <>
@@ -67,7 +70,7 @@ const CrearPublicacion: React.FC<CrearPublicacionProps> = ({
                         name="etiquetas"
                         label="Etiquetas"
                     >
-                        <Input placeholder="Agrega etiquetas a tu publicación" />
+                        <EditableTagGroup/>
                     </Form.Item>
                 </Form>
             </Modal>
