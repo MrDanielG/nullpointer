@@ -7,23 +7,22 @@ const { Option } = Select;
 
 export const Registro = () => {
     const [form] = Form.useForm();
-    const { signUp, currentUser } = useContext(AuthContext) as authData;
+    const { signUp } = useContext(AuthContext) as authData;
     const [loading, setLoading] = useState(false);
     const history = useHistory();
 
-    const onFinish = async (values: any) => {
-        console.log('Received values of form: ', values);
-
+    const onFinish = async ({ username, password, email, semester }: any) => {
         try {
             setLoading(true);
-            await signUp(values.email, values.password);
+            const user = await signUp(email, password, username, semester);
+            console.log(user);
             message.success('Usuario Registrado');
             history.push('/inicio');
         } catch (error) {
             message.error('Error al Registrar Usuario');
             console.log(error);
+            setLoading(false);
         }
-        setLoading(false);
     };
 
     const onSemesterChange = (value: string) => {
@@ -172,7 +171,7 @@ export const Registro = () => {
                             className="login-form-button"
                             disabled={loading}
                         >
-                            Iniciar Sesión
+                            Registrarse
                         </Button>
                         Ya tienes cuenta? <Link to="/">Inicia Sesión</Link>
                     </Form.Item>
