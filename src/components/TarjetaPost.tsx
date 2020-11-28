@@ -1,15 +1,24 @@
 import React from 'react'
-import { Button, Card, message, Tag, Typography, Space } from 'antd';
+import { Card, Tag, Typography } from 'antd';
 import { UpOutlined, AlignLeftOutlined, CheckCircleTwoTone, QuestionCircleOutlined } from '@ant-design/icons';
+import { Link } from 'react-router-dom';
 
-const { Text, Link } = Typography;
-export const TarjetaPost = (props: {titulo: string, contenido: string, resuelto: boolean 
-                                    tags?: string[], fecha: string}) => {
+const { Text } = Typography;
+interface Props {
+    id: string;
+    titulo: string;
+    contenido: string;
+    resuelto: boolean;
+    tags?: string[];
+    fecha: string;
+}
+export const TarjetaPost = (props: Props) => {
     return (
         <div>
-            <Card
+            <Card            
                 title={props.titulo}
-                extra={<a href="#">Más</a>} style={{ width: 700 }}
+                extra={<Link to={`/app/post/${props.id}`}>Más</Link>} 
+                style={{ width: 700 }}
                 actions={[
                     props.resuelto ? <CheckCircleTwoTone twoToneColor="#52c41a" key="check"/>: <QuestionCircleOutlined />,
                     <UpOutlined key="up" about="12"/>,

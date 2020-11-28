@@ -12,6 +12,7 @@ import { AuthContext, authData } from './contexts/AuthContext'
 import { PreguntarBtn } from './components/CrearPublicacion';
 import { Link, Route } from 'react-router-dom';
 import { ListaPublicaciones } from './components/ListaPublicaciones';
+import { MostrarPost } from './components/MostrarPost';
 
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -78,13 +79,13 @@ class App extends Component<AppProps, AppState> {
                         <Menu
                             defaultSelectedKeys={[this.props.history.location.pathname]}
                             mode="inline"
-                            theme="light"                            
+                            theme="light"
                         >
                             <Menu.Item key="/app/inicio" icon={<HomeOutlined />}>
-                               <Link to="/app/inicio">Inicio</Link> 
+                                <Link to="/app/inicio">Inicio</Link>
                             </Menu.Item>
                             <Menu.Item key="/app/misposts" icon={<FormOutlined />}>
-                               <Link to="/app/misposts">Mis Posts</Link>
+                                <Link to="/app/misposts">Mis Posts</Link>
                             </Menu.Item>
                             <SubMenu key="/app/ctrlpanel" icon={<SettingOutlined />} title="Panel de control">
                                 <Menu.Item key="3">Cuentas</Menu.Item>
@@ -100,6 +101,7 @@ class App extends Component<AppProps, AppState> {
                             <Route path="/app/misposts">
                                 <ListaPublicaciones autorId={currentUser?.uid} />
                             </Route>
+                            <Route path="/app/post/:id" component={MostrarPost} />
                         </Content>
                         <Footer style={{ textAlign: 'center' }}>Nullpointer</Footer>
                     </Layout>

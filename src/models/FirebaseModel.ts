@@ -14,11 +14,13 @@ class FirebaseModel<T extends DocData> {
         doc.set(data);
         return { ...data, id: doc.id };
     }
+    
     getCollection() {
         return this.collection;
     }
-    subscribe(setData: (data: T[]) => void): () => void {
-        return this.collection.onSnapshot(snapshot => {
+    subscribe(setData: (data: T[]) => void, collection?: firebase.firestore.CollectionReference): () => void {
+        collection = collection ? collection : this.collection;
+        return collection.onSnapshot(snapshot => {
             this.data = snapshot.docs.map(doc => {
                 return convertDate({ ...doc.data(), id: doc.id })
             }) as T[];
