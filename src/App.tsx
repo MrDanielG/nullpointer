@@ -13,6 +13,7 @@ import { PreguntarBtn } from './components/CrearPublicacion';
 import { Link, Route } from 'react-router-dom';
 import { ListaPublicaciones } from './components/ListaPublicaciones';
 import { MostrarPost } from './components/MostrarPost';
+import { AdminCuentas } from './components/AdminCuentas'
 
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -88,7 +89,11 @@ class App extends Component<AppProps, AppState> {
                                 <Link to="/app/misposts">Mis Posts</Link>
                             </Menu.Item>
                             <SubMenu key="/app/ctrlpanel" icon={<SettingOutlined />} title="Panel de control">
-                                <Menu.Item key="3">Cuentas</Menu.Item>
+                                <Menu.Item key="/app/cuentas">
+                                    <Link to="/app/cuentas">
+                                        Cuentas
+                                    </Link>
+                                </Menu.Item>
                                 <Menu.Item key="4">Posts</Menu.Item>
                             </SubMenu>
                         </Menu>
@@ -102,6 +107,7 @@ class App extends Component<AppProps, AppState> {
                                 <ListaPublicaciones autorId={currentUser?.uid} />
                             </Route>
                             <Route path="/app/post/:id" component={MostrarPost} />
+                            <Route path="/app/cuentas" component={AdminCuentas} />
                         </Content>
                         <Footer style={{ textAlign: 'center' }}>Nullpointer</Footer>
                     </Layout>
