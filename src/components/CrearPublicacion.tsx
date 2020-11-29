@@ -34,7 +34,7 @@ const CrearPublicacion: React.FC<CrearPublicacionProps> = ({
                 title="Crear una nueva publicación"
                 okText="Publicar"
 
-                cancelText="Cancel"
+                cancelText="Cancelar"
                 onCancel={onCancel}
                 onOk={() => {
                     form
@@ -97,7 +97,7 @@ export const PreguntarBtn: React.FC = () => {
             estado: 'Abierta',
             tags: values.tags
         }
-        post = firebaseCtx.postM.create(post);
+        firebaseCtx.postM.create(post);
         setVisible(false);
     };
     return (
