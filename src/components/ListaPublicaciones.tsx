@@ -19,7 +19,6 @@ export const ListaPublicaciones = (props: Props) => {
             setResueltos(true);
         }
     }
-
     return (
 
         <div>
@@ -31,23 +30,12 @@ export const ListaPublicaciones = (props: Props) => {
             <div className="resultados">
                 {
                     posts &&
-                    posts.map((post, index) =>                    
+                    posts.map((post, index) =>
                         (props.autorId ? post.autor_id === props.autorId : true) &&
                         post.resuelto === resueltos &&
                         <div key={index}>
                             <br />
-                            <TarjetaPost
-                                id={post.id!}
-                                titulo={post.titulo!}
-                                contenido={post.contenido}
-                                resuelto={post.resuelto}
-                                fecha={post.fechaCreacion.toLocaleString('es-ES', {
-                                    day: 'numeric',
-                                    month: 'long',
-                                    year: 'numeric'
-                                })}
-                                tags={post.tags}
-                            />
+                            <TarjetaPost post={post} />
                             <br />
                         </div>
                     )

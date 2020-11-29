@@ -2,36 +2,43 @@ import firebase, { db, convertDate } from '../firebase';
 
 class FirebaseModel<T extends DocData> {
     protected collection: firebase.firestore.CollectionReference;
-    public data: T[];
-
+    
     constructor(collection: string) {
         this.collection = db.collection(collection);
-        this.data = [];
 
     }
-    protected addToCollection(collection: firebase.firestore.CollectionReference, data: T): T {
+    /* protected addToCollection(collection: firebase.firestore.CollectionReference, data: T): T {
+
         const doc = collection.doc();
-        doc.set(data);
+        doc.set(data).then();
         return { ...data, id: doc.id };
+    } */
+    protected async addToCollection(collection: firebase.firestore.CollectionReference, data: T) {
+        return await collection.add(data).then(docRef =>
+            docRef.get().then(docData => {
+                return convertDate({ ...docData.data(), id: docData.id }) as T;
+            }));
     }
-    
     getCollection() {
         return this.collection;
     }
     subscribe(setData: (data: T[]) => void, collection?: firebase.firestore.CollectionReference): () => void {
         collection = collection ? collection : this.collection;
         return collection.onSnapshot(snapshot => {
-            this.data = snapshot.docs.map(doc => {
-                return convertDate({ ...doc.data(), id: doc.id })
-            }) as T[];
-            setData(this.data);
+            setData(
+                snapshot.docs.map(doc => {
+                    return convertDate({ ...doc.data(), id: doc.id })
+                }) as T[]
+            );
         });
     }
-    create(data: T): T {
+    create(data: T) {
         return this.addToCollection(this.collection, data);
     }
-    read(id: string): T | undefined {
-        return this.data.find((item) => item.id === id);
+    async read(id: string) {
+        return await this.collection.doc(id).get().then(docData =>{
+            return convertDate({...docData, id: docData.id}) as T
+        });
     }
     update(id: string, data: Partial<T>) {
         this.collection.doc(id).update(data);

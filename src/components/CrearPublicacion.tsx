@@ -97,7 +97,7 @@ export const PreguntarBtn: React.FC = () => {
             estado: 'Abierta',
             tags: values.tags
         }
-        post = firebaseCtx.postM.create(post);
+        firebaseCtx.postM.create(post);
         setVisible(false);
     };
     return (
