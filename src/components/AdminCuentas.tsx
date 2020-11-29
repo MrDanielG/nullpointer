@@ -11,7 +11,6 @@ export const AdminCuentas = () => {
             {usuarios?.map((usuario) => {
                 return <TarjetaCuenta key={usuario.id} usuario={usuario} />;
             })}
-            {/* <TarjetaCuenta /> */}
         </div>
     );
 };

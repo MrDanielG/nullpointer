@@ -1,11 +1,14 @@
-import { Card, Avatar, Switch, Modal, Button } from 'antd';
-import { EllipsisOutlined, DeleteOutlined } from '@ant-design/icons';
 import React, { useState } from 'react';
+import { Card, Avatar, Switch, Modal, message } from 'antd';
+import { EllipsisOutlined, DeleteOutlined } from '@ant-design/icons';
+import { useFirebase } from '../contexts/FirebaseContext';
 const { Meta } = Card;
 
 export const TarjetaCuenta = ({ usuario }: any) => {
-    const [state, setState] = useState({ visible: false });
-    const { nombre, correo, isAdmin } = usuario;
+    const { usuarioM } = useFirebase();
+    const [state, setState] = useState(false);
+    const [confirmLoading, setConfirmLoading] = useState(false);
+    const { nombre, correo, isAdmin, id } = usuario;
 
     const onChange = (checked: any) => {
         showModal();
@@ -17,27 +20,39 @@ export const TarjetaCuenta = ({ usuario }: any) => {
 
     const onDetails = () => {
         console.log('Detail');
-        console.log(usuario);
     };
 
     const showModal = () => {
-        setState({
-            visible: true,
-        });
+        setState(true);
     };
 
-    const handleOk = (e: any) => {
-        console.log(e);
-        setState({
-            visible: false,
-        });
+    const handleOk = async (id: string) => {
+        if (isAdmin) {
+            try {
+                setConfirmLoading(true);
+                await usuarioM.update(id, { isAdmin: false });
+                setConfirmLoading(false);
+                message.success('Usuario Actualizado');
+            } catch (error) {
+                console.log(error);
+                message.error('Error al actualizar Usuario');
+            }
+        } else {
+            try {
+                setConfirmLoading(true);
+                await usuarioM.update(id, { isAdmin: true });
+                setConfirmLoading(false);
+                message.success('Usuario Actualizado');
+            } catch (error) {
+                console.log(error);
+                message.error('Error al actualizar Usuario');
+            }
+        }
+        setState(false);
     };
 
     const handleCancel = (e: any) => {
-        console.log(e);
-        setState({
-            visible: false,
-        });
+        setState(false);
     };
 
     return (
@@ -64,14 +79,16 @@ export const TarjetaCuenta = ({ usuario }: any) => {
                     className="admin-switch"
                 />
             </p>
-            {}
             <Modal
                 title="Adminisrar Admins"
-                visible={state.visible}
-                onOk={handleOk}
+                visible={state}
+                onOk={() => handleOk(id)}
+                confirmLoading={confirmLoading}
                 onCancel={handleCancel}
             >
-                <p>Desea cambiar los permisos del usuario: {nombre} </p>
+                <p>
+                    ¿Desea cambiar los permisos del usuario: <b>{nombre}</b>?
+                </p>
             </Modal>
         </Card>
     );

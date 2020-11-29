@@ -41,10 +41,10 @@ class FirebaseModel<T extends DocData> {
         });
     }
     update(id: string, data: Partial<T>) {
-        this.collection.doc(id).update(data);
+        return this.collection.doc(id).update(data);
     }
     remove(id: string) {
-        this.collection.doc(id).delete();
+        return this.collection.doc(id).delete();
     }
     createCustomDoc(data: T, id: string | any): T {
         const doc = this.collection.doc(id);
