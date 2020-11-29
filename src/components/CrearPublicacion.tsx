@@ -34,7 +34,7 @@ const CrearPublicacion: React.FC<CrearPublicacionProps> = ({
                 title="Crear una nueva publicación"
                 okText="Publicar"
 
-                cancelText="Cancel"
+                cancelText="Cancelar"
                 onCancel={onCancel}
                 onOk={() => {
                     form

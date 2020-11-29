@@ -15,8 +15,8 @@ class FirebaseModel<T extends DocData> {
     } */
     protected async addToCollection(collection: firebase.firestore.CollectionReference, data: T) {
         return await collection.add(data).then(docRef =>
-            docRef.get().then(docData => {
-                return convertDate({ ...docData.data(), id: docData.id }) as T;
+            docRef.get().then(snapshot => {
+                return convertDate({ ...snapshot.data(), id: snapshot.id }) as T;
             }));
     }
     getCollection() {
@@ -36,8 +36,8 @@ class FirebaseModel<T extends DocData> {
         return this.addToCollection(this.collection, data);
     }
     async read(id: string) {
-        return await this.collection.doc(id).get().then(docData =>{
-            return convertDate({...docData, id: docData.id}) as T
+        return await this.collection.doc(id).get().then(snapshot =>{
+            return convertDate({...snapshot.data(), id: snapshot.id}) as T
         });
     }
     update(id: string, data: Partial<T>) {

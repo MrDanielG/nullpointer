@@ -1,4 +1,10 @@
 .post-item {
     margin-bottom: 20px;
-    width: 55vw;
+    width: 60vw;
+    padding: 20px;
+    text-align: justify;
+}
+
+.post-item-footer {
+    padding-top: 20px;
 }

@@ -2,48 +2,58 @@ import React, { useState, useEffect } from 'react'
 import './MostrarPost.css';
 import { useFirebase } from '../contexts/FirebaseContext';
 import { useAuth } from '../contexts/AuthContext';
-import { RouteComponentProps } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { PostItem } from './PostItem';
 import { Steps, Typography } from 'antd';
+import { CheckCircleOutlined, CommentOutlined, MessageTwoTone, CheckCircleTwoTone } from '@ant-design/icons';
 import { EditorRespuesta } from './EditorRespuesta';
 
 interface RouteInfo {
     id: string;
 }
-interface Props extends RouteComponentProps<RouteInfo> {
+interface Props {
 
 }
 export const MostrarPost = (props: Props) => {
     const { currentUser } = useAuth()!;
     const firebaseCtx = useFirebase();
-
+    const params = useParams<RouteInfo>();
     const [respuestas, setRespuestas] = useState<Post[]>();
     useEffect(() => {
         const setData = (data: Post[]) => {
             setRespuestas(data);
         };
-        return firebaseCtx.postM.subscribeToPostReplies(props.match.params.id, setData);
-    }, [firebaseCtx.postM]);
-    let post = firebaseCtx.posts.find(val => val.id === props.match.params.id)!;
+        return firebaseCtx.postM.subscribeToPostReplies(params.id, setData);
+    }, [firebaseCtx.postM, params.id]);
+
+    const post = firebaseCtx.posts.find(val => val.id === params.id)!;
     return (
         <div className="mostrar-post">
-            <PostItem post={post} />
+            {post &&
+                <PostItem post={post} isReply={false} />
+            }
             <Steps direction="vertical">
                 {
+                    post &&
                     respuestas &&
                     respuestas.map((respuesta, i) =>
                         <Steps.Step
+                            icon={
+                            (post.respuesta_aceptada_id === respuesta.id) ?
+                            <CheckCircleTwoTone twoToneColor="#52c41a" style={{fontSize: '32px'}} />:
+                             <MessageTwoTone style={{fontSize: '32px'}} />
+                            }
                             key={i}
                             status="finish"
-                            description={<PostItem post={respuesta} />}
+                            description={<PostItem post={respuesta} isReply={true} />}
                         />
                     )
                 }
             </Steps>
-            <br/>
-            <br/>
+            <br />
+            <br />
             <Typography.Title level={5}>Responde a esta pregunta</Typography.Title>
-            <EditorRespuesta idPost={props.match.params.id} idUser={currentUser?.uid!} />
+            <EditorRespuesta idPost={params.id} idUser={currentUser?.uid!} />
         </div>
     )
 }
