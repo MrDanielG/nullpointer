@@ -78,7 +78,8 @@ class App extends Component<AppProps, AppState> {
         );
         return (
             <Layout style={{ minHeight: '100vh' }}>
-                <Header className="app-header">
+                <Header className="app-header"
+                style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
                     <FileTextOutlined />
                     <span style={{ paddingLeft: '5px' }}> Nullpointer </span>
                     <Space className="app-header-actions" size="large">
@@ -102,6 +103,15 @@ class App extends Component<AppProps, AppState> {
                         collapsed={collapsed}
                         onCollapse={this.onCollapse}
                         theme="light"
+                        style={{
+                            //overflow: 'auto',
+                            height: '100vh',
+                            position: 'fixed',
+                            left: 0,
+                            top:75,
+                            overflow: 'auto',
+
+                        }}
                     >
                         <div className="logo" />
                         <Menu
@@ -110,6 +120,7 @@ class App extends Component<AppProps, AppState> {
                             ]}
                             mode="inline"
                             theme="light"
+ 
                         >
                             <Menu.Item
                                 key="/app/inicio"
@@ -127,6 +138,7 @@ class App extends Component<AppProps, AppState> {
                                 key="/app/ctrlpanel"
                                 icon={<SettingOutlined />}
                                 title="Panel de control"
+                                
                             >
                                 <Menu.Item key="/app/cuentas">
                                     <Link to="/app/cuentas">Cuentas</Link>
@@ -135,7 +147,16 @@ class App extends Component<AppProps, AppState> {
                             </SubMenu>
                         </Menu>
                     </Sider>
-                    <Layout className="site-layout">
+                    <Layout className="site-layout" 
+                        style={{
+                            marginLeft: 200,
+                            marginTop: 75.
+                            //display: 'flex',
+                            // justify-content: 'center',
+                            //align-items: 'center',
+                            //flex-direction: 'column', 
+                        }}
+                        >
                         <Content style={{ margin: '0 16px' }}>
                             <Route path="/app/inicio">
                                 <ListaPublicaciones />
