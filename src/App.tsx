@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { History } from 'history';
 import './App.css';
-import { Layout, Menu, message, Space, Dropdown } from 'antd';
+import { Layout, Menu, message, Space, Dropdown, Avatar } from 'antd';
 import {
     FormOutlined,
     HomeOutlined,
     SettingOutlined,
     FileTextOutlined,
     DownOutlined,
+    UserOutlined
 } from '@ant-design/icons';
 import { AuthContext } from './contexts/AuthContext';
 import { PreguntarBtn } from './components/CrearPublicacion';
@@ -87,7 +88,10 @@ class App extends Component<AppProps, AppState> {
                                 className="ant-dropdown-link"
                                 onClick={(e) => e.preventDefault()}
                             >
-                                {currentUser?.email} <DownOutlined />
+                                {/* <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" /> */}
+                                <Avatar style={{ backgroundColor: '#188dba' }} icon={<UserOutlined />} />
+                                
+                                {"   "+currentUser?.email} <DownOutlined />
                             </a>
                         </Dropdown>
                     </Space>
