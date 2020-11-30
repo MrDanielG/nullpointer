@@ -21,7 +21,7 @@ export const PostItem = (props: Props) => {
             }
         });
         return () => { isSubscribed = false };
-    }, [])
+    }, [props.post.autor_id])
     return (
         <>
             <Card
