@@ -3,6 +3,8 @@ import './ListaPublicaciones.css';
 import { TarjetaPost } from './TarjetaPost';
 import { useFirebase } from '../contexts/FirebaseContext';
 import { Tabs } from 'antd';
+import { CheckCircleOutlined, QuestionCircleOutlined } from '@ant-design/icons';
+
 
 
 interface Props {
@@ -23,8 +25,18 @@ export const ListaPublicaciones = (props: Props) => {
 
         <div>
             <Tabs onChange={onTabChange}>
-                <Tabs.TabPane tab="Abiertos" key="1" />
-                <Tabs.TabPane tab="Resueltos" key="2" />
+                <Tabs.TabPane tab={
+                    <span>
+                        <QuestionCircleOutlined />
+                        Abiertos
+                    </span>
+                } key="1" />
+                <Tabs.TabPane tab={
+                    <span>
+                        <CheckCircleOutlined />
+                        Resueltos
+                    </span>
+                } key="2" />
 
             </Tabs>
             <div className="resultados">
