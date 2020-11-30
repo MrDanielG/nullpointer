@@ -134,17 +134,19 @@ class App extends Component<AppProps, AppState> {
                             >
                                 <Link to="/app/misposts">Mis Posts</Link>
                             </Menu.Item>
-                            <SubMenu
+                            {(currentUser?.isAdmin) && 
+                            <SubMenu 
                                 key="/app/ctrlpanel"
                                 icon={<SettingOutlined />}
                                 title="Panel de control"
                                 
                             >
+                                
                                 <Menu.Item key="/app/cuentas">
                                     <Link to="/app/cuentas">Cuentas</Link>
-                                </Menu.Item>
+                                </Menu.Item> 
                                 <Menu.Item key="4">Posts</Menu.Item>
-                            </SubMenu>
+                            </SubMenu>}
                         </Menu>
                     </Sider>
                     <Layout className="site-layout" 
