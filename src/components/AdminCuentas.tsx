@@ -1,12 +1,15 @@
 import { Col, Row } from 'antd';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useFirebase } from '../contexts/FirebaseContext';
 import { TarjetaCuenta } from './TarjetaCuenta';
 
 export const AdminCuentas = () => {
     const { usuarioM } = useFirebase();
     const [usuarios, setUsuarios] = useState<Usuario[]>();
-    usuarioM.subscribe(setUsuarios, usuarioM.getCollection());
+    useEffect(() => {
+        console.log('Holi');
+        return usuarioM.subscribe(setUsuarios, usuarioM.getCollection());
+    }, [usuarioM]);
     return (
         <Row>
             {usuarios?.map((usuario) => {
