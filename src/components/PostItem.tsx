@@ -16,6 +16,7 @@ interface Props {
     isReply?: boolean;
     canAccept?: boolean;
     acceptReply?: (id: string) => void;
+    parentPost?: string;
 }
 
 export const PostItem = (props: Props) => {
@@ -28,7 +29,12 @@ export const PostItem = (props: Props) => {
     const like = async () => {
         setAction('liked');
         try {
-            await likesM.createLike(currentUser?.uid!, props.post.id!);
+            await likesM.createLike(
+                currentUser?.uid!,
+                props.post.id!,
+                props.isReply,
+                props.parentPost
+            );
         } catch (error) {
             console.log(error);
         }
@@ -37,7 +43,12 @@ export const PostItem = (props: Props) => {
     const dislike = async () => {
         setAction('disliked');
         try {
-            await likesM.deleteLike(currentUser?.uid!, props.post.id!);
+            await likesM.deleteLike(
+                currentUser?.uid!,
+                props.post.id!,
+                props.isReply,
+                props.parentPost
+            );
         } catch (error) {
             console.log(error);
         }
@@ -104,9 +115,7 @@ export const PostItem = (props: Props) => {
                                         ? DislikeFilled
                                         : DislikeOutlined
                                 )}
-                                <span className="comment-action">
-                                    {dislikes}
-                                </span>
+                                <span className="comment-action"></span>
                             </span>
                         </Tooltip>
 

@@ -74,6 +74,7 @@ export const MostrarPost = (props: Props) => {
                             description={<PostItem
                                 post={respuesta}
                                 isReply={true}
+                                parentPost={post.id}
                                 canAccept={                                   
                                     post.autor_id === currentUser.uid
                                     &&  post.respuesta_aceptada_id !== respuesta.id
