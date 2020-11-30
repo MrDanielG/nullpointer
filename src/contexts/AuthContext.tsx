@@ -2,8 +2,12 @@ import React, { useContext, useEffect, useState } from 'react';
 import firebase, { auth } from '../firebase';
 import { FirebaseContext } from './FirebaseContext';
 
+interface authUserData extends firebase.User, Usuario{
+
+}
+
 export interface authData {
-    currentUser: firebase.User | null;
+    currentUser: authUserData | null;
     signUp(
         email: string,
         password: string,
@@ -25,7 +29,7 @@ export const useAuth = () => {
 };
 
 export const AuthProvider = ({ children }: any): JSX.Element => {
-    const [currentUser, setCurrentUser] = useState<firebase.User | null>(null);
+    const [currentUser, setCurrentUser] = useState<authUserData | null>(null);
     const [loading, setLoading] = useState(true);
     const { usuarioM } = useContext(FirebaseContext);
 
@@ -65,12 +69,23 @@ export const AuthProvider = ({ children }: any): JSX.Element => {
     };
 
     useEffect(() => {
+        const getData = async (user: firebase.User | null) => {
+            if(user && usuarioM){
+                try {
+                    const userData = await usuarioM.read(user.uid);
+                    setCurrentUser({...user, ...userData});
+                    
+                } catch (error) {
+                    console.error("Error al obtener los datos de usuario");
+                }
+            }
+        };
         const unsuscribe = auth.onAuthStateChanged((user) => {
-            setCurrentUser(user);
+            getData(user);
             setLoading(false);
         });
         return unsuscribe;
-    }, []);
+    }, [usuarioM]);
 
     const value: authData = {
         currentUser: currentUser,
