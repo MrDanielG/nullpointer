@@ -90,7 +90,7 @@ export const Login = () => {
                             type="primary"
                             htmlType="submit"
                             className="login-form-button"
-                            disabled={loading}
+                            loading={loading}
                         >
                             Iniciar Sesión
                         </Button>
