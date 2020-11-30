@@ -25,7 +25,7 @@ class LikesModel extends FirebaseModel<Like> {
                 return this.addPostLike(postId);
             } else if (!doc.exists && isReply) {
                 await docRef.set(infoLike);
-                return this.addReplylike(parentId!, postId);
+                return this.addReplyLike(parentId!, postId);
             } else {
                 return;
             }
@@ -38,7 +38,8 @@ class LikesModel extends FirebaseModel<Like> {
         userId: string,
         postId: string,
         isReply?: boolean,
-        parentId?: string
+        parentId?: string,
+        currentLikes?: number
     ): Promise<void> {
         const docRef = this.collection.doc(`${postId}_${userId}`);
         try {
@@ -47,42 +48,44 @@ class LikesModel extends FirebaseModel<Like> {
                 return this.removePostLike(postId);
             } else {
                 await docRef.delete();
-                return this.removeReplylike(parentId!, postId);
+                return this.removeReplyLike(parentId!, postId, currentLikes!);
             }
         } catch (error) {
             console.log(error);
         }
     }
 
-    addPostLike(postId: string) {
+    addPostLike(postId: string): Promise<void> {
         return db
             .collection('posts')
             .doc(postId)
             .update({ numVotos: firebase.firestore.FieldValue.increment(1) });
     }
 
-    removePostLike(postId: string) {
+    removePostLike(postId: string): Promise<void> {
         return db
             .collection('posts')
             .doc(postId)
             .update({ numVotos: firebase.firestore.FieldValue.increment(-1) });
     }
 
-    addReplylike(parentId: string, postId: string) {
+    addReplyLike(parentId: string, postId: string): Promise<void> {
         return db
             .collection(`/posts/${parentId}/respuestas/`)
             .doc(postId)
             .update({ numVotos: firebase.firestore.FieldValue.increment(1) });
     }
 
-    async removeReplylike(parentId: string, postId: string) {
+    async removeReplyLike(
+        parentId: string,
+        postId: string,
+        currentLikes: number
+    ): Promise<void> {
         const replyRef = db
             .collection(`/posts/${parentId}/respuestas/`)
             .doc(postId);
 
-        const doc = await replyRef.get();
-        const post = doc.data() as Post;
-        if (post.numVotos <= 0) {
+        if (currentLikes <= 0) {
             return;
         } else {
             return replyRef.update({

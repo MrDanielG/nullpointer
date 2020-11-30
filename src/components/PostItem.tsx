@@ -23,7 +23,6 @@ export const PostItem = (props: Props) => {
     const { usuarioM, likesM } = useFirebase();
     const { currentUser } = useAuth() as authData;
     const [usuario, setUsuario] = useState<Usuario>();
-    const [dislikes, setDislikes] = useState(0);
     const [action, setAction] = useState('');
 
     const like = async () => {
@@ -47,7 +46,8 @@ export const PostItem = (props: Props) => {
                 currentUser?.uid!,
                 props.post.id!,
                 props.isReply,
-                props.parentPost
+                props.parentPost,
+                props.post.numVotos
             );
         } catch (error) {
             console.log(error);
