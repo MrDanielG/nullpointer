@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Card, Col, Row, Tag, Tooltip, Typography, Avatar } from 'antd';
+import { Card, Col, Row, Tag, Tooltip, Typography, Avatar, Button } from 'antd';
 import {
     DislikeOutlined,
     LikeOutlined,
@@ -9,10 +9,13 @@ import {
 import { useFirebase } from '../contexts/FirebaseContext';
 import './PostItem.css';
 import { authData, useAuth } from '../contexts/AuthContext';
+import { CheckOutlined } from '@ant-design/icons';
 
 interface Props {
     post: Post;
-    isReply: boolean;
+    isReply?: boolean;
+    canAccept?: boolean;
+    acceptReply?: (id: string) => void;
 }
 
 export const PostItem = (props: Props) => {
@@ -52,6 +55,12 @@ export const PostItem = (props: Props) => {
         };
     }, [usuarioM, props.post.autor_id]);
 
+    const accept = () => {
+        if (props.acceptReply && props.post.id) {
+            props.acceptReply(props.post.id);
+        }
+    };
+
     return (
         <>
             <Card bordered={false} size="small" className="post-item">
@@ -73,9 +82,9 @@ export const PostItem = (props: Props) => {
                                     {tag}
                                 </Tag>
                             ))}
+                        <br />
+                        <br />
 
-                        <br />
-                        <br />
                         <Tooltip key="comment-basic-like" title="Like">
                             <span onClick={like}>
                                 {React.createElement(
@@ -100,6 +109,20 @@ export const PostItem = (props: Props) => {
                                 </span>
                             </span>
                         </Tooltip>
+
+                        {props.canAccept && (
+                            <Button
+                                style={{
+                                    backgroundColor: '#52c41a',
+                                    borderColor: '#52c41a',
+                                }}
+                                onClick={accept}
+                                type="primary"
+                                icon={<CheckOutlined />}
+                            >
+                                Aceptar
+                            </Button>
+                        )}
                     </Col>
                 </Row>
                 <div className="post-item-footer">

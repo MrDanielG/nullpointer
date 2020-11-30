@@ -4,7 +4,7 @@ import { useFirebase } from '../contexts/FirebaseContext';
 import { useAuth } from '../contexts/AuthContext';
 import { useParams } from 'react-router-dom';
 import { PostItem } from './PostItem';
-import { Steps, Typography } from 'antd';
+import { Steps, Typography, message } from 'antd';
 import { MessageTwoTone, CheckCircleTwoTone } from '@ant-design/icons';
 import { EditorRespuesta } from './EditorRespuesta';
 
@@ -18,7 +18,25 @@ export const MostrarPost = (props: Props) => {
     const { currentUser } = useAuth()!;
     const firebaseCtx = useFirebase();
     const params = useParams<RouteInfo>();
+    const [post, setPost] = useState<Post>();
     const [respuestas, setRespuestas] = useState<Post[]>();
+/*     const [resp_aceptada, setRespAceptada] = useState<string>(); */
+    const acceptReply = async (id: string | null) => {
+        if (id) {
+            try {
+                await firebaseCtx.postM.update(params.id, {
+                    respuesta_aceptada_id: id,
+                    resuelto: true
+                });
+                message.success("Respuesta acceptada");
+            } catch (error) {
+                message.error("No se pudo actualizar el post");
+                console.error(error);
+                console.error("Error al actualizar el post");
+            }
+        }
+    };
+
     useEffect(() => {
         const setData = (data: Post[]) => {
             data.sort((r1, r2) => {
@@ -28,10 +46,12 @@ export const MostrarPost = (props: Props) => {
             });
             setRespuestas(data);
         };
+        const post = firebaseCtx.posts.find(val => val.id === params.id);
+        setPost(post);
+/*         setRespAceptada(post?.respuesta_aceptada_id); */
         return firebaseCtx.postM.subscribeToPostReplies(params.id, setData);
-    }, [firebaseCtx.postM, params.id]);
+    }, [firebaseCtx, params.id]);
 
-    const post = firebaseCtx.posts.find(val => val.id === params.id)!;
     return (
         <div className="mostrar-post">
             {post &&
@@ -41,6 +61,7 @@ export const MostrarPost = (props: Props) => {
                 {
                     post &&
                     respuestas &&
+                    currentUser &&
                     respuestas.map((respuesta) =>
                         <Steps.Step
                             icon={
@@ -50,7 +71,15 @@ export const MostrarPost = (props: Props) => {
                             }
                             key={respuesta.id}
                             status="finish"
-                            description={<PostItem post={respuesta} isReply={true} />}
+                            description={<PostItem
+                                post={respuesta}
+                                isReply={true}
+                                canAccept={                                   
+                                    post.autor_id === currentUser.uid
+                                    &&  post.respuesta_aceptada_id !== respuesta.id
+                                 }
+                                acceptReply={acceptReply}
+                            />}
                         />
                     )
                 }

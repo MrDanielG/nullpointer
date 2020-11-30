@@ -94,7 +94,6 @@ export const PreguntarBtn: React.FC = () => {
             titulo: values.titulo,
             contenido: values.contenido,
             autor_id: currentUser ? currentUser.uid : '',
-            estado: 'Abierta',
             tags: values.tags
         }
         firebaseCtx.postM.create(post);
