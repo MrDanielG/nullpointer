@@ -18,7 +18,7 @@ export const AyudaBusqueda = (props: Props) => {
                         Puedes usar operadores de búsqueda avanzada. El espacio en
                         blanco es el operador AND y '|' es el operador OR. Para
                         escapar el espacio usa comillas dobles, p.e. ="lengueje ptyhon"
-                        para un búsqueda exacta.
+                        para una búsqueda exacta.
                         </p>
                     <Collapse ghost>
                         <Collapse.Panel key="1" header="Más operadores">
