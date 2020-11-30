@@ -1,14 +1,15 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import { History } from 'history';
 import './App.css';
-import { Layout, Menu, Button, message, Space } from 'antd';
+import { Layout, Menu, message, Space, Dropdown } from 'antd';
 import {
     FormOutlined,
     HomeOutlined,
     SettingOutlined,
     FileTextOutlined,
+    DownOutlined,
 } from '@ant-design/icons';
-import { AuthContext, authData } from './contexts/AuthContext'
+import { AuthContext } from './contexts/AuthContext';
 import { PreguntarBtn } from './components/CrearPublicacion';
 import { Link, Route } from 'react-router-dom';
 import { ListaPublicaciones } from './components/ListaPublicaciones';
@@ -27,6 +28,7 @@ interface AppState {
 
 class App extends Component<AppProps, AppState> {
     static contextType = AuthContext;
+    context!: React.ContextType<typeof AuthContext>;
 
     constructor(props: AppProps) {
         super(props);
@@ -40,10 +42,10 @@ class App extends Component<AppProps, AppState> {
     onCollapse(collapsed: boolean) {
         console.log(collapsed);
         this.setState({ collapsed });
-    };
+    }
 
     async handleLogOut() {
-        const { logOut } = this.context as authData;
+        const { logOut } = this.context!;
         try {
             await logOut();
             message.success('Sesión Terminada');
@@ -56,20 +58,41 @@ class App extends Component<AppProps, AppState> {
 
     render() {
         const { collapsed } = this.state;
-        const { currentUser } = this.context as authData;
+        const { currentUser } = this.context!;
+        const menu = (
+            <Menu>
+                <Menu.Item>
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="http://www.alipay.com/"
+                    >
+                        Mi perfil
+                    </a>
+                </Menu.Item>
+                <Menu.Item danger onClick={this.handleLogOut}>
+                    Cerrar Sesión
+                </Menu.Item>
+            </Menu>
+        );
         return (
             <Layout style={{ minHeight: '100vh' }}>
-                <Header className="app-header" >
+                <Header className="app-header">
                     <FileTextOutlined />
                     <span style={{ paddingLeft: '5px' }}> Nullpointer </span>
                     <Space className="app-header-actions" size="large">
                         <PreguntarBtn />
-                        <Button type="primary" onClick={this.handleLogOut}> Salir </Button>
+                        <Dropdown overlay={menu}>
+                            <a
+                                className="ant-dropdown-link"
+                                onClick={(e) => e.preventDefault()}
+                            >
+                                {currentUser?.email} <DownOutlined />
+                            </a>
+                        </Dropdown>
                     </Space>
-
-
                 </Header>
-                <Layout >
+                <Layout>
                     <Sider
                         collapsible
                         collapsed={collapsed}
@@ -78,21 +101,31 @@ class App extends Component<AppProps, AppState> {
                     >
                         <div className="logo" />
                         <Menu
-                            defaultSelectedKeys={[this.props.history.location.pathname]}
+                            defaultSelectedKeys={[
+                                this.props.history.location.pathname,
+                            ]}
                             mode="inline"
                             theme="light"
                         >
-                            <Menu.Item key="/app/inicio" icon={<HomeOutlined />}>
+                            <Menu.Item
+                                key="/app/inicio"
+                                icon={<HomeOutlined />}
+                            >
                                 <Link to="/app/inicio">Inicio</Link>
                             </Menu.Item>
-                            <Menu.Item key="/app/misposts" icon={<FormOutlined />}>
+                            <Menu.Item
+                                key="/app/misposts"
+                                icon={<FormOutlined />}
+                            >
                                 <Link to="/app/misposts">Mis Posts</Link>
                             </Menu.Item>
-                            <SubMenu key="/app/ctrlpanel" icon={<SettingOutlined />} title="Panel de control">
+                            <SubMenu
+                                key="/app/ctrlpanel"
+                                icon={<SettingOutlined />}
+                                title="Panel de control"
+                            >
                                 <Menu.Item key="/app/cuentas">
-                                    <Link to="/app/cuentas">
-                                        Cuentas
-                                    </Link>
+                                    <Link to="/app/cuentas">Cuentas</Link>
                                 </Menu.Item>
                                 <Menu.Item key="4">Posts</Menu.Item>
                             </SubMenu>
@@ -100,16 +133,26 @@ class App extends Component<AppProps, AppState> {
                     </Sider>
                     <Layout className="site-layout">
                         <Content style={{ margin: '0 16px' }}>
-                            <Route path="/app/inicio" >
+                            <Route path="/app/inicio">
                                 <ListaPublicaciones />
                             </Route>
                             <Route path="/app/misposts">
-                                <ListaPublicaciones autorId={currentUser?.uid} />
+                                <ListaPublicaciones
+                                    autorId={currentUser?.uid}
+                                />
                             </Route>
-                            <Route path="/app/post/:id" component={MostrarPost} />
-                            <Route path="/app/cuentas" component={AdminCuentas} />
+                            <Route
+                                path="/app/post/:id"
+                                component={MostrarPost}
+                            />
+                            <Route
+                                path="/app/cuentas"
+                                component={AdminCuentas}
+                            />
                         </Content>
-                        <Footer style={{ textAlign: 'center' }}>Nullpointer</Footer>
+                        <Footer style={{ textAlign: 'center' }}>
+                            Nullpointer
+                        </Footer>
                     </Layout>
                 </Layout>
             </Layout>

@@ -21,3 +21,7 @@
 .admin-switch {
     margin-left: 10px;
 }
+
+.ant-dropdown-link {
+    font-size: small;
+}
