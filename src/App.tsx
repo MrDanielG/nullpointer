@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { History } from 'history';
 import './App.css';
-import { Layout, Menu, message, Space, Dropdown, Avatar } from 'antd';
+import { Layout, Menu, message, Space, Dropdown, Avatar, Button } from 'antd';
 import {
     FormOutlined,
     HomeOutlined,
@@ -62,7 +62,7 @@ class App extends Component<AppProps, AppState> {
         const { currentUser } = this.context!;
         const menu = (
             <Menu>
-                <Menu.Item>
+                {/*                 <Menu.Item>
                     <a
                         target="_blank"
                         rel="noopener noreferrer"
@@ -70,7 +70,7 @@ class App extends Component<AppProps, AppState> {
                     >
                         Mi perfil
                     </a>
-                </Menu.Item>
+                </Menu.Item> */}
                 <Menu.Item danger onClick={this.handleLogOut}>
                     Cerrar Sesión
                 </Menu.Item>
@@ -86,18 +86,18 @@ class App extends Component<AppProps, AppState> {
                     <span style={{ paddingLeft: '5px' }}> Nullpointer </span>
                     <Space className="app-header-actions" size="large">
                         <PreguntarBtn />
-                        <Dropdown overlay={menu}>
-                            <a
+                        <Dropdown overlay={menu} trigger={['click']}>
+                            <Button type="link"
                                 className="ant-dropdown-link"
                                 onClick={(e) => e.preventDefault()}
                             >
                                 {/* <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" /> */}
-                                <Avatar
-                                    style={{ backgroundColor: '#188dba' }}
-                                    icon={<UserOutlined />}
+                                <Avatar style={{ backgroundColor: '#188dba', marginRight: '10px' }} icon={<UserOutlined />}
+
                                 />
-                                {'   ' + currentUser?.email} <DownOutlined />
-                            </a>
+
+                                { currentUser?.email} <DownOutlined />
+                            </Button>
                         </Dropdown>
                     </Space>
                 </Header>
@@ -123,6 +123,7 @@ class App extends Component<AppProps, AppState> {
                             ]}
                             mode="inline"
                             theme="light"
+
                         >
                             <Menu.Item
                                 key="/app/inicio"

@@ -114,6 +114,7 @@ class EditableTagGroup extends React.Component<EditableTagGroupProps, EditableTa
                             key={tag}
                             closable={true}
                             onClose={() => this.handleClose(tag)}
+                            color="blue"
                         >
                             <span
                                 onDoubleClick={e => {
@@ -150,7 +151,8 @@ class EditableTagGroup extends React.Component<EditableTagGroupProps, EditableTa
                     />
                 )}
                 {!inputVisible && (
-                    <Tag className="site-tag-plus" onClick={this.showInput}>
+                    <Tag className="site-tag-plus" onClick={this.showInput} color="blue">
+                        
                         <PlusOutlined /> Nueva etiqueta
                     </Tag>
                 )}

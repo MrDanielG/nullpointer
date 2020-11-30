@@ -46,6 +46,7 @@ export const AuthProvider = ({ children }: any): JSX.Element => {
         const uid = firebaseUserCredential.user?.uid;
 
         const user: Usuario = {
+            id:  "",
             nombre: username,
             correo: email,
             isAdmin: false,

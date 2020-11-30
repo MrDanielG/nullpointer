@@ -93,7 +93,7 @@ export const PreguntarBtn: React.FC = () => {
             fechaModificacion: new Date(),
             titulo: values.titulo,
             contenido: values.contenido,
-            autor_id: currentUser ? currentUser.uid : '',
+            autor_id: currentUser ? currentUser.id : '',
             tags: values.tags
         }
         firebaseCtx.postM.create(post);

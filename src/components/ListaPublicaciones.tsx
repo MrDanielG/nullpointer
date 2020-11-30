@@ -1,19 +1,22 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import './ListaPublicaciones.css';
 import { TarjetaPost } from './TarjetaPost';
 import { useFirebase } from '../contexts/FirebaseContext';
-import { Tabs } from 'antd';
+import { Input, Tabs, Typography } from 'antd';
 import { CheckCircleOutlined, QuestionCircleOutlined } from '@ant-design/icons';
-
-
+import { AyudaBusqueda } from './AyudaBusqueda';
 
 interface Props {
     autorId?: string;
 }
 
+
 export const ListaPublicaciones = (props: Props) => {
-    const { posts } = useFirebase();
+    const { posts, fuseIdx } = useFirebase();
+    const [postResults, setPostResults] = useState<Post[]>(posts);
     const [resueltos, setResueltos] = useState(false);
+    const headerTitle = useRef<HTMLSpanElement>(null);
+
     const onTabChange = (key: string) => {
         if (key === "1") {
             setResueltos(false);
@@ -21,9 +24,41 @@ export const ListaPublicaciones = (props: Props) => {
             setResueltos(true);
         }
     }
-    return (
+    const onSearch = (querystr: string) => {
 
+        if (headerTitle.current !== null) {
+            headerTitle.current.innerText = querystr ?
+                "Resultados de búsqueda" :
+                (props.autorId ? "Mis posts" : "Posts recientes");
+        }
+        setPostResults(
+            querystr ? 
+            fuseIdx.search(querystr).map(res => res.item)
+                : posts
+        );
+
+    }
+
+    return (
         <div>
+            <div className="lista-header">
+                <Typography.Title level={3} >
+                    <span ref={headerTitle} >
+                        {
+                            props.autorId ? "Mis posts" : "Posts recientes"
+                        }
+                    </span>
+                </Typography.Title>
+
+                <Input.Search
+                    placeholder="Buscar en Nullpointer"
+                    allowClear
+                    onSearch={onSearch}
+                    className="lista-search"
+                    suffix={<AyudaBusqueda />}
+                />
+
+            </div>
             <Tabs onChange={onTabChange}>
                 <Tabs.TabPane tab={
                     <span>
@@ -41,8 +76,8 @@ export const ListaPublicaciones = (props: Props) => {
             </Tabs>
             <div className="resultados">
                 {
-                    posts &&
-                    posts.map((post) =>
+                    postResults &&
+                    postResults.map((post) =>
                         (props.autorId ? post.autor_id === props.autorId : true) &&
                         post.resuelto === resueltos &&
                         <div key={post.id}>

@@ -14,6 +14,7 @@ class LikesModel extends FirebaseModel<Like> {
     ): Promise<void> {
         const docRef = this.collection.doc(`${postId}_${userId}`);
         const infoLike: Like = {
+            id: "",
             idUser: userId,
             idPost: postId,
         };
