@@ -66,7 +66,7 @@ class App extends Component<AppProps, AppState> {
                     <a
                         target="_blank"
                         rel="noopener noreferrer"
-                        href="http://www.alipay.com/"
+                        href="https://create-react-app.dev"
                     >
                         Mi perfil
                     </a>
@@ -78,8 +78,10 @@ class App extends Component<AppProps, AppState> {
         );
         return (
             <Layout style={{ minHeight: '100vh' }}>
-                <Header className="app-header"
-                style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
+                <Header
+                    className="app-header"
+                    style={{ position: 'fixed', zIndex: 1, width: '100%' }}
+                >
                     <FileTextOutlined />
                     <span style={{ paddingLeft: '5px' }}> Nullpointer </span>
                     <Space className="app-header-actions" size="large">
@@ -90,9 +92,11 @@ class App extends Component<AppProps, AppState> {
                                 onClick={(e) => e.preventDefault()}
                             >
                                 {/* <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" /> */}
-                                <Avatar style={{ backgroundColor: '#188dba' }} icon={<UserOutlined />} />
-                                
-                                {"   "+currentUser?.email} <DownOutlined />
+                                <Avatar
+                                    style={{ backgroundColor: '#188dba' }}
+                                    icon={<UserOutlined />}
+                                />
+                                {'   ' + currentUser?.email} <DownOutlined />
                             </a>
                         </Dropdown>
                     </Space>
@@ -108,9 +112,8 @@ class App extends Component<AppProps, AppState> {
                             height: '100vh',
                             position: 'fixed',
                             left: 0,
-                            top:75,
+                            top: 65,
                             overflow: 'auto',
-
                         }}
                     >
                         <div className="logo" />
@@ -120,7 +123,6 @@ class App extends Component<AppProps, AppState> {
                             ]}
                             mode="inline"
                             theme="light"
- 
                         >
                             <Menu.Item
                                 key="/app/inicio"
@@ -139,7 +141,6 @@ class App extends Component<AppProps, AppState> {
                                 key="/app/ctrlpanel"
                                 icon={<SettingOutlined />}
                                 title="Panel de control"
-                                
                             >
                                 
                                 <Menu.Item key="/app/cuentas">
@@ -149,16 +150,17 @@ class App extends Component<AppProps, AppState> {
                             </SubMenu>}
                         </Menu>
                     </Sider>
-                    <Layout className="site-layout" 
+                    <Layout
+                        className="site-layout"
                         style={{
                             marginLeft: 200,
-                            marginTop: 75.
+                            marginTop: 75,
                             //display: 'flex',
                             // justify-content: 'center',
                             //align-items: 'center',
-                            //flex-direction: 'column', 
+                            //flex-direction: 'column',
                         }}
-                        >
+                    >
                         <Content style={{ margin: '0 16px' }}>
                             <Route path="/app/inicio">
                                 <ListaPublicaciones />

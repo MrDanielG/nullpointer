@@ -10,8 +10,6 @@ export const Login = () => {
     const history = useHistory();
 
     const onFinish = async (values: any) => {
-        console.log('Received values of form: ', values);
-
         try {
             setLoading(true);
             await logIn(values.email, values.password);

@@ -1,22 +1,21 @@
 import React, { useContext, useEffect, useState } from 'react';
 import FirebaseModel from '../models/FirebaseModel';
+import LikesModel from '../models/LikesModel';
 import PostsModel from '../models/PostsModel';
 
 interface ContextData {
     usuarioM: FirebaseModel<Usuario>;
-    infoPublicacionM: FirebaseModel<InfoPublicacion>;
-    preguntaM: FirebaseModel<Pregunta>;
+    likesM: LikesModel;
     postM: PostsModel;
-    posts: Post[]
+    posts: Post[];
 }
 
 
 const defaultContextData = {
     usuarioM: new FirebaseModel<Usuario>('/usuarios'),
-    infoPublicacionM: new FirebaseModel<InfoPublicacion>('/infopubs'),
-    preguntaM: new FirebaseModel<Pregunta>('/preguntas'),
+    likesM: new LikesModel(),
     postM: new PostsModel(),
-    posts: []
+    posts: [],
 };
 
 
