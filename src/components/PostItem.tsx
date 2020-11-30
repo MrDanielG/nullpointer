@@ -17,11 +17,10 @@ export const PostItem = (props: Props) => {
         usuarioM.read(props.post.autor_id).then(user => {
             if (isSubscribed) {
                 setUsuario(user);
-                console.log("foo")
             }
         });
         return () => { isSubscribed = false };
-    }, [props.post.autor_id])
+    }, [usuarioM, props.post.autor_id]);
     return (
         <>
             <Card
