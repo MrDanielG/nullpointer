@@ -4,19 +4,15 @@ import PostsModel from '../models/PostsModel';
 
 interface ContextData {
     usuarioM: FirebaseModel<Usuario>;
-    infoPublicacionM: FirebaseModel<InfoPublicacion>;
-    preguntaM: FirebaseModel<Pregunta>;
     postM: PostsModel;
-    posts: Post[]
+    posts: Post[];
 }
 
 
 const defaultContextData = {
     usuarioM: new FirebaseModel<Usuario>('/usuarios'),
-    infoPublicacionM: new FirebaseModel<InfoPublicacion>('/infopubs'),
-    preguntaM: new FirebaseModel<Pregunta>('/preguntas'),
     postM: new PostsModel(),
-    posts: []
+    posts: [],
 };
 
 
