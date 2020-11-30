@@ -26,29 +26,24 @@ export const TarjetaCuenta = ({ usuario }: any) => {
         setState(true);
     };
 
-    const handleOk = async (id: string) => {
-        if (isAdmin) {
-            try {
+    const handleOk = async () => {
+        try {
+            if (isAdmin) {
                 setConfirmLoading(true);
                 await usuarioM.update(id, { isAdmin: false });
                 setConfirmLoading(false);
                 message.success('Usuario Actualizado');
-            } catch (error) {
-                console.log(error);
-                message.error('Error al actualizar Usuario');
-            }
-        } else {
-            try {
+            } else {
                 setConfirmLoading(true);
                 await usuarioM.update(id, { isAdmin: true });
                 setConfirmLoading(false);
                 message.success('Usuario Actualizado');
-            } catch (error) {
-                console.log(error);
-                message.error('Error al actualizar Usuario');
             }
+            setState(false);
+        } catch (error) {
+            console.log(error);
+            message.error('Error al actualizar Usuario');
         }
-        setState(false);
     };
 
     const handleCancel = (e: any) => {
@@ -82,7 +77,7 @@ export const TarjetaCuenta = ({ usuario }: any) => {
             <Modal
                 title="Adminisrar Admins"
                 visible={state}
-                onOk={() => handleOk(id)}
+                onOk={handleOk}
                 confirmLoading={confirmLoading}
                 onCancel={handleCancel}
                 width={300}
