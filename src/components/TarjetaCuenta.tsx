@@ -1,17 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Card, Avatar, Switch, Modal, message } from 'antd';
-import { EllipsisOutlined, DeleteOutlined } from '@ant-design/icons';
+import {
+    EllipsisOutlined,
+    DeleteOutlined,
+    ExclamationCircleOutlined,
+} from '@ant-design/icons';
 import { useFirebase } from '../contexts/FirebaseContext';
 const { Meta } = Card;
 
 export const TarjetaCuenta = ({ usuario }: any) => {
     const { usuarioM } = useFirebase();
-    const [state, setState] = useState(false);
-    const [confirmLoading, setConfirmLoading] = useState(false);
     const { nombre, correo, isAdmin, id } = usuario;
 
     const onChange = (checked: any) => {
-        showModal();
+        showPromiseConfirm();
     };
 
     const onDelete = () => {
@@ -22,33 +24,28 @@ export const TarjetaCuenta = ({ usuario }: any) => {
         console.log('Detail');
     };
 
-    const showModal = () => {
-        setState(true);
-    };
-
-    const handleOk = async () => {
-        try {
-            if (isAdmin) {
-                setConfirmLoading(true);
-                await usuarioM.update(id, { isAdmin: false });
-                setConfirmLoading(false);
-                message.success('Usuario Actualizado');
-            } else {
-                setConfirmLoading(true);
-                await usuarioM.update(id, { isAdmin: true });
-                setConfirmLoading(false);
-                message.success('Usuario Actualizado');
-            }
-            setState(false);
-        } catch (error) {
-            console.log(error);
-            message.error('Error al actualizar Usuario');
-        }
-    };
-
-    const handleCancel = (e: any) => {
-        setState(false);
-    };
+    function showPromiseConfirm() {
+        Modal.confirm({
+            title: 'Administrar Permisos',
+            icon: <ExclamationCircleOutlined />,
+            content: `¿Desea cambiar los permisos del usuario: ${nombre}?`,
+            async onOk() {
+                try {
+                    if (isAdmin) {
+                        await usuarioM.update(id, { isAdmin: false });
+                        message.success('Usuario Actualizado');
+                    } else {
+                        await usuarioM.update(id, { isAdmin: true });
+                        message.success('Usuario Actualizado');
+                    }
+                } catch (error) {
+                    console.log(error);
+                    message.error('Error al actualizar Usuario');
+                }
+            },
+            onCancel() {},
+        });
+    }
 
     return (
         <Card
@@ -74,18 +71,6 @@ export const TarjetaCuenta = ({ usuario }: any) => {
                     className="admin-switch"
                 />
             </p>
-            <Modal
-                title="Adminisrar Admins"
-                visible={state}
-                onOk={handleOk}
-                confirmLoading={confirmLoading}
-                onCancel={handleCancel}
-                width={300}
-            >
-                <p>
-                    ¿Desea cambiar los permisos del usuario: <b>{nombre}</b>?
-                </p>
-            </Modal>
         </Card>
     );
 };

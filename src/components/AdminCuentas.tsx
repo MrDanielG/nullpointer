@@ -7,7 +7,6 @@ export const AdminCuentas = () => {
     const { usuarioM } = useFirebase();
     const [usuarios, setUsuarios] = useState<Usuario[]>();
     useEffect(() => {
-        console.log('Holi');
         return usuarioM.subscribe(setUsuarios, usuarioM.getCollection());
     }, [usuarioM]);
     return (
