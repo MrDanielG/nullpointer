@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { History } from 'history';
 import './App.css';
-import { Layout, Menu, message, Space, Dropdown, Avatar } from 'antd';
+import { Layout, Menu, message, Space, Dropdown, Avatar, Button } from 'antd';
 import {
     FormOutlined,
     HomeOutlined,
@@ -62,7 +62,7 @@ class App extends Component<AppProps, AppState> {
         const { currentUser } = this.context!;
         const menu = (
             <Menu>
-                <Menu.Item>
+                {/*                 <Menu.Item>
                     <a
                         target="_blank"
                         rel="noopener noreferrer"
@@ -70,7 +70,7 @@ class App extends Component<AppProps, AppState> {
                     >
                         Mi perfil
                     </a>
-                </Menu.Item>
+                </Menu.Item> */}
                 <Menu.Item danger onClick={this.handleLogOut}>
                     Cerrar Sesión
                 </Menu.Item>
@@ -79,21 +79,23 @@ class App extends Component<AppProps, AppState> {
         return (
             <Layout style={{ minHeight: '100vh' }}>
                 <Header className="app-header"
-                style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
+                    style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
                     <FileTextOutlined />
                     <span style={{ paddingLeft: '5px' }}> Nullpointer </span>
                     <Space className="app-header-actions" size="large">
                         <PreguntarBtn />
-                        <Dropdown overlay={menu}>
-                            <a
+                        <Dropdown overlay={menu} trigger={['click']}>
+                            <Button type="link"
                                 className="ant-dropdown-link"
                                 onClick={(e) => e.preventDefault()}
                             >
                                 {/* <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" /> */}
-                                <Avatar style={{ backgroundColor: '#188dba' }} icon={<UserOutlined />} />
-                                
-                                {"   "+currentUser?.email} <DownOutlined />
-                            </a>
+                                <Avatar style={{ backgroundColor: '#188dba', marginRight: '10px' }} icon={<UserOutlined />}
+
+                                />
+
+                                { currentUser?.email} <DownOutlined />
+                            </Button>
                         </Dropdown>
                     </Space>
                 </Header>
@@ -108,7 +110,7 @@ class App extends Component<AppProps, AppState> {
                             height: '100vh',
                             position: 'fixed',
                             left: 0,
-                            top:75,
+                            top: 75,
                             overflow: 'auto',
 
                         }}
@@ -120,7 +122,7 @@ class App extends Component<AppProps, AppState> {
                             ]}
                             mode="inline"
                             theme="light"
- 
+
                         >
                             <Menu.Item
                                 key="/app/inicio"
@@ -134,22 +136,22 @@ class App extends Component<AppProps, AppState> {
                             >
                                 <Link to="/app/misposts">Mis Posts</Link>
                             </Menu.Item>
-                            {(currentUser?.isAdmin) && 
-                            <SubMenu 
-                                key="/app/ctrlpanel"
-                                icon={<SettingOutlined />}
-                                title="Panel de control"
-                                
-                            >
-                                
-                                <Menu.Item key="/app/cuentas">
-                                    <Link to="/app/cuentas">Cuentas</Link>
-                                </Menu.Item> 
-                                <Menu.Item key="4">Posts</Menu.Item>
-                            </SubMenu>}
+                            {(currentUser?.isAdmin) &&
+                                <SubMenu
+                                    key="/app/ctrlpanel"
+                                    icon={<SettingOutlined />}
+                                    title="Panel de control"
+
+                                >
+
+                                    <Menu.Item key="/app/cuentas">
+                                        <Link to="/app/cuentas">Cuentas</Link>
+                                    </Menu.Item>
+                                    {/* <Menu.Item key="4">Posts</Menu.Item> */}
+                                </SubMenu>}
                         </Menu>
                     </Sider>
-                    <Layout className="site-layout" 
+                    <Layout className="site-layout"
                         style={{
                             marginLeft: 200,
                             marginTop: 75.
@@ -158,7 +160,7 @@ class App extends Component<AppProps, AppState> {
                             //align-items: 'center',
                             //flex-direction: 'column', 
                         }}
-                        >
+                    >
                         <Content style={{ margin: '0 16px' }}>
                             <Route path="/app/inicio">
                                 <ListaPublicaciones />

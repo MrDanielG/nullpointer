@@ -7,12 +7,7 @@ class FirebaseModel<T extends DocData> {
         this.collection = db.collection(collection);
 
     }
-    /* protected addToCollection(collection: firebase.firestore.CollectionReference, data: T): T {
 
-        const doc = collection.doc();
-        doc.set(data).then();
-        return { ...data, id: doc.id };
-    } */
     protected async addToCollection(collection: firebase.firestore.CollectionReference, data: T) {
         return await collection.add(data).then(docRef =>
             docRef.get().then(snapshot => {

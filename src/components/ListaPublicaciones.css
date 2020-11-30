@@ -5,3 +5,12 @@
     align-items: center;
     flex-direction: column;
 }
+.lista-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;    
+}
+
+.lista-search {
+    width: 400px;
+}
