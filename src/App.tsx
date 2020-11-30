@@ -66,7 +66,7 @@ class App extends Component<AppProps, AppState> {
                     <a
                         target="_blank"
                         rel="noopener noreferrer"
-                        href="http://www.alipay.com/"
+                        href="https://create-react-app.dev"
                     >
                         Mi perfil
                     </a>
@@ -78,8 +78,10 @@ class App extends Component<AppProps, AppState> {
         );
         return (
             <Layout style={{ minHeight: '100vh' }}>
-                <Header className="app-header"
-                    style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
+                <Header
+                    className="app-header"
+                    style={{ position: 'fixed', zIndex: 1, width: '100%' }}
+                >
                     <FileTextOutlined />
                     <span style={{ paddingLeft: '5px' }}> Nullpointer </span>
                     <Space className="app-header-actions" size="large">
@@ -110,9 +112,8 @@ class App extends Component<AppProps, AppState> {
                             height: '100vh',
                             position: 'fixed',
                             left: 0,
-                            top: 75,
+                            top: 65,
                             overflow: 'auto',
-
                         }}
                     >
                         <div className="logo" />
@@ -136,29 +137,29 @@ class App extends Component<AppProps, AppState> {
                             >
                                 <Link to="/app/misposts">Mis Posts</Link>
                             </Menu.Item>
-                            {(currentUser?.isAdmin) &&
-                                <SubMenu
-                                    key="/app/ctrlpanel"
-                                    icon={<SettingOutlined />}
-                                    title="Panel de control"
-
-                                >
-
-                                    <Menu.Item key="/app/cuentas">
-                                        <Link to="/app/cuentas">Cuentas</Link>
-                                    </Menu.Item>
-                                    {/* <Menu.Item key="4">Posts</Menu.Item> */}
-                                </SubMenu>}
+                            {(currentUser?.isAdmin) && 
+                            <SubMenu 
+                                key="/app/ctrlpanel"
+                                icon={<SettingOutlined />}
+                                title="Panel de control"
+                            >
+                                
+                                <Menu.Item key="/app/cuentas">
+                                    <Link to="/app/cuentas">Cuentas</Link>
+                                </Menu.Item> 
+                                <Menu.Item key="4">Posts</Menu.Item>
+                            </SubMenu>}
                         </Menu>
                     </Sider>
-                    <Layout className="site-layout"
+                    <Layout
+                        className="site-layout"
                         style={{
                             marginLeft: 200,
-                            marginTop: 75.
+                            marginTop: 75,
                             //display: 'flex',
                             // justify-content: 'center',
                             //align-items: 'center',
-                            //flex-direction: 'column', 
+                            //flex-direction: 'column',
                         }}
                     >
                         <Content style={{ margin: '0 16px' }}>

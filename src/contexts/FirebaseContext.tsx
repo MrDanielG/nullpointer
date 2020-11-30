@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
 import FirebaseModel from '../models/FirebaseModel';
+import LikesModel from '../models/LikesModel';
 import PostsModel from '../models/PostsModel';
 import Fuse from 'fuse.js';
 
 interface ContextData {
     usuarioM: FirebaseModel<Usuario>;
-    infoPublicacionM: FirebaseModel<InfoPublicacion>;
-    preguntaM: FirebaseModel<Pregunta>;
+    likesM: LikesModel;
     postM: PostsModel;
     posts: Post[],
     fuseIdx: Fuse<Post>
@@ -35,8 +35,7 @@ const fuseOps = {
 
 const defaultContextData = {
     usuarioM: new FirebaseModel<Usuario>('/usuarios'),
-    infoPublicacionM: new FirebaseModel<InfoPublicacion>('/infopubs'),
-    preguntaM: new FirebaseModel<Pregunta>('/preguntas'),
+    likesM: new LikesModel(),
     postM: new PostsModel(),
     posts: [],
     fuseIdx: new Fuse<Post>([], fuseOps)
