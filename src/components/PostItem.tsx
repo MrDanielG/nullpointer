@@ -36,15 +36,6 @@ export const PostItem = (props: Props) => {
                                 {props.post.titulo}
                             </Typography.Title>
                         }
-
-                        <Typography.Text strong >
-                            Publicado el
-                            {" " + props.post.fechaCreacion.toLocaleDateString('es-ES', {
-                            day: 'numeric',
-                            month: 'long',
-                            year: 'numeric'
-                        })}
-                        </Typography.Text>
                         <Typography.Paragraph>
                             {props.post.contenido}
                         </Typography.Paragraph>
@@ -69,6 +60,15 @@ export const PostItem = (props: Props) => {
                         />
 
                     }
+                    <Typography.Text type="secondary">
+                        Publicado el:
+                        {" " +
+                        props.post.fechaCreacion.toLocaleDateString('es-MX', {
+                            hour12: true,
+                            hour: "numeric",
+                            minute: "numeric"
+                        })}
+                    </Typography.Text>
                 </div>
 
             </Card>

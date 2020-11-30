@@ -21,6 +21,11 @@ export const MostrarPost = (props: Props) => {
     const [respuestas, setRespuestas] = useState<Post[]>();
     useEffect(() => {
         const setData = (data: Post[]) => {
+            data.sort((r1, r2) => {
+                const f1 = r1.fechaCreacion.getTime();
+                const f2 = r2.fechaCreacion.getTime();
+                return f1 - f2;
+            });
             setRespuestas(data);
         };
         return firebaseCtx.postM.subscribeToPostReplies(params.id, setData);
@@ -39,9 +44,9 @@ export const MostrarPost = (props: Props) => {
                     respuestas.map((respuesta) =>
                         <Steps.Step
                             icon={
-                            (post.respuesta_aceptada_id === respuesta.id) ?
-                            <CheckCircleTwoTone twoToneColor="#52c41a" style={{fontSize: '32px'}} />:
-                             <MessageTwoTone style={{fontSize: '32px'}} />
+                                (post.respuesta_aceptada_id === respuesta.id) ?
+                                    <CheckCircleTwoTone twoToneColor="#52c41a" style={{ fontSize: '32px' }} /> :
+                                    <MessageTwoTone style={{ fontSize: '32px' }} />
                             }
                             key={respuesta.id}
                             status="finish"
