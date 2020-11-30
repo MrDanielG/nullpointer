@@ -30,7 +30,6 @@ interface Post extends DocData {
     titulo?: string;
     contenido: string;
     autor_id: string;
-    estado?: 'Resuelta' | 'Abierta';
     numVotos: number;
     resuelto: boolean;
     respuesta_aceptada_id?: string;

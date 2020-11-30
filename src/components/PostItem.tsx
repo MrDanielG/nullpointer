@@ -2,11 +2,14 @@ import React, { useState, useEffect } from 'react'
 import { Card, Col, Row, Tag, Typography } from 'antd'
 import { useFirebase } from '../contexts/FirebaseContext';
 import './PostItem.css';
-import { Avatar } from 'antd';
+import { Avatar, Button } from 'antd';
+import { CheckOutlined } from '@ant-design/icons';
 
 interface Props {
     post: Post;
-    isReply: boolean;
+    isReply?: boolean;
+    canAccept?: boolean;
+    acceptReply?: (id: string) => void;
 }
 
 export const PostItem = (props: Props) => {
@@ -21,6 +24,13 @@ export const PostItem = (props: Props) => {
         });
         return () => { isSubscribed = false };
     }, [usuarioM, props.post.autor_id]);
+
+    const accept = () => {
+        if (props.acceptReply && props.post.id) {
+            props.acceptReply(props.post.id);
+        }
+    }
+
     return (
         <>
             <Card
@@ -49,6 +59,16 @@ export const PostItem = (props: Props) => {
                                 </Tag>
                             )
                         }
+                        {
+                            props.canAccept &&
+                            <Button
+                                style={{backgroundColor: "#52c41a", borderColor: "#52c41a"}}
+                                onClick={accept}
+                                type="primary"
+                                icon={<CheckOutlined />}
+                            >Aceptar</Button>
+                        }
+
                     </Col>
                 </Row>
                 <div className="post-item-footer">
@@ -63,11 +83,11 @@ export const PostItem = (props: Props) => {
                     <Typography.Text type="secondary">
                         Publicado el:
                         {" " +
-                        props.post.fechaCreacion.toLocaleDateString('es-MX', {
-                            hour12: true,
-                            hour: "numeric",
-                            minute: "numeric"
-                        })}
+                            props.post.fechaCreacion.toLocaleDateString('es-MX', {
+                                hour12: true,
+                                hour: "numeric",
+                                minute: "numeric"
+                            })}
                     </Typography.Text>
                 </div>
 
