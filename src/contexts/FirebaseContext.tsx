@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
 import FirebaseModel from '../models/FirebaseModel';
+import LikesModel from '../models/LikesModel';
 import PostsModel from '../models/PostsModel';
 
 interface ContextData {
     usuarioM: FirebaseModel<Usuario>;
+    likesM: LikesModel;
     postM: PostsModel;
     posts: Post[];
 }
@@ -11,6 +13,7 @@ interface ContextData {
 
 const defaultContextData = {
     usuarioM: new FirebaseModel<Usuario>('/usuarios'),
+    likesM: new LikesModel(),
     postM: new PostsModel(),
     posts: [],
 };

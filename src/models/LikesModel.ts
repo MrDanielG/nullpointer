@@ -7,23 +7,29 @@ class LikesModel extends FirebaseModel<Like> {
     }
 
     async createLike(userId: string, postId: string): Promise<void> {
-        const doc = this.collection.doc(`${postId}_${userId}`);
+        const docRef = this.collection.doc(`${postId}_${userId}`);
         const infoLike: Like = {
             idUser: userId,
             idPost: postId,
         };
         try {
-            await doc.set(infoLike);
-            return this.addPostLike(postId);
+            const doc = await docRef.get();
+
+            if (!doc.exists) {
+                await docRef.set(infoLike);
+                return this.addPostLike(postId);
+            } else {
+                return;
+            }
         } catch (error) {
             console.log(error);
         }
     }
 
     async deleteLike(userId: string, postId: string): Promise<void> {
-        const doc = this.collection.doc(`${postId}_${userId}`);
+        const docRef = this.collection.doc(`${postId}_${userId}`);
         try {
-            await doc.delete();
+            await docRef.delete();
             return this.removePostLike(postId);
         } catch (error) {
             console.log(error);
@@ -32,14 +38,14 @@ class LikesModel extends FirebaseModel<Like> {
 
     addPostLike(postId: string) {
         return db
-            .collection('post')
+            .collection('posts')
             .doc(postId)
             .update({ numVotos: firebase.firestore.FieldValue.increment(1) });
     }
 
     removePostLike(postId: string) {
         return db
-            .collection('post')
+            .collection('posts')
             .doc(postId)
             .update({ numVotos: firebase.firestore.FieldValue.increment(-1) });
     }
