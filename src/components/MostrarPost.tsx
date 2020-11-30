@@ -5,7 +5,7 @@ import { useAuth } from '../contexts/AuthContext';
 import { useParams } from 'react-router-dom';
 import { PostItem } from './PostItem';
 import { Steps, Typography } from 'antd';
-import { CheckCircleOutlined, CommentOutlined, MessageTwoTone, CheckCircleTwoTone } from '@ant-design/icons';
+import { MessageTwoTone, CheckCircleTwoTone } from '@ant-design/icons';
 import { EditorRespuesta } from './EditorRespuesta';
 
 interface RouteInfo {
@@ -36,14 +36,14 @@ export const MostrarPost = (props: Props) => {
                 {
                     post &&
                     respuestas &&
-                    respuestas.map((respuesta, i) =>
+                    respuestas.map((respuesta) =>
                         <Steps.Step
                             icon={
                             (post.respuesta_aceptada_id === respuesta.id) ?
                             <CheckCircleTwoTone twoToneColor="#52c41a" style={{fontSize: '32px'}} />:
                              <MessageTwoTone style={{fontSize: '32px'}} />
                             }
-                            key={i}
+                            key={respuesta.id}
                             status="finish"
                             description={<PostItem post={respuesta} isReply={true} />}
                         />

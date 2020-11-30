@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import './ListaPublicaciones.css';
 import { TarjetaPost } from './TarjetaPost';
 import { useFirebase } from '../contexts/FirebaseContext';
@@ -30,10 +30,10 @@ export const ListaPublicaciones = (props: Props) => {
             <div className="resultados">
                 {
                     posts &&
-                    posts.map((post, index) =>
+                    posts.map((post) =>
                         (props.autorId ? post.autor_id === props.autorId : true) &&
                         post.resuelto === resueltos &&
-                        <div key={index}>
+                        <div key={post.id}>
                             <br />
                             <TarjetaPost post={post} />
                             <br />
