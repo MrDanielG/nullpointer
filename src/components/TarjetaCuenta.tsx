@@ -85,6 +85,7 @@ export const TarjetaCuenta = ({ usuario }: any) => {
                 onOk={() => handleOk(id)}
                 confirmLoading={confirmLoading}
                 onCancel={handleCancel}
+                width={300}
             >
                 <p>
                     ¿Desea cambiar los permisos del usuario: <b>{nombre}</b>?
