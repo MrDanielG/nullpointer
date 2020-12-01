@@ -147,7 +147,7 @@ class App extends Component<AppProps, AppState> {
                                 <Menu.Item key="/app/cuentas">
                                     <Link to="/app/cuentas">Cuentas</Link>
                                 </Menu.Item> 
-                                <Menu.Item key="4">Posts</Menu.Item>
+                                {/* <Menu.Item key="4">Posts</Menu.Item> */}
                             </SubMenu>}
                         </Menu>
                     </Sider>
