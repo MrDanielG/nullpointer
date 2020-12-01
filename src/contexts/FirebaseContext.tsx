@@ -44,9 +44,9 @@ const defaultContextData = {
 
 
 
-const search = (searchTerms: string) => {
+// const search = (searchTerms: string) => {
 
-};
+// };
 
 
 export const FirebaseContext = React.createContext<ContextData>(defaultContextData);
@@ -57,14 +57,14 @@ export const useFirebase = () => {
 
 export const FirebaseProvider: React.FC = (props) => {
     const [posts, setPosts] = useState<Post[]>([]);
-    const [fuseIdx, setFuseIdx] = useState<Fuse<Post>>(defaultContextData.fuseIdx);
+    const [fuseIdx] = useState<Fuse<Post>>(defaultContextData.fuseIdx);
     useEffect(() => {
         const setData = (data: Post[]) => {
             setPosts(data);
             fuseIdx.setCollection(data);
         };
         return defaultContextData.postM.subscribe(setData);
-    }, []);
+    }, [fuseIdx]);
     return (
         <FirebaseContext.Provider value={{ ...defaultContextData, posts: posts}}>
             {props.children}
