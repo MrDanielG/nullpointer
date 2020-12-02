@@ -79,7 +79,7 @@ export const InfoUsuarioForm = () => {
                             <Option value="4">Cuarto Semestre</Option>
                             <Option value="5">Quinto Semestre</Option>
                             <Option value="6">Sexto Semestre</Option>
-                            <Option value="7">Septimo Semestre</Option>
+                            <Option value="7">Séptimo Semestre</Option>
                             <Option value="8">Octavo Semestre</Option>
                             <Option value="9">Noveno Semestre</Option>
                         </Select>
