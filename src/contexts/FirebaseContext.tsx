@@ -41,14 +41,6 @@ const defaultContextData = {
     fuseIdx: new Fuse<Post>([], fuseOps)
 };
 
-
-
-
-// const search = (searchTerms: string) => {
-
-// };
-
-
 export const FirebaseContext = React.createContext<ContextData>(defaultContextData);
 
 export const useFirebase = () => {
@@ -60,13 +52,18 @@ export const FirebaseProvider: React.FC = (props) => {
     const [fuseIdx] = useState<Fuse<Post>>(defaultContextData.fuseIdx);
     useEffect(() => {
         const setData = (data: Post[]) => {
+            data.sort((r1, r2) => {
+                const f1 = r1.fechaCreacion.getTime();
+                const f2 = r2.fechaCreacion.getTime();
+                return f1 - f2;
+            });
             setPosts(data);
             fuseIdx.setCollection(data);
         };
         return defaultContextData.postM.subscribe(setData);
     }, [fuseIdx]);
     return (
-        <FirebaseContext.Provider value={{ ...defaultContextData, posts: posts}}>
+        <FirebaseContext.Provider value={{ ...defaultContextData, posts: posts }}>
             {props.children}
         </FirebaseContext.Provider>
     );

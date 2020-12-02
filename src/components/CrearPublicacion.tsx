@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
     Form,
     Input,
@@ -17,32 +17,47 @@ interface CrearPublicacionProps {
     visible: boolean;
     onCreate: (values: Store) => void;
     onCancel: () => void;
+    title?: string;
+    okText?: string;
+    post?: Post
 }
 
 const CrearPublicacion: React.FC<CrearPublicacionProps> = ({
     visible,
     onCreate,
     onCancel,
+    okText,
+    title,
+    post,
 }) => {
-
     const [form] = Form.useForm();
+
+    useEffect(() => {
+        if (post) {
+            form.setFieldsValue({
+                titulo: post.titulo,
+                contenido: post.contenido,
+                tags: post.tags
+            });
+        }
+    }, [form, post]);
+
     return (
         <>
 
             <Modal
                 visible={visible}
-                title="Crear una nueva publicación"
-                okText="Publicar"
-
+                title={title ? title : "Crear un nuevo Post"}
+                okText={okText ? okText : "Publicar"}
+                forceRender={true}
                 cancelText="Cancelar"
                 onCancel={onCancel}
                 onOk={() => {
                     form
                         .validateFields()
                         .then(values => {
-                            console.log('Values: ', values);
+                            onCreate(values);
                             form.resetFields();
-                            onCreate(values)
                         })
                         .catch(info => {
                             console.log('Validate Failed:', info);
@@ -61,6 +76,7 @@ const CrearPublicacion: React.FC<CrearPublicacionProps> = ({
                         <Input placeholder="Escribe tu pregunta" />
                     </Form.Item>
                     <Form.Item
+                        initialValue={post?.contenido}
                         name="contenido"
                         label="Cuerpo de la publicación"
                         rules={[{ required: true, message: 'Inserta el cuerpo de la publicación' }]}

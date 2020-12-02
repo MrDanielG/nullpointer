@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import './ListaPublicaciones.css';
 import { TarjetaPost } from './TarjetaPost';
 import { useFirebase } from '../contexts/FirebaseContext';
@@ -36,9 +36,13 @@ export const ListaPublicaciones = (props: Props) => {
             fuseIdx.search(querystr).map(res => res.item)
                 : posts
         );
+        
 
     }
-
+    useEffect(()=>{
+        setPostResults(posts);
+        return () => { setPostResults([])};
+    }, [posts])
     return (
         <div>
             <div className="lista-header">
