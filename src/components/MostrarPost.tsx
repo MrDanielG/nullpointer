@@ -20,7 +20,7 @@ export const MostrarPost = (props: Props) => {
     const params = useParams<RouteInfo>();
     const [post, setPost] = useState<Post>();
     const [respuestas, setRespuestas] = useState<Post[]>();
-/*     const [resp_aceptada, setRespAceptada] = useState<string>(); */
+    /*     const [resp_aceptada, setRespAceptada] = useState<string>(); */
     const acceptReply = async (id: string | null) => {
         if (id) {
             try {
@@ -28,7 +28,7 @@ export const MostrarPost = (props: Props) => {
                     respuesta_aceptada_id: id,
                     resuelto: true
                 });
-                message.success("Respuesta acceptada");
+                message.success("Respuesta aceptada");
             } catch (error) {
                 message.error("No se pudo actualizar el post");
                 console.error(error);
@@ -48,7 +48,7 @@ export const MostrarPost = (props: Props) => {
         };
         const post = firebaseCtx.posts.find(val => val.id === params.id);
         setPost(post);
-/*         setRespAceptada(post?.respuesta_aceptada_id); */
+        /*         setRespAceptada(post?.respuesta_aceptada_id); */
         return firebaseCtx.postM.subscribeToPostReplies(params.id, setData);
     }, [firebaseCtx, params.id]);
 
@@ -57,12 +57,19 @@ export const MostrarPost = (props: Props) => {
             {post &&
                 <PostItem post={post} isReply={false} />
             }
+            <Typography.Title level={4}>
+                {
+                    respuestas &&
+                    respuestas.length + " respuestas"
+                }
+            </Typography.Title>
             <Steps direction="vertical">
                 {
                     post &&
                     respuestas &&
                     currentUser &&
                     respuestas.map((respuesta) =>
+
                         <Steps.Step
                             icon={
                                 (post.respuesta_aceptada_id === respuesta.id) ?
@@ -71,16 +78,17 @@ export const MostrarPost = (props: Props) => {
                             }
                             key={respuesta.id}
                             status="finish"
-                            description={<PostItem
-                                post={respuesta}
-                                isReply={true}
-                                parentPost={post.id}
-                                canAccept={                                   
-                                    post.autor_id === currentUser.uid
-                                    &&  post.respuesta_aceptada_id !== respuesta.id
-                                 }
-                                acceptReply={acceptReply}
-                            />}
+                            description={
+                                <PostItem
+                                    post={respuesta}
+                                    isReply={true}
+                                    parentPost={post.id}
+                                    canAccept={
+                                        post.autor_id === currentUser.uid
+                                        && post.respuesta_aceptada_id !== respuesta.id
+                                    }
+                                    acceptReply={acceptReply}
+                                />}
                         />
                     )
                 }
