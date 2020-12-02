@@ -13,7 +13,7 @@ export const Login = () => {
         try {
             setLoading(true);
             await logIn(values.email, values.password);
-            message.success('Loggin Exitoso');
+            message.success('Login Exitoso');
             history.push('/app/inicio');
         } catch (error) {
             message.error('Contraseña o Correo Incorrecto');
