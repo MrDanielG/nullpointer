@@ -1,46 +1,40 @@
-# Getting Started with Create React App
+# Nullpointer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Firebase Deploy](https://github.com/MrDanielG/nullpointer/workflows/Firebase%20Deploy/badge.svg)
 
-## Available Scripts
+> Nullpointer es una aplicación web creada para que los estudiantes de la BUAP puedan expresar sus dudas sobre cursos, temas, profesores, etc. por medio de posts, creando una comunidad estudiantil de ayuda.
 
-In the project directory, you can run:
+## Requerimientos
 
-### `yarn start`
+-   Node JS
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Instrucciones
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Para correr Nullpointer de manera local es necesario utilizar algún administrador de paquetes. A continuación mostraremos las dos opciones existentes para correr el proyecto:
 
-### `yarn test`
+-   `NPM:` Administrador de paquetes por defecto de Node
+-   `Yarn:` Administrador de paquetes de Facebook (necesita instalación extra)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### NPM
 
-### `yarn build`
+1. Dentro de la ruta del proyecto correr el comando `npm install` para instalar las dependencias del proyecto.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Para iniciar el proyecto correremos el comando `npm start`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Abrir [http://localhost:3000](http://localhost:3000) para visualizar en el navegador
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Para mas información acerca de NPM seguír el siguiente [link](https://docs.npmjs.com/about-npm)
 
-### `yarn eject`
+### Yarn
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. Dentro de la ruta del proyecto correr el comando `yarn install` para instalar las dependencias del proyecto.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Para iniciar el proyecto correremos el comando `yarn start`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+3. Abrir [http://localhost:3000](http://localhost:3000) para visualizar en el navegador
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Para mas información acerca de Yarn seguír el siguiente [link](https://yarnpkg.com/getting-started)
 
-## Learn More
+### Página Web
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Para ingresar a la app en linea dar click en el siguiente [link](https://nullpointer-dc5e2.web.app)
