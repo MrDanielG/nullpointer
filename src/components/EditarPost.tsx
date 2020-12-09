@@ -16,7 +16,6 @@ const EditarPost: React.FC<Props> = ({ post }) => {
         const postData: Partial<Post> = {
             fechaModificacion: new Date(),
             titulo: values.titulo,
-            contenido: values.contenido,
             tags: values.tags
         };
         try {
@@ -30,16 +29,17 @@ const EditarPost: React.FC<Props> = ({ post }) => {
     };
     return (
         <>
-            <Tooltip title="Editar post">
+            <Tooltip title="Editar título y etiquetas del post">
                 <Button onClick={() => {
                     setVisible(true);
                 }}
                     type="link"
-                    icon={<EditOutlined style={{fontSize: '20px'}}/>}
+                    icon={<EditOutlined style={{ fontSize: '20px' }} />}
                 />
             </Tooltip>
-            
+
             <CrearPublicacion
+                edit
                 post={post}
                 visible={visible}
                 title="Editar Post"
