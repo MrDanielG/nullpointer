@@ -81,7 +81,7 @@ export const PostItem = (props: Props) => {
     };
     const saveContent = async (value: string) => {
         try {
-            const path =  props.isReply ? props.parentPost + '/respuestas/' + props.post.id : props.post.id;
+            const path = props.isReply ? props.parentPost + '/respuestas/' + props.post.id : props.post.id;
             await postM.update(path, {
                 contenido: value,
                 fechaModificacion: new Date()
@@ -117,36 +117,27 @@ export const PostItem = (props: Props) => {
                         )}
                         <Typography.Paragraph type="secondary">
                             {"Publicado el: " +
-                             props.post.fechaCreacion.toLocaleDateString(
-                                 'es-MX',
-                                 {
-                                     hour12: true,
-                                     hour: 'numeric',
-                                     minute: 'numeric',
-                                 }
-                            )}
+                                props.post.fechaCreacion.toLocaleDateString(
+                                    'es-MX',
+                                    {
+                                        hour12: true,
+                                        hour: 'numeric',
+                                        minute: 'numeric',
+                                    }
+                                )}
                         </Typography.Paragraph>
-{/*                         <Typography.Paragraph editable={
-                        (currentUser?.id === usuario?.id) && props.isReply ?
-                        {
-                            tooltip: "Editar contenido",
-                            onChange: editContent
-                        }
-                        : false
-                        }                      
-                        >
-                            
-                        </Typography.Paragraph> */}
-                        <MarkdownEditor editable={(currentUser?.id === usuario?.id)} content={props.post.contenido} onSave={saveContent}/>
-                            
+                        <MarkdownEditor editable={(currentUser?.id === usuario?.id)}
+                            content={props.post.contenido}
+                            onSave={saveContent} />
+
                     </Col>
                     <Col span={3}>
                         {props.post.tags &&
-                         props.post.tags.map((tag, index) => (
-                             <Tag key={index} color="blue">
-                                 {tag}
-                             </Tag>
-                        ))}
+                            props.post.tags.map((tag, index) => (
+                                <Tag key={index} color="blue">
+                                    {tag}
+                                </Tag>
+                            ))}
                         <br />
                         <br />
 
@@ -154,8 +145,8 @@ export const PostItem = (props: Props) => {
                             <span onClick={like}>
                                 {React.createElement(
                                     action === 'liked'
-                                    ? LikeFilled
-                                    : LikeOutlined
+                                        ? LikeFilled
+                                        : LikeOutlined
                                 )}
                                 <span className="comment-action">
                                     {props.post.numVotos}
@@ -166,8 +157,8 @@ export const PostItem = (props: Props) => {
                             <span onClick={dislike}>
                                 {React.createElement(
                                     action === 'disliked'
-                                    ? DislikeFilled
-                                    : DislikeOutlined
+                                        ? DislikeFilled
+                                        : DislikeOutlined
                                 )}
                                 <span className="comment-action"></span>
                             </span>

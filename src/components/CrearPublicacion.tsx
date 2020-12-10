@@ -11,6 +11,7 @@ import { Store } from 'antd/lib/form/interface';
 
 import { useFirebase } from '../contexts/FirebaseContext';
 import { useAuth } from '../contexts/AuthContext';
+import { MarkdownInput } from './MarkdownInput';
 
 
 interface CrearPublicacionProps {
@@ -85,7 +86,7 @@ const CrearPublicacion: React.FC<CrearPublicacionProps> = ({
                             label="Cuerpo de la publicación"
                             rules={[{ required: true, message: 'Inserta el cuerpo de la publicación' }]}
                         >
-                            <Input.TextArea placeholder="Explica tu pregunta" />
+                            <MarkdownInput placeholder="Explica tu pregunta" />
                         </Form.Item>
                     }
 

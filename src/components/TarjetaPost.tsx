@@ -3,6 +3,8 @@ import { Card, Tag, Typography } from 'antd';
 import { UpOutlined, AlignLeftOutlined, CheckCircleTwoTone, QuestionCircleOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import { MarkdownRender } from './MarkdownRender';
+import './TarjetaPost.css';
+
 const { Text } = Typography;
 interface Props {
     post: Post;
@@ -13,7 +15,7 @@ export const TarjetaPost = (props: Props) => {
             <Card
                 title={props.post.titulo}
                 extra={<Link to={`/app/post/${props.post.id}`}>Más</Link>}
-                style={{ width: 900 }}
+                className="tp-card"
                 actions={[
                     props.post.resuelto ? <CheckCircleTwoTone twoToneColor="#52c41a" key="check" /> : <QuestionCircleOutlined />,
                     <UpOutlined key="up" about="12" />,

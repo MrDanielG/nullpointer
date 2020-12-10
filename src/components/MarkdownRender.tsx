@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from 'react'
+import React, { ReactNode } from 'react'
 import ReactMarkdown from 'react-markdown';
 import gfm from 'remark-gfm'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -19,14 +19,15 @@ interface MathProps {
     value?: string | number;
 }
 
+
 const renderers = {
     code: ({ language, value }: CodeProps) => {
         return <SyntaxHighlighter style={materialLight} language={language} children={value} showLineNumbers />
     },
     inlineMath: ({ value }: MathProps) => <Tex math={value} />,
-    math: ({ value }: MathProps) => <Tex math={value} block/>
-}
+    math: ({ value }: MathProps) => <Tex math={value} block/>,
 
+}
 export const MarkdownRender: React.FC<Props> = (props) => {
     return (
         <ReactMarkdown

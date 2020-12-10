@@ -1,8 +1,9 @@
-import React, { ReactNode, useState } from 'react';
-import { Button, Input, Tooltip, Tabs, Typography } from 'antd';
+import React, { useState } from 'react';
+import { Button, Tooltip } from 'antd';
 import { EditOutlined } from '@ant-design/icons';
 import { MarkdownRender } from './MarkdownRender';
 import './MarkdownEditor.css';
+import { MarkdownInput } from './MarkdownInput';
 
 interface Props {
     content: string;
@@ -28,41 +29,21 @@ export const MarkdownEditor: React.FC<Props> = ({ editable = false, ...props }) 
                         />
                     </Tooltip>
                 </div>
-
             }
-
             {
                 !visible &&
                 <MarkdownRender content={props.content} />
             }
-
             {
                 editable &&
                 visible &&
                 <div>
-                    <Typography.Text type="secondary">
-                        Puedes usar Markdown para editar el contenido del post
-                        (<a href="https://guides.github.com/features/mastering-markdown/#GitHub-flavored-markdown"
-                            title="Aprende a usar Markdown"
-                        >?</a>) y además usar código LaTeX para texto matemático
-                        (<a href="https://es.wikibooks.org/wiki/Manual_de_LaTeX/F%C3%B3rmulas_matem%C3%A1ticas"
-                            title="Aprende LaTeX para texto matemático"
-                        >?</a>).
-                    </Typography.Text>
-                    <Tabs>
-                        <Tabs.TabPane tab="Escribir" key="tab-esc">
-                            <Input.TextArea
-                                rows={3}
-                                value={content}
-                                onChange={(event) => {
-                                    setContent(event.target.value)
-                                }}
-                            />
-                        </Tabs.TabPane>
-                        <Tabs.TabPane tab="Previsualizar" key="tab-preview">
-                            <MarkdownRender content={content} />
-                        </Tabs.TabPane>
-                    </Tabs>
+                    <MarkdownInput
+                        value={content}
+                        onChange={(value) => {
+                            setContent(value)
+                        }}
+                    />
                     <div className="mde-action-btns">
                         <Button type="default" danger
                             onClick={() => {
@@ -83,9 +64,7 @@ export const MarkdownEditor: React.FC<Props> = ({ editable = false, ...props }) 
                             Guardar
                         </Button>
                     </div>
-
                 </div>
-
             }
         </>
     );
