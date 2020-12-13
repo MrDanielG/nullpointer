@@ -11,6 +11,7 @@ import { Store } from 'antd/lib/form/interface';
 
 import { useFirebase } from '../contexts/FirebaseContext';
 import { useAuth } from '../contexts/AuthContext';
+import { MarkdownInput } from './MarkdownInput';
 
 
 interface CrearPublicacionProps {
@@ -19,7 +20,8 @@ interface CrearPublicacionProps {
     onCancel: () => void;
     title?: string;
     okText?: string;
-    post?: Post
+    post?: Post;
+    edit?: boolean;
 }
 
 const CrearPublicacion: React.FC<CrearPublicacionProps> = ({
@@ -29,6 +31,7 @@ const CrearPublicacion: React.FC<CrearPublicacionProps> = ({
     okText,
     title,
     post,
+    edit = false
 }) => {
     const [form] = Form.useForm();
 
@@ -75,14 +78,18 @@ const CrearPublicacion: React.FC<CrearPublicacionProps> = ({
                     >
                         <Input placeholder="Escribe tu pregunta" />
                     </Form.Item>
-                    <Form.Item
-                        initialValue={post?.contenido}
-                        name="contenido"
-                        label="Cuerpo de la publicación"
-                        rules={[{ required: true, message: 'Inserta el cuerpo de la publicación' }]}
-                    >
-                        <Input.TextArea placeholder="Explica tu pregunta" />
-                    </Form.Item>
+                    {
+                        !edit &&
+                        <Form.Item
+                            initialValue={post?.contenido}
+                            name="contenido"
+                            label="Cuerpo de la publicación"
+                            rules={[{ required: true, message: 'Inserta el cuerpo de la publicación' }]}
+                        >
+                            <MarkdownInput placeholder="Explica tu pregunta" />
+                        </Form.Item>
+                    }
+
                     <Form.Item
                         name="tags"
                         label="Etiquetas"

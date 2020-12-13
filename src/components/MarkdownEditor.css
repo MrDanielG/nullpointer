@@ -1,0 +1,12 @@
+.mde-edit-btn {
+    float: right;
+}
+
+.mde-action-btns {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+.mde-action-btns .ant-btn {
+    margin-left: 15px;
+}

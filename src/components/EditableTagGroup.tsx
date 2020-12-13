@@ -27,8 +27,7 @@ class EditableTagGroup extends React.Component<EditableTagGroupProps, EditableTa
         if (this.props !== prevProps && this.props.value && this.state.tags.length === 0) {
             this.setState({
                 tags: this.props.value
-            })
-            console.log(this.props.value);
+            });            
         }
     }
     handleClose = (removedTag: string) => {

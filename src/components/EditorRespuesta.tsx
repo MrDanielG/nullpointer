@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Form, Input, Button, message } from 'antd';
 import { useFirebase } from '../contexts/FirebaseContext';
+import { MarkdownInput } from './MarkdownInput';
 
 
 
@@ -14,10 +15,6 @@ export const EditorRespuesta = (props: Props) => {
     const [submitting, setSubmitting] = useState(false);
     const { postM } = useFirebase();
     const [form] = Form.useForm();
-    const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-        setRespuesta(e.target.value);
-    };
-
 
     const onSubmit = () => {
         const reply: Post = {
@@ -47,12 +44,16 @@ export const EditorRespuesta = (props: Props) => {
     };
     return (
         <Form form={form} onFinish={onSubmit}>
-            <Form.Item 
-            name="contenido" 
-            initialValue=""
-            rules={[{required: true, message: "No puedes enviar un mensaje vacío"}]}
+            <Form.Item
+                name="contenido"
+                initialValue=""
+                rules={[{ required: true, message: "No puedes enviar un mensaje vacío" }]}
             >
-                <Input.TextArea onChange={handleChange} rows={5} />
+                <MarkdownInput
+                    placeholder="Escribe tu repuesta"
+                    onChange={(value) => {
+                        setRespuesta(value);
+                    }} />
             </Form.Item>
             <Form.Item>
                 <Button
