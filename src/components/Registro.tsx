@@ -57,6 +57,11 @@ export const Registro = () => {
                                 type: 'email',
                                 message: 'Ingresar un correo válido',
                             },
+                            {
+                                type: 'string',
+                                message: 'Ingresar un correo institucional (correo BUAP)',
+                                pattern: new RegExp(/\.buap\.mx$/)
+                            },
                         ]}
                     >
                         <Input
