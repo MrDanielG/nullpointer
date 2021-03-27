@@ -8,8 +8,9 @@ export const TarjetaPost = (props: {titulo: string, contenido: string, resuelto:
     return (
         <div>
             <Card
+                style={{margin: 'auto', width: '90%'}}
                 title={props.titulo}
-                extra={<a href="#">Más</a>} style={{ width: 700 }}
+                extra={<a href="#">Más</a>}
                 actions={[
                     props.resuelto ? <CheckCircleTwoTone twoToneColor="#52c41a" key="check"/>: <QuestionCircleOutlined />,
                     <UpOutlined key="up" about="12"/>,

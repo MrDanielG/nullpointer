@@ -1,19 +1,22 @@
 import { Component } from 'react';
 import { History } from 'history';
+
 import './App.css';
-import { Layout, Menu, Button, message, Space } from 'antd';
+import { ReactComponent as NullpointerLogo } from './nullpointer_logo.svg';
+
+import { Layout, Menu, Button, message, Space, Affix } from 'antd';
 import {
     FormOutlined,
     HomeOutlined,
     SettingOutlined,
-    FileTextOutlined,
 } from '@ant-design/icons';
-import { AuthContext, authData } from './contexts/AuthContext'
+import { AuthContext, authData } from './contexts/AuthContext';
 import { PreguntarBtn } from './components/CrearPublicacion';
 import { Link, Route } from 'react-router-dom';
 import { ListaPublicaciones } from './components/ListaPublicaciones';
+/* import { Registro } from './components/Registro'; */
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Header, Content, Sider } = Layout;
 const { SubMenu } = Menu;
 
 interface AppProps {
@@ -55,56 +58,83 @@ class App extends Component<AppProps, AppState> {
     render() {
         const { collapsed } = this.state;
         const { currentUser } = this.context as authData;
+
         return (
-            <Layout style={{ minHeight: '100vh' }}>
-                <Header className="app-header" >
-                    <FileTextOutlined />
-                    <span style={{ paddingLeft: '5px' }}> Nullpointer </span>
-                    <Space className="app-header-actions" size="large">
-                        <PreguntarBtn />
-                        <Button type="primary" onClick={this.handleLogOut}> Salir </Button>
-                    </Space>
+            <>
+                <Layout style={{ minHeight: '100vh' }}>
+
+                    <Header className="app-header" >
+                        <Link to="/" className="app-header-logo-link">
+                            <NullpointerLogo className="app-header-logo" />
+                        </Link>
+                        <Space className="app-header-actions" size="large">
+
+                            {
+                                !currentUser &&
+                                <>
+                                    <Button type="link">
+                                        <Link to="/login">Iniciar sesión</Link>
+                                    </Button>
+                                    <Button ghost>
+                                        <Link to="/registro">Registrarse</Link>
+                                    </Button>
+                                </>
+                            }
+                            {
+                                currentUser &&
+                                <Button type="primary" onClick={this.handleLogOut}> Salir </Button>
+                            }
+                        </Space>
 
 
-                </Header>
-                <Layout >
-                    <Sider
-                        collapsible
-                        collapsed={collapsed}
-                        onCollapse={this.onCollapse}
-                        theme="light"
-                    >
-                        <div className="logo" />
-                        <Menu
-                            defaultSelectedKeys={[this.props.history.location.pathname]}
-                            mode="inline"
-                            theme="light"                            
+                    </Header>
+                    <Layout >
+                        <Sider
+                            collapsible
+                            collapsed={collapsed}
+                            onCollapse={this.onCollapse}
+                            theme="light"
                         >
-                            <Menu.Item key="/app/inicio" icon={<HomeOutlined />}>
-                               <Link to="/app/inicio">Inicio</Link> 
-                            </Menu.Item>
-                            <Menu.Item key="/app/misposts" icon={<FormOutlined />}>
-                               <Link to="/app/misposts">Mis Posts</Link>
-                            </Menu.Item>
-                            <SubMenu key="/app/ctrlpanel" icon={<SettingOutlined />} title="Panel de control">
-                                <Menu.Item key="3">Cuentas</Menu.Item>
-                                <Menu.Item key="4">Posts</Menu.Item>
-                            </SubMenu>
-                        </Menu>
-                    </Sider>
-                    <Layout className="site-layout">
-                        <Content style={{ margin: '0 16px' }}>
-                            <Route path="/app/inicio" >
-                                <ListaPublicaciones />
-                            </Route>
-                            <Route path="/app/misposts">
-                                <ListaPublicaciones autorId={currentUser?.uid} />
-                            </Route>
-                        </Content>
-                        <Footer style={{ textAlign: 'center' }}>Nullpointer</Footer>
+                            <div className="logo" />
+                            <Menu
+                                defaultSelectedKeys={[this.props.history.location.pathname]}
+                                mode="inline"
+                                theme="light"
+                            >
+                                <Menu.Item key="/app/inicio" icon={<HomeOutlined />}>
+                                    <Link to="/app/inicio">Inicio</Link>
+                                </Menu.Item>
+                                <Menu.Item key="/app/misposts" icon={<FormOutlined />}>
+                                    <Link to="/app/misposts">Mis Posts</Link>
+                                </Menu.Item>
+                                <SubMenu key="/app/ctrlpanel" icon={<SettingOutlined />} title="Panel de control">
+                                    <Menu.Item key="3">Cuentas</Menu.Item>
+                                    <Menu.Item key="4">Posts</Menu.Item>
+                                </SubMenu>
+                            </Menu>
+                        </Sider>
+                        <Layout className="site-layout">
+                            <Content style={{ margin: '0 16px' }}>
+                                <Route exact path="/app/inicio" >
+                                    <ListaPublicaciones />
+                                </Route>
+                                <Route exact path="/app/misposts">
+                                    <ListaPublicaciones autorId={currentUser?.uid} />
+                                </Route>
+                                {/* <Route exact path="/app/registro">
+                                    <Registro />
+                                </Route> */}
+                            </Content>
+                            {/* <Footer style={{ textAlign: 'center' }}>Nullpointer</Footer> */}
+                        </Layout>
                     </Layout>
                 </Layout>
-            </Layout>
+                <Affix
+                    style={{ position: 'fixed', bottom: 50, right: 50 }}
+                >
+                    <PreguntarBtn />
+                </Affix>
+            </>
         );
     }
 }

@@ -40,7 +40,7 @@ code {
 
 /* Login Form Styles */
 .login-form {
-    max-width: 500px;
+    min-width: 300px;
 }
 .login-form-forgot {
     float: right;

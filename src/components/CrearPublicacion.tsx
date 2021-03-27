@@ -1,10 +1,12 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import {
     Form,
     Input,
     Button,
-    Modal
+    Modal,
+    Tooltip
 } from 'antd';
+import { QuestionOutlined } from '@ant-design/icons';
 import EditableTagGroup from './EditableTagGroup';
 
 import { Store } from 'antd/lib/form/interface';
@@ -122,14 +124,27 @@ export const PreguntarBtn: React.FC = () => {
     };
     return (
         <>
-            <Button
-                type="primary"
-                onClick={() => {
-                    setVisible(true);
-                }}
-            >
-                Preguntar
-        </Button>
+            <Tooltip title="Preguntar">
+                <Button
+                    style={{ zIndex: 1, width: 56, height: 56 }}
+                    size="large"
+                    type="primary"
+                    shape="circle"
+                    onClick={() => {
+                        setVisible(true);
+                    }}
+                    icon={<QuestionOutlined />}
+                />
+            </Tooltip>
+            {/* <Button
+                    type="primary"
+                    shape="circle"
+                    onClick={() => {
+                        setVisible(true);
+                    }}
+                >
+
+                </Button> */}
             <CrearPublicacion
                 visible={visible}
                 onCreate={onCreate}

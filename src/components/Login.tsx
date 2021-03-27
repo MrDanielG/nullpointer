@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Form, Input, Button, Checkbox, Card, message } from 'antd';
+import { Form, Input, Button, Checkbox, Card, PageHeader, message } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { Link, useHistory } from 'react-router-dom';
 import { AuthContext, authData } from '../contexts/AuthContext';
@@ -16,7 +16,7 @@ export const Login = () => {
             setLoading(true);
             await logIn(values.email, values.password);
             message.success('Loggin Exitoso');
-            history.push('/app/inicio');
+            history.push('/');
         } catch (error) {
             message.error('Contraseña o Correo Incorrecto');
             console.log(error);
@@ -26,7 +26,13 @@ export const Login = () => {
 
     return (
         <div className="login-container">
-            <Card title="Inicia Sesión" className="card">
+            <Card className="card"
+                  cover={
+                      <PageHeader
+                          title="Iniciar sesión"
+                          onBack={() => history.push('/')}
+                      />}
+            >
                 <Form
                     name="normal_login"
                     className="login-form"

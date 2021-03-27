@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Form, Input, Button, Card, message } from 'antd';
+import { Form, Input, Button, Card, PageHeader, message } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { Link, useHistory } from 'react-router-dom';
 import { AuthContext, authData } from '../contexts/AuthContext';
@@ -27,7 +27,13 @@ export const Registro = () => {
 
     return (
         <div className="register-container">
-            <Card title="Registro" className="card">
+
+            <Card cover={
+                <PageHeader
+                    title="Registrarse"
+                    onBack={() => history.goBack()}
+                />}
+                className="card">
                 <Form
                     name="normal_login"
                     className="login-form"
@@ -124,9 +130,9 @@ export const Registro = () => {
                             className="login-form-button"
                             disabled={loading}
                         >
-                            Iniciar Sesión
+                            Registrarse
                         </Button>
-                        Ya tienes cuenta? <Link to="/">Inicia Sesión</Link>
+                        Ya tienes cuenta? <Link to="/login">Inicia Sesión</Link>
                     </Form.Item>
                 </Form>
             </Card>

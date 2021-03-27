@@ -54,8 +54,11 @@ export const ListaPublicaciones = (props: Props) => {
     return (
 
         <div>
-            <Tabs onChange={onTabChange}>
-                <Tabs.TabPane tab="Abiertos" key="1"/>
+            <Tabs
+                onChange={onTabChange}
+                size="large"
+            >
+                <Tabs.TabPane tab="Abiertos" key="1" />
                 <Tabs.TabPane tab="Resueltos" key="2"/>
 
             </Tabs>

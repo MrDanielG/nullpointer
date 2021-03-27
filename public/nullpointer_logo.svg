@@ -1,0 +1,1376 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8">
+  <defs
+     id="defs2">
+    <marker
+       style="overflow:visible;"
+       id="marker2107"
+       refX="0.0"
+       refY="0.0"
+       orient="auto">
+      <path
+         transform="scale(0.3) rotate(180) translate(-2.3,0)"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         id="path2105" />
+    </marker>
+    <marker
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker1587"
+       style="overflow:visible;">
+      <path
+         id="path1585"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(0.3) rotate(180) translate(-2.3,0)" />
+    </marker>
+    <marker
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker1257"
+       style="overflow:visible;">
+      <path
+         id="path1255"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(0.3) rotate(180) translate(-2.3,0)" />
+    </marker>
+    <marker
+       style="overflow:visible;"
+       id="marker5865"
+       refX="0.0"
+       refY="0.0"
+       orient="auto">
+      <path
+         transform="scale(0.3) rotate(180) translate(-2.3,0)"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#ffffff;stroke-opacity:1;fill:#ffffff;fill-opacity:1"
+         id="path5863" />
+    </marker>
+    <marker
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker5615"
+       style="overflow:visible;">
+      <path
+         id="path5613"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(0.3) rotate(180) translate(-2.3,0)" />
+    </marker>
+    <marker
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker4819"
+       style="overflow:visible;">
+      <path
+         id="path4817"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#441650;stroke-opacity:1;fill:#441650;fill-opacity:1"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(0.3) rotate(180) translate(-2.3,0)" />
+    </marker>
+    <marker
+       style="overflow:visible;"
+       id="marker2496"
+       refX="0.0"
+       refY="0.0"
+       orient="auto">
+      <path
+         transform="scale(0.3) rotate(180) translate(-2.3,0)"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         id="path2494" />
+    </marker>
+    <marker
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker2302"
+       style="overflow:visible;">
+      <path
+         id="path2300"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#ffffff;stroke-opacity:1;fill:#ffffff;fill-opacity:1"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(0.3) rotate(180) translate(-2.3,0)" />
+    </marker>
+    <marker
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="EmptyTriangleOutS"
+       style="overflow:visible">
+      <path
+         id="path1316"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         style="fill-rule:evenodd;fill:#ffffff;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         transform="scale(0.2) translate(-3.0,0)" />
+    </marker>
+    <marker
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker2098"
+       style="overflow:visible;">
+      <path
+         id="path2096"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(0.3) rotate(180) translate(-2.3,0)" />
+    </marker>
+    <marker
+       style="overflow:visible;"
+       id="marker2022"
+       refX="0.0"
+       refY="0.0"
+       orient="auto">
+      <path
+         transform="scale(0.3) rotate(180) translate(-2.3,0)"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         id="path2020" />
+    </marker>
+    <marker
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="DotM"
+       style="overflow:visible">
+      <path
+         id="path1214"
+         d="M -2.5,-1.0 C -2.5,1.7600000 -4.7400000,4.0 -7.5,4.0 C -10.260000,4.0 -12.5,1.7600000 -12.5,-1.0 C -12.5,-3.7600000 -10.260000,-6.0 -7.5,-6.0 C -4.7400000,-6.0 -2.5,-3.7600000 -2.5,-1.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.4) translate(7.4, 1)" />
+    </marker>
+    <marker
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Send"
+       style="overflow:visible;">
+      <path
+         id="path1165"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.2) rotate(180) translate(6,0)" />
+    </marker>
+    <marker
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow2Mend"
+       style="overflow:visible;">
+      <path
+         id="path1177"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(0.6) rotate(180) translate(0,0)" />
+    </marker>
+    <marker
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow2Lend"
+       style="overflow:visible;">
+      <path
+         id="path1171"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(1.1) rotate(180) translate(1,0)" />
+    </marker>
+    <marker
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lend"
+       style="overflow:visible;">
+      <path
+         id="path1153"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+    <marker
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Mstart"
+       style="overflow:visible">
+      <path
+         id="path1156"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.4) translate(10,0)" />
+    </marker>
+    <marker
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lstart"
+       style="overflow:visible">
+      <path
+         id="path1150"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) translate(12.5,0)" />
+    </marker>
+    <filter
+       height="1.2935632"
+       y="-0.1467816"
+       width="1.1360458"
+       x="-0.068022878"
+       id="filter4687"
+       style="color-interpolation-filters:sRGB">
+      <feGaussianBlur
+         id="feGaussianBlur4689"
+         stdDeviation="0.3943371" />
+    </filter>
+    <filter
+       height="1.3958278"
+       y="-0.19791391"
+       width="1.0897364"
+       x="-0.044868217"
+       id="filter5089"
+       style="color-interpolation-filters:sRGB">
+      <feGaussianBlur
+         id="feGaussianBlur5091"
+         stdDeviation="0.92078026" />
+    </filter>
+    <filter
+       height="1.2546078"
+       y="-0.12730391"
+       width="1.0671601"
+       x="-0.033580031"
+       id="filter6321"
+       style="color-interpolation-filters:sRGB">
+      <feGaussianBlur
+         id="feGaussianBlur6323"
+         stdDeviation="0.93102365" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       id="filter1993"
+       x="-0.054753224"
+       width="1.1095064"
+       y="-0.11748491"
+       height="1.2349698">
+      <feGaussianBlur
+         stdDeviation="0.36632204"
+         id="feGaussianBlur1995" />
+    </filter>
+  </defs>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1">
+    <rect
+       ry="1.1427734"
+       y="47.724541"
+       x="47.988052"
+       height="11.165828"
+       width="49.252518"
+       id="rect4963"
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.566035;stroke-linejoin:round;paint-order:markers fill stroke;filter:url(#filter5089)"
+       rx="1.1427733" />
+    <rect
+       rx="1.1427733"
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.566035;stroke-linejoin:round;paint-order:markers fill stroke"
+       id="rect4765"
+       width="49.252518"
+       height="11.165828"
+       x="47.988052"
+       y="47.724541"
+       ry="1.1427734" />
+    <g
+       transform="translate(0,8.4618098)"
+       id="g4695"
+       style="fill:#000000;stroke:#000000;filter:url(#filter4687)">
+      <path
+         d="m 26.595868,29.031384 h 5.947423 v 6.447736 h -5.947423 c -0.545487,0 -0.984634,-0.439147 -0.984634,-0.984635 v -4.478466 c 0,-0.545488 0.439147,-0.984635 0.984634,-0.984635 z"
+         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264583;stroke-linejoin:round;stroke-opacity:1;paint-order:markers fill stroke"
+         id="path4691" />
+      <path
+         id="path4693"
+         style="fill:#000000;stroke:#000000;stroke-width:0.264583;stroke-linejoin:miter;paint-order:markers fill stroke"
+         d="m 38.539699,29.031384 h -5.994195 v 6.447736 h 5.994195 c 0.545487,0 0.984634,-0.439147 0.984634,-0.984635 v -4.478466 c 0,-0.545488 -0.439147,-0.984635 -0.984634,-0.984635 z" />
+    </g>
+    <g
+       id="g4725">
+      <path
+         id="path2808"
+         style="fill:#800000;fill-opacity:1;stroke:#800000;stroke-width:0.264583;stroke-linejoin:round;stroke-opacity:1;paint-order:markers fill stroke"
+         d="m 26.595868,37.493194 h 5.947423 v 6.447736 h -5.947423 c -0.545487,0 -0.984634,-0.439147 -0.984634,-0.984635 v -4.478466 c 0,-0.545488 0.439147,-0.984635 0.984634,-0.984635 z" />
+      <path
+         d="m 38.539699,37.493194 h -5.947423 v 6.447736 h 5.947423 c 0.545487,0 0.984634,-0.439147 0.984634,-0.984635 v -4.478466 c 0,-0.545488 -0.439147,-0.984635 -0.984634,-0.984635 z"
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.264583;stroke-linejoin:miter;paint-order:markers fill stroke"
+         id="path2810" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;stroke:none;stroke-width:0.264583"
+         x="33.938808"
+         y="42.279163"
+         id="text2814"><tspan
+           id="tspan2812"
+           style="fill:#000000;stroke:none">ø</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#ffffff;stroke:#ffffff;stroke-width:0.264583"
+         x="27.117096"
+         y="42.818913"
+         id="text2818"><tspan
+           style="fill:#ffffff;stroke:#ffffff"
+           id="tspan2816">*</tspan></text>
+      <rect
+         style="fill:#ffffff;stroke:none;stroke-width:0.562421;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:markers fill stroke"
+         id="rect2820"
+         width="1.4839606"
+         height="0.54590076"
+         x="30.974813"
+         y="40.444115"
+         ry="0" />
+      <path
+         d="m 78.391467,22.478507 -0.549258,0 -0.549258,0 0.274629,-0.475672 0.274629,-0.475672 0.274629,0.475672 z"
+         style="fill:#000000;stroke:none;stroke-width:0.673804;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:markers fill stroke"
+         id="path2822"
+         transform="matrix(0,1,-0.67998047,0,48.89879,-37.125146)" />
+      <rect
+         ry="0"
+         y="40.444115"
+         x="32.506363"
+         height="0.54590076"
+         width="1.3650745"
+         id="rect2824"
+         style="fill:#000000;stroke:none;stroke-width:0.539422;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:markers fill stroke" />
+    </g>
+    <g
+       style="fill:#000000;stroke:#000000;filter:url(#filter4687)"
+       id="g4141">
+      <path
+         id="path4135"
+         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264583;stroke-linejoin:round;stroke-opacity:1;paint-order:markers fill stroke"
+         d="m 26.595868,29.031384 h 5.947423 v 6.447736 h -5.947423 c -0.545487,0 -0.984634,-0.439147 -0.984634,-0.984635 v -4.478466 c 0,-0.545488 0.439147,-0.984635 0.984634,-0.984635 z" />
+      <path
+         d="m 38.539699,29.031384 h -5.994195 v 6.447736 h 5.994195 c 0.545487,0 0.984634,-0.439147 0.984634,-0.984635 v -4.478466 c 0,-0.545488 -0.439147,-0.984635 -0.984634,-0.984635 z"
+         style="fill:#000000;stroke:#000000;stroke-width:0.264583;stroke-linejoin:miter;paint-order:markers fill stroke"
+         id="path4137" />
+    </g>
+    <rect
+       ry="1.4404486"
+       y="2.7868316"
+       x="14.30596"
+       height="17.552145"
+       width="66.541237"
+       id="rect1059"
+       style="fill:#001529;stroke-width:0.536719;paint-order:markers fill stroke;fill-opacity:1" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;stroke-width:0.264583"
+       x="21.605213"
+       y="89.028519"
+       id="text12"><tspan
+         id="tspan10"
+         x="21.605213"
+         y="89.028519"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583">*nullpøinter</tspan></text>
+    <rect
+       style="fill:#ff0000;stroke:#ffffff;stroke-width:0.264999;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:markers fill stroke"
+       id="rect1554"
+       width="12.548467"
+       height="3.698998"
+       x="48.95174"
+       y="-7.0540504"
+       ry="0.99716961" />
+    <g
+       id="g2510">
+      <text
+         id="text67"
+         y="12.346041"
+         x="23.977777"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#ffffff;stroke:#ffffff;stroke-width:0.264583;stroke-opacity:1;"
+         xml:space="preserve"><tspan
+           id="tspan241"
+           style="fill:#ffffff;stroke:#ffffff;stroke-opacity:1;">*</tspan></text>
+      <rect
+         rx="1.1427734"
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-linejoin:round;paint-order:markers fill stroke"
+         id="rect313"
+         width="16.057007"
+         height="7.4832835"
+         x="28.002478"
+         y="6.5025487"
+         ry="1.1427734" />
+      <g
+         style="stroke:#001529;stroke-opacity:1;fill:#001529;fill-opacity:1"
+         transform="translate(0,0.15829468)"
+         id="g1301">
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#001529;stroke:#001529;stroke-width:0.264583;stroke-opacity:1;fill-opacity:1"
+           x="28.466097"
+           y="12.289346"
+           id="text246"><tspan
+             style="fill:#001529;stroke:#001529;stroke-opacity:1;fill-opacity:1"
+             id="tspan244">n</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#001529;stroke:#001529;stroke-width:0.264583;stroke-opacity:1;fill-opacity:1"
+           x="32.336845"
+           y="12.289346"
+           id="text250"><tspan
+             style="fill:#001529;stroke:#001529;stroke-opacity:1;fill-opacity:1"
+             id="tspan248">u</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#001529;stroke:#001529;stroke-width:0.264583;stroke-opacity:1;fill-opacity:1"
+           x="36.032967"
+           y="12.289346"
+           id="text254"><tspan
+             style="fill:#001529;stroke:#001529;stroke-opacity:1;fill-opacity:1"
+             id="tspan252">l</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#001529;stroke:#001529;stroke-width:0.264583;stroke-opacity:1;fill-opacity:1"
+           x="39.811642"
+           y="12.289346"
+           id="text258"><tspan
+             style="fill:#001529;stroke:#001529;stroke-opacity:1;fill-opacity:1"
+             id="tspan256">l</tspan></text>
+      </g>
+      <g
+         style="fill:#ffffff"
+         transform="translate(0,-0.33700531)"
+         id="g1317">
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#ffffff;stroke-width:0.264583"
+           x="44.067711"
+           y="12.289346"
+           id="text262"><tspan
+             id="tspan260"
+             style="fill:#ffffff">p</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#ffffff;stroke-width:0.264583"
+           x="47.938461"
+           y="12.289346"
+           id="text266"><tspan
+             id="tspan264"
+             style="fill:#ffffff">ø</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#ffffff;stroke-width:0.264583"
+           x="51.996536"
+           y="12.289346"
+           id="text270"><tspan
+             id="tspan268"
+             style="fill:#ffffff">i</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#ffffff;stroke-width:0.264583"
+           x="55.451359"
+           y="12.289346"
+           id="text274"><tspan
+             id="tspan272"
+             style="fill:#ffffff">n</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#ffffff;stroke-width:0.264583"
+           x="59.252254"
+           y="12.289346"
+           id="text278"><tspan
+             id="tspan276"
+             style="fill:#ffffff">t</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#ffffff;stroke-width:0.264583"
+           x="63.040455"
+           y="12.289346"
+           id="text282"><tspan
+             id="tspan280"
+             style="fill:#ffffff">e</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#ffffff;stroke-width:0.264583"
+           x="66.603226"
+           y="12.289346"
+           id="text286"><tspan
+             id="tspan284"
+             style="fill:#ffffff">r</tspan></text>
+      </g>
+      <path
+         style="fill:none;stroke:#ffffff;stroke-width:0.735542;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker2302)"
+         d="m 67.801842,11.752459 c 0,0.996592 0,1.992896 0,2.674609 0,0.681712 0,1.04877 -0.1453,1.232171 -0.145301,0.183401 -0.436161,0.183401 -3.311954,0.183401 -2.875792,0 -8.336199,0 -11.184627,0 -2.848427,0 -3.084548,0 -3.202749,-0.205683 -0.1182,-0.205683 -0.1182,-0.617289 -0.1182,-1.079869 0,-0.462581 0,-0.976092 0,-1.489878"
+         id="path2010" />
+    </g>
+    <g
+       id="g2677"
+       transform="translate(8.5415233,-29.078946)">
+      <rect
+         ry="0.98463482"
+         y="20.487711"
+         x="83.178177"
+         height="6.4477363"
+         width="6.8217134"
+         id="rect2626"
+         style="fill:none;stroke:#000000;stroke-width:0.264583;stroke-linejoin:round;paint-order:markers fill stroke"
+         rx="0.98463482" />
+    </g>
+    <rect
+       ry="0.98463482"
+       y="-6.0898185"
+       x="80.290703"
+       height="6.4477363"
+       width="6.8217134"
+       id="rect2594"
+       style="fill:#800000;stroke:none;stroke-width:0.264583;stroke-linejoin:round;paint-order:markers fill stroke"
+       rx="0.98463482" />
+    <g
+       id="g4737">
+      <path
+         d="m 26.595868,29.031384 h 5.947423 v 6.447736 h -5.947423 c -0.545487,0 -0.984634,-0.439147 -0.984634,-0.984635 v -4.478466 c 0,-0.545488 0.439147,-0.984635 0.984634,-0.984635 z"
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.264583;stroke-linejoin:round;stroke-opacity:1;paint-order:markers fill stroke"
+         id="rect2767" />
+      <path
+         id="path2770"
+         style="fill:#800000;stroke:#800000;stroke-width:0.264583;stroke-linejoin:miter;paint-order:markers fill stroke"
+         d="m 38.539699,29.031384 h -5.994195 v 6.447736 h 5.994195 c 0.545487,0 0.984634,-0.439147 0.984634,-0.984635 v -4.478466 c 0,-0.545488 -0.439147,-0.984635 -0.984634,-0.984635 z" />
+      <text
+         id="text2490"
+         y="33.817352"
+         x="33.938808"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#ffffff;stroke:none;stroke-width:0.264583"
+         xml:space="preserve"><tspan
+           style="fill:#ffffff;stroke:none"
+           id="tspan2488">ø</tspan></text>
+      <text
+         id="text2486"
+         y="34.357101"
+         x="27.117096"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;stroke:#000000;stroke-width:0.264583"
+         xml:space="preserve"><tspan
+           id="tspan2484"
+           style="fill:#000000;stroke:#000000">*</tspan></text>
+      <rect
+         ry="0"
+         y="31.982304"
+         x="30.974813"
+         height="0.54590076"
+         width="1.4483144"
+         id="rect2757"
+         style="fill:#000000;stroke:none;stroke-width:0.555625;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:markers fill stroke" />
+      <g
+         transform="translate(-1.0974302,-2.0828059)"
+         style="fill:#ffffff;stroke:none"
+         id="g2806">
+        <path
+           d="m 78.391467,22.478507 -0.549258,0 -0.549258,0 0.274629,-0.475672 0.274629,-0.475672 0.274629,0.475672 z"
+           style="fill:#ffffff;stroke:none;stroke-width:0.673804;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:markers fill stroke"
+           id="path2759"
+           transform="matrix(0,1,-0.67998047,0,49.99622,-43.50415)" />
+        <rect
+           ry="0"
+           y="34.065109"
+           x="33.520554"
+           height="0.54590076"
+           width="1.4483144"
+           id="rect2763"
+           style="fill:#ffffff;stroke:none;stroke-width:0.555625;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:markers fill stroke" />
+      </g>
+    </g>
+    <text
+       id="text4763"
+       y="53.568035"
+       x="49.306309"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#214478;stroke:#214478;stroke-width:0.264583;stroke-opacity:1;"
+       xml:space="preserve"><tspan
+         id="tspan4761"
+         style="fill:#214478;stroke:#214478;stroke-opacity:1;">*</tspan></text>
+    <text
+       id="text4769"
+       y="53.669636"
+       x="53.773396"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#214478;stroke:#214478;stroke-width:0.264583;stroke-opacity:1;"
+       xml:space="preserve"><tspan
+         id="tspan4767"
+         style="fill:#214478;stroke:#214478;stroke-opacity:1;">n</tspan></text>
+    <text
+       id="text4773"
+       y="53.669636"
+       x="57.492767"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#214478;stroke:#214478;stroke-width:0.264583;stroke-opacity:1;"
+       xml:space="preserve"><tspan
+         id="tspan4771"
+         style="fill:#214478;stroke:#214478;stroke-opacity:1;">u</tspan></text>
+    <text
+       id="text4777"
+       y="53.669636"
+       x="61.037506"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#214478;stroke:#214478;stroke-width:0.264583;stroke-opacity:1;"
+       xml:space="preserve"><tspan
+         id="tspan4775"
+         style="fill:#214478;stroke:#214478;stroke-opacity:1;">l</tspan></text>
+    <text
+       id="text4781"
+       y="53.669636"
+       x="64.664803"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#214478;stroke:#214478;stroke-width:0.264583;stroke-opacity:1;"
+       xml:space="preserve"><tspan
+         id="tspan4779"
+         style="fill:#214478;stroke:#214478;stroke-opacity:1;">l</tspan></text>
+    <g
+       transform="translate(25.018293,40.884989)"
+       id="g4811"
+       style="fill:#441650;stroke:none;fill-opacity:1">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#441650;stroke-width:0.264583;stroke:none;fill-opacity:1"
+         x="44.067711"
+         y="12.289346"
+         id="text4785"><tspan
+           id="tspan4783"
+           style="fill:#441650;stroke:none;fill-opacity:1">p</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#441650;stroke-width:0.264583;stroke:none;fill-opacity:1"
+         x="47.938461"
+         y="12.289346"
+         id="text4789"><tspan
+           id="tspan4787"
+           style="fill:#441650;stroke:none;fill-opacity:1">ø</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#441650;stroke-width:0.264583;stroke:none;fill-opacity:1"
+         x="51.996536"
+         y="12.289346"
+         id="text4793"><tspan
+           id="tspan4791"
+           style="fill:#441650;stroke:none;fill-opacity:1">i</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#441650;stroke-width:0.264583;stroke:none;fill-opacity:1"
+         x="55.451359"
+         y="12.289346"
+         id="text4797"><tspan
+           id="tspan4795"
+           style="fill:#441650;stroke:none;fill-opacity:1">n</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#441650;stroke-width:0.264583;stroke:none;fill-opacity:1"
+         x="59.252254"
+         y="12.289346"
+         id="text4801"><tspan
+           id="tspan4799"
+           style="fill:#441650;stroke:none;fill-opacity:1">t</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#441650;stroke-width:0.264583;stroke:none;fill-opacity:1"
+         x="63.040455"
+         y="12.289346"
+         id="text4805"><tspan
+           id="tspan4803"
+           style="fill:#441650;stroke:none;fill-opacity:1">e</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#441650;stroke-width:0.264583;stroke:none;fill-opacity:1"
+         x="66.603226"
+         y="12.289346"
+         id="text4809"><tspan
+           id="tspan4807"
+           style="fill:#441650;stroke:none;fill-opacity:1">r</tspan></text>
+    </g>
+    <path
+       style="fill:none;stroke:#441650;stroke-width:0.735542;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker4819);fill-opacity:1"
+       d="m 92.820135,52.974453 c 0,0.996592 0,1.992896 0,2.674609 0,0.681712 0,1.04877 -0.1453,1.232171 -0.145301,0.183401 -0.436161,0.183401 -3.311954,0.183401 -2.875792,0 -8.336199,0 -11.184627,0 -2.848427,0 -3.084548,0 -3.202749,-0.205683 -0.1182,-0.205683 -0.1182,-0.617289 -0.1182,-1.07987 0,-0.46258 0,-0.976091 0,-1.489877"
+       id="path4813" />
+    <rect
+       ry="1.4404486"
+       y="8.3440409"
+       x="115.1102"
+       height="17.552145"
+       width="66.541237"
+       id="rect6239"
+       style="fill:#000000;fill-opacity:1;stroke-width:0.536719;paint-order:markers fill stroke;filter:url(#filter6321)"
+       rx="1.4404486" />
+    <rect
+       rx="1.4404486"
+       style="fill:#001529;fill-opacity:1;stroke-width:0.536719;paint-order:markers fill stroke"
+       id="rect5803"
+       width="66.541237"
+       height="17.552145"
+       x="115.1102"
+       y="8.3440409"
+       ry="1.4404486" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#ffffff;stroke:#ffffff;stroke-width:0.264583;stroke-opacity:1"
+       x="126.50134"
+       y="19.221964"
+       id="text5807"><tspan
+         style="fill:#ffffff;stroke:#ffffff;stroke-opacity:1"
+         id="tspan5805">*</tspan></text>
+    <rect
+       ry="1.1427734"
+       y="13.378471"
+       x="130.52603"
+       height="7.4832835"
+       width="16.057007"
+       id="rect5809"
+       style="fill:#6bb8ff;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-linejoin:round;paint-order:markers fill stroke"
+       rx="1.1427734" />
+    <g
+       id="g5827"
+       transform="translate(102.52356,7.0342176)"
+       style="fill:#001b42;fill-opacity:1;stroke:#001b42;stroke-opacity:1">
+      <text
+         id="text5813"
+         y="12.289346"
+         x="28.466097"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#001b42;fill-opacity:1;stroke:#001b42;stroke-width:0.264583;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           id="tspan5811"
+           style="fill:#001b42;fill-opacity:1;stroke:#001b42;stroke-opacity:1">n</tspan></text>
+      <text
+         id="text5817"
+         y="12.289346"
+         x="32.336845"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#001b42;fill-opacity:1;stroke:#001b42;stroke-width:0.264583;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           id="tspan5815"
+           style="fill:#001b42;fill-opacity:1;stroke:#001b42;stroke-opacity:1">u</tspan></text>
+      <text
+         id="text5821"
+         y="12.289346"
+         x="36.032967"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#001b42;fill-opacity:1;stroke:#001b42;stroke-width:0.264583;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           id="tspan5819"
+           style="fill:#001b42;fill-opacity:1;stroke:#001b42;stroke-opacity:1">l</tspan></text>
+      <text
+         id="text5825"
+         y="12.289346"
+         x="39.811642"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#001b42;fill-opacity:1;stroke:#001b42;stroke-width:0.264583;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           id="tspan5823"
+           style="fill:#001b42;fill-opacity:1;stroke:#001b42;stroke-opacity:1">l</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#ffffff;stroke-width:0.264583"
+       x="146.59128"
+       y="18.828264"
+       id="text5831"><tspan
+         id="tspan5829"
+         style="fill:#ffffff">p</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#ffffff;stroke-width:0.264583"
+       x="150.02104"
+       y="18.828264"
+       id="text5835"><tspan
+         id="tspan5833"
+         style="fill:#ffffff">ø</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#ffffff;stroke-width:0.264583"
+       x="153.63817"
+       y="18.828264"
+       id="text5839"><tspan
+         id="tspan5837"
+         style="fill:#ffffff">i</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#ffffff;stroke-width:0.264583"
+       x="156.65201"
+       y="18.828264"
+       id="text5843"><tspan
+         id="tspan5841"
+         style="fill:#ffffff">n</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#ffffff;stroke-width:0.264583"
+       x="160.01193"
+       y="18.828264"
+       id="text5847"><tspan
+         id="tspan5845"
+         style="fill:#ffffff">t</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#ffffff;stroke-width:0.264583"
+       x="163.35919"
+       y="18.828264"
+       id="text5851"><tspan
+         id="tspan5849"
+         style="fill:#ffffff">e</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#ffffff;stroke-width:0.264583"
+       x="166.48099"
+       y="18.828264"
+       id="text5855"><tspan
+         id="tspan5853"
+         style="fill:#ffffff">r</tspan></text>
+    <path
+       id="path5859"
+       d="m 167.67957,18.800561 c 0,0.996592 0,1.992892 0,2.674606 0,0.681715 0,1.048775 -0.1453,1.232175 -0.1453,0.1834 -0.43617,0.1834 -2.93854,0.1834 -2.50236,0 -7.21595,0 -9.69095,0 -2.475,0 -2.71112,0 -2.82932,-0.205683 -0.1182,-0.205683 -0.1182,-0.617289 -0.1182,-1.079869 0,-0.462581 0,-0.976092 0,-1.489878"
+       style="fill:none;stroke:#ffffff;stroke-width:0.735542;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker5865)" />
+    <g
+       transform="translate(54.979525,-20.050946)"
+       id="g6637">
+      <g
+         transform="translate(107.64435,9.5216033)"
+         id="g6554"
+         style="fill:#000000;stroke:#000000;filter:url(#filter4687)">
+        <path
+           d="m 26.595868,29.031384 h 5.947423 v 6.447736 h -5.947423 c -0.545487,0 -0.984634,-0.439147 -0.984634,-0.984635 v -4.478466 c 0,-0.545488 0.439147,-0.984635 0.984634,-0.984635 z"
+           style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264583;stroke-linejoin:round;stroke-opacity:1;paint-order:markers fill stroke"
+           id="path6550" />
+        <path
+           id="path6552"
+           style="fill:#000000;stroke:#000000;stroke-width:0.264583;stroke-linejoin:miter;paint-order:markers fill stroke"
+           d="m 38.539699,29.031384 h -5.994195 v 6.447736 h 5.994195 c 0.545487,0 0.984634,-0.439147 0.984634,-0.984635 v -4.478466 c 0,-0.545488 -0.439147,-0.984635 -0.984634,-0.984635 z" />
+      </g>
+      <path
+         d="m 134.24022,38.552987 h 5.94742 v 6.447736 h -5.94742 c -0.54549,0 -0.98464,-0.439147 -0.98464,-0.984634 v -4.478466 c 0,-0.545488 0.43915,-0.984635 0.98464,-0.984636 z"
+         style="fill:#001529;fill-opacity:1;stroke:#001529;stroke-width:0.264583;stroke-linejoin:round;stroke-opacity:1;paint-order:markers fill stroke"
+         id="path6556" />
+      <path
+         id="path6558"
+         style="fill:#ffffff;stroke:#001529;stroke-width:0.264583;stroke-linejoin:miter;stroke-opacity:1;paint-order:markers fill stroke"
+         d="m 146.18405,38.552987 h -5.94742 v 6.447736 h 5.94742 c 0.54549,0 0.98463,-0.439147 0.98463,-0.984634 v -4.478466 c 0,-0.545488 -0.43914,-0.984635 -0.98463,-0.984636 z" />
+      <text
+         id="text6562"
+         y="43.338959"
+         x="141.58316"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#001529;fill-opacity:1;stroke:none;stroke-width:0.264583;"
+         xml:space="preserve"><tspan
+           style="fill:#001529;fill-opacity:1;stroke:none;"
+           id="tspan6560">ø</tspan></text>
+      <text
+         id="text6566"
+         y="43.878708"
+         x="134.76144"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#ffffff;stroke:#ffffff;stroke-width:0.264583"
+         xml:space="preserve"><tspan
+           id="tspan6564"
+           style="fill:#ffffff;stroke:#ffffff">*</tspan></text>
+      <rect
+         ry="0"
+         y="41.50391"
+         x="138.61916"
+         height="0.54590076"
+         width="1.4839606"
+         id="rect6568"
+         style="fill:#ffffff;stroke:none;stroke-width:0.562421;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:markers fill stroke" />
+      <path
+         d="m 78.391467,22.478507 -0.549258,0 -0.549258,0 0.274629,-0.475672 0.274629,-0.475672 0.274629,0.475672 z"
+         transform="matrix(0,1,-0.67998047,0,156.54314,-36.065353)"
+         id="path6570"
+         style="fill:#001529;fill-opacity:1;stroke:none;stroke-width:0.673804;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:markers fill stroke" />
+      <rect
+         style="fill:#001529;fill-opacity:1;stroke:none;stroke-width:0.539422;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:markers fill stroke"
+         id="rect6572"
+         width="1.3650745"
+         height="0.54590076"
+         x="140.15071"
+         y="41.50391"
+         ry="0" />
+    </g>
+    <g
+       transform="translate(54.979525,-20.800727)"
+       id="g6651">
+      <g
+         style="fill:#000000;stroke:#000000;filter:url(#filter4687)"
+         id="g6580"
+         transform="translate(107.64435,1.0597935)">
+        <path
+           id="path6576"
+           style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264583;stroke-linejoin:round;stroke-opacity:1;paint-order:markers fill stroke"
+           d="m 26.595868,29.031384 h 5.947423 v 6.447736 h -5.947423 c -0.545487,0 -0.984634,-0.439147 -0.984634,-0.984635 v -4.478466 c 0,-0.545488 0.439147,-0.984635 0.984634,-0.984635 z" />
+        <path
+           d="m 38.539699,29.031384 h -5.994195 v 6.447736 h 5.994195 c 0.545487,0 0.984634,-0.439147 0.984634,-0.984635 v -4.478466 c 0,-0.545488 -0.439147,-0.984635 -0.984634,-0.984635 z"
+           style="fill:#000000;stroke:#000000;stroke-width:0.264583;stroke-linejoin:miter;paint-order:markers fill stroke"
+           id="path6578" />
+      </g>
+      <path
+         id="path6582"
+         style="fill:#ffffff;fill-opacity:1;stroke:#001529;stroke-width:0.264583;stroke-linejoin:round;stroke-opacity:1;paint-order:markers fill stroke"
+         d="m 134.24022,30.091177 h 5.94742 v 6.447736 h -5.94742 c -0.54549,0 -0.98464,-0.439147 -0.98464,-0.984634 v -4.478466 c 0,-0.545488 0.43915,-0.984635 0.98464,-0.984636 z" />
+      <path
+         d="m 146.18405,30.091177 h -5.9942 v 6.447736 h 5.9942 c 0.54549,0 0.98463,-0.439147 0.98463,-0.984634 v -4.478466 c 0,-0.545488 -0.43914,-0.984635 -0.98463,-0.984636 z"
+         style="fill:#001529;fill-opacity:1;stroke:#001529;stroke-width:0.264583;stroke-linejoin:miter;stroke-opacity:1;paint-order:markers fill stroke"
+         id="path6584" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#ffffff;stroke:none;stroke-width:0.264583"
+         x="141.58316"
+         y="34.877148"
+         id="text6588"><tspan
+           id="tspan6586"
+           style="fill:#ffffff;stroke:none">ø</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#001529;fill-opacity:1;stroke:#001529;stroke-width:0.264583;stroke-opacity:1;"
+         x="134.76144"
+         y="35.416897"
+         id="text6592"><tspan
+           style="fill:#001529;fill-opacity:1;stroke:#001529;stroke-opacity:1;"
+           id="tspan6590">*</tspan></text>
+      <rect
+         style="fill:#001529;fill-opacity:1;stroke:none;stroke-width:0.555625;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+         id="rect6594"
+         width="1.4483144"
+         height="0.54590076"
+         x="138.61916"
+         y="33.042099"
+         ry="0" />
+      <path
+         d="m 78.391467,22.478507 -0.549258,0 -0.549258,0 0.274629,-0.475672 0.274629,-0.475672 0.274629,0.475672 z"
+         style="fill:#ffffff;stroke:none;stroke-width:0.673804;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:markers fill stroke"
+         id="path6596"
+         transform="matrix(0,1,-0.67998047,0,156.54314,-44.527162)" />
+      <rect
+         ry="0"
+         y="33.042095"
+         x="140.06747"
+         height="0.54590076"
+         width="1.4483144"
+         id="rect6598"
+         style="fill:#ffffff;stroke:none;stroke-width:0.555625;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:markers fill stroke" />
+    </g>
+    <g
+       id="g2031">
+      <rect
+         rx="1.1427734"
+         style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-linejoin:round;paint-order:markers fill stroke;filter:url(#filter1993)"
+         id="rect1827"
+         width="16.057007"
+         height="7.4832835"
+         x="130.52603"
+         y="30.872866"
+         ry="1.1427734" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;stroke:#000000;stroke-width:0.264583;stroke-opacity:1;"
+         x="126.50134"
+         y="36.716358"
+         id="text1531"><tspan
+           style="fill:#000000;stroke:#000000;stroke-opacity:1;"
+           id="tspan1529">*</tspan></text>
+      <rect
+         ry="1.1427734"
+         y="30.872866"
+         x="130.52603"
+         height="7.4832835"
+         width="16.057007"
+         id="rect1533"
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-linejoin:round;paint-order:markers fill stroke"
+         rx="1.1427734" />
+      <g
+         id="g1551"
+         transform="translate(102.52356,24.528611)"
+         style="fill:#800000;fill-opacity:1;stroke:#800000;stroke-opacity:1">
+        <text
+           id="text1537"
+           y="12.289346"
+           x="28.466097"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#800000;fill-opacity:1;stroke:#800000;stroke-width:0.264583;stroke-opacity:1"
+           xml:space="preserve"><tspan
+             id="tspan1535"
+             style="fill:#800000;fill-opacity:1;stroke:#800000;stroke-opacity:1">n</tspan></text>
+        <text
+           id="text1541"
+           y="12.289346"
+           x="32.336845"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#800000;fill-opacity:1;stroke:#800000;stroke-width:0.264583;stroke-opacity:1"
+           xml:space="preserve"><tspan
+             id="tspan1539"
+             style="fill:#800000;fill-opacity:1;stroke:#800000;stroke-opacity:1">u</tspan></text>
+        <text
+           id="text1545"
+           y="12.289346"
+           x="36.032967"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#800000;fill-opacity:1;stroke:#800000;stroke-width:0.264583;stroke-opacity:1"
+           xml:space="preserve"><tspan
+             id="tspan1543"
+             style="fill:#800000;fill-opacity:1;stroke:#800000;stroke-opacity:1">l</tspan></text>
+        <text
+           id="text1549"
+           y="12.289346"
+           x="39.811642"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#800000;fill-opacity:1;stroke:#800000;stroke-width:0.264583;stroke-opacity:1"
+           xml:space="preserve"><tspan
+             id="tspan1547"
+             style="fill:#800000;fill-opacity:1;stroke:#800000;stroke-opacity:1">l</tspan></text>
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;stroke-width:0.264583;"
+         x="146.59128"
+         y="36.322659"
+         id="text1555"><tspan
+           id="tspan1553"
+           style="fill:#000000;">p</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;stroke-width:0.264583;"
+         x="150.02104"
+         y="36.322659"
+         id="text1559"><tspan
+           id="tspan1557"
+           style="fill:#000000;">ø</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;stroke-width:0.264583;"
+         x="153.63817"
+         y="36.322659"
+         id="text1563"><tspan
+           id="tspan1561"
+           style="fill:#000000;">i</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;stroke-width:0.264583;"
+         x="156.65201"
+         y="36.322659"
+         id="text1567"><tspan
+           id="tspan1565"
+           style="fill:#000000;">n</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;stroke-width:0.264583;"
+         x="160.01193"
+         y="36.322659"
+         id="text1571"><tspan
+           id="tspan1569"
+           style="fill:#000000;">t</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;stroke-width:0.264583;"
+         x="163.35919"
+         y="36.322659"
+         id="text1575"><tspan
+           id="tspan1573"
+           style="fill:#000000;">e</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;stroke-width:0.264583;"
+         x="166.48099"
+         y="36.322659"
+         id="text1579"><tspan
+           id="tspan1577"
+           style="fill:#000000;">r</tspan></text>
+      <path
+         id="path1581"
+         d="m 167.67957,36.294954 c 0,0.996592 0,1.992892 0,2.674606 0,0.681715 0,1.048775 -0.1453,1.232175 -0.1453,0.1834 -0.43617,0.1834 -2.93854,0.1834 -2.50236,0 -7.21595,0 -9.69095,0 -2.475,0 -2.71112,0 -2.82932,-0.205683 -0.1182,-0.205683 -0.1182,-0.617289 -0.1182,-1.07987 0,-0.46258 0,-0.976091 0,-1.489877"
+         style="fill:none;stroke:#000000;stroke-width:0.735542;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker1587)" />
+    </g>
+    <rect
+       rx="1.1427734"
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-linejoin:round;paint-order:markers fill stroke;filter:url(#filter1993)"
+       id="rect2045"
+       width="16.057007"
+       height="7.4832835"
+       x="130.52603"
+       y="44.025742"
+       ry="1.1427734" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;stroke:#000000;stroke-width:0.264583;stroke-opacity:1"
+       x="126.50134"
+       y="49.869232"
+       id="text2049"><tspan
+         style="fill:#000000;stroke:#000000;stroke-opacity:1"
+         id="tspan2047">*</tspan></text>
+    <rect
+       ry="1.1427734"
+       y="44.025742"
+       x="130.52603"
+       height="7.4832835"
+       width="16.057007"
+       id="rect2051"
+       style="fill:#a02c2c;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-linejoin:round;paint-order:markers fill stroke"
+       rx="1.1427734" />
+    <g
+       id="g2069"
+       transform="translate(102.52356,37.681485)"
+       style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-opacity:1">
+      <text
+         id="text2055"
+         y="12.289346"
+         x="28.466097"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.264583;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           id="tspan2053"
+           style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-opacity:1">n</tspan></text>
+      <text
+         id="text2059"
+         y="12.289346"
+         x="32.336845"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.264583;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           id="tspan2057"
+           style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-opacity:1">u</tspan></text>
+      <text
+         id="text2063"
+         y="12.289346"
+         x="36.032967"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.264583;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           id="tspan2061"
+           style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-opacity:1">l</tspan></text>
+      <text
+         id="text2067"
+         y="12.289346"
+         x="39.811642"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.264583;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           id="tspan2065"
+           style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-opacity:1">l</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;stroke-width:0.264583"
+       x="146.59128"
+       y="49.475533"
+       id="text2073"><tspan
+         id="tspan2071"
+         style="fill:#000000">p</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;stroke-width:0.264583"
+       x="150.02104"
+       y="49.475533"
+       id="text2077"><tspan
+         id="tspan2075"
+         style="fill:#000000">ø</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;stroke-width:0.264583"
+       x="153.63817"
+       y="49.475533"
+       id="text2081"><tspan
+         id="tspan2079"
+         style="fill:#000000">i</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;stroke-width:0.264583"
+       x="156.65201"
+       y="49.475533"
+       id="text2085"><tspan
+         id="tspan2083"
+         style="fill:#000000">n</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;stroke-width:0.264583"
+       x="160.01193"
+       y="49.475533"
+       id="text2089"><tspan
+         id="tspan2087"
+         style="fill:#000000">t</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;stroke-width:0.264583"
+       x="163.35919"
+       y="49.475533"
+       id="text2093"><tspan
+         id="tspan2091"
+         style="fill:#000000">e</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;stroke-width:0.264583"
+       x="166.48099"
+       y="49.475533"
+       id="text2097"><tspan
+         id="tspan2095"
+         style="fill:#000000">r</tspan></text>
+    <path
+       id="path2099"
+       d="m 167.67957,49.447828 c 0,0.996592 0,1.992892 0,2.674606 0,0.681715 0,1.048775 -0.1453,1.232175 -0.1453,0.1834 -0.43617,0.1834 -2.93854,0.1834 -2.50236,0 -7.21595,0 -9.69095,0 -2.475,0 -2.71112,0 -2.82932,-0.205683 -0.1182,-0.205683 -0.1182,-0.617289 -0.1182,-1.079869 0,-0.462581 0,-0.976092 0,-1.489878"
+       style="fill:none;stroke:#000000;stroke-width:0.735542;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker2107)" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#ffffff;stroke:#ffffff;stroke-width:0.264583;stroke-opacity:1"
+       x="126.50134"
+       y="19.221964"
+       id="text2160"><tspan
+         style="fill:#ffffff;stroke:#ffffff;stroke-opacity:1"
+         id="tspan2158">*</tspan></text>
+    <rect
+       ry="1.1427734"
+       y="13.378471"
+       x="130.52603"
+       height="7.4832835"
+       width="16.057007"
+       id="rect2162"
+       style="fill:none;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-linejoin:round;paint-order:markers fill stroke"
+       rx="1.1427734" />
+    <g
+       id="g2180"
+       transform="translate(102.52356,7.0342176)"
+       style="fill:#001529;fill-opacity:1;stroke:#001529;stroke-opacity:1">
+      <text
+         id="text2166"
+         y="12.289346"
+         x="28.466097"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#001529;fill-opacity:1;stroke:#001529;stroke-width:0.264583;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           id="tspan2164"
+           style="fill:#001529;fill-opacity:1;stroke:#001529;stroke-opacity:1">n</tspan></text>
+      <text
+         id="text2170"
+         y="12.289346"
+         x="32.336845"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#001529;fill-opacity:1;stroke:#001529;stroke-width:0.264583;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           id="tspan2168"
+           style="fill:#001529;fill-opacity:1;stroke:#001529;stroke-opacity:1">u</tspan></text>
+      <text
+         id="text2174"
+         y="12.289346"
+         x="36.032967"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#001529;fill-opacity:1;stroke:#001529;stroke-width:0.264583;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           id="tspan2172"
+           style="fill:#001529;fill-opacity:1;stroke:#001529;stroke-opacity:1">l</tspan></text>
+      <text
+         id="text2178"
+         y="12.289346"
+         x="39.811642"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#001529;fill-opacity:1;stroke:#001529;stroke-width:0.264583;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           id="tspan2176"
+           style="fill:#001529;fill-opacity:1;stroke:#001529;stroke-opacity:1">l</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#ffffff;stroke-width:0.264583"
+       x="146.59128"
+       y="18.828264"
+       id="text2184"><tspan
+         id="tspan2182"
+         style="fill:#ffffff">p</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#ffffff;stroke-width:0.264583"
+       x="150.02104"
+       y="18.828264"
+       id="text2188"><tspan
+         id="tspan2186"
+         style="fill:#ffffff">ø</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#ffffff;stroke-width:0.264583"
+       x="153.63817"
+       y="18.828264"
+       id="text2192"><tspan
+         id="tspan2190"
+         style="fill:#ffffff">i</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#ffffff;stroke-width:0.264583"
+       x="156.65201"
+       y="18.828264"
+       id="text2196"><tspan
+         id="tspan2194"
+         style="fill:#ffffff">n</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#ffffff;stroke-width:0.264583"
+       x="160.01193"
+       y="18.828264"
+       id="text2200"><tspan
+         id="tspan2198"
+         style="fill:#ffffff">t</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#ffffff;stroke-width:0.264583"
+       x="163.35919"
+       y="18.828264"
+       id="text2204"><tspan
+         id="tspan2202"
+         style="fill:#ffffff">e</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'Source Code Pro Semibold';-inkscape-font-specification:'Source Code Pro Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#ffffff;stroke-width:0.264583"
+       x="166.48099"
+       y="18.828264"
+       id="text2208"><tspan
+         id="tspan2206"
+         style="fill:#ffffff">r</tspan></text>
+    <path
+       id="path2210"
+       d="m 167.67957,18.800561 c 0,0.996592 0,1.992892 0,2.674606 0,0.681715 0,1.048775 -0.1453,1.232175 -0.1453,0.1834 -0.43617,0.1834 -2.93854,0.1834 -2.50236,0 -7.21595,0 -9.69095,0 -2.475,0 -2.71112,0 -2.82932,-0.205683 -0.1182,-0.205683 -0.1182,-0.617289 -0.1182,-1.079869 0,-0.462581 0,-0.976092 0,-1.489878"
+       style="fill:none;stroke:#ffffff;stroke-width:0.735542;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker5865)" />
+    <image
+       width="19.314583"
+       height="8.4666662"
+       preserveAspectRatio="none"
+       xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEkAAAAgCAYAAABeiFVOAAAABHNCSVQICAgIfAhkiAAAAGRJREFU
+aIHt0EENwCAAwECGB0TMv8DhgPRHltwpaPqM9X6Do3k74A9MCkwKTApMCkwKTApMCkwKTApMCkwK
+TApMCkwKTApMCkwKTApMCkwKTApMCkwKTApMCkwKTApMCkwKTAo2EQ0Bfa4Zn/AAAAAASUVORK5C
+YII=
+"
+       id="image2452"
+       x="178.10968"
+       y="63.493557" />
+    <image
+       width="22.225"
+       height="16.933332"
+       preserveAspectRatio="none"
+       xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFQAAABACAYAAACELFBMAAAABHNCSVQICAgIfAhkiAAABWtJREFU
+eJztm12IVFUcwH/nfi/b7qy6m1B+bG6Qi9vmYmGU1Zu7ieQS9IFvQkoPQUkJBVFRPvQghG+xPviQ
+lJBlpZFrESQRComyplayfiPVuB8zYzizd+69PdwddSf3Y8Zz7h3l/mCY2b1f5/74z/9/7jlnxGj2
+34AEaWhxN+BOIxEqmUSoZBKhkkmESiYRKplEqGQSoZJJhEomESqZRKhkEqGSSYRKxoi7ATfj50s6
+O08aHLssGLqqUfQnbjc0aKnzWdIc8GJ7kRX3ePE09CaIWhm++/UvjQ8OmgyO6hRLfsQ0B4233NDh
+/iaP9x53WdriT32MYmIXmr4qeKnf5o9hjSAAMZ3ESSgd2z7Hp29lgZa6eG4rVqEfHTbpGzAJfKaP
+xpkSgNBgQ6fLxmWupJPOnFiEDucFL+yxuZDV5IksJ4AFKZ+dqwvMdqK7xcir/LmMoHuXw3mVMgEE
+nMtodO9yOJdReaGJRCo0X4Tn9jrkCqLqXFkJQkCuIHh+r4MbUa2KVOiqLx0yeaE2MssRMJoX9O52
+IrlcZEI3H7S4lNMiicxyhIDBUY3NBy3l14pE6PmsYMcJI9rILEfAjhOG8nwaidAN++1rnfBYCeCV
+H22ll1D+6DmQFpy9hYr+2DzoXgQdLeHfv6Wh/zT8crGKkwk4NaIxkNboVPREpbwf2vuVw8mh6nLn
++0/B+qXh54u58H1eQ/jedwTePVD5OYMAOpo9vlhTqPzgGaA0Qos+/DlyazL3nYZX90N2/P4bbdi6
+EjZ0hcXmnZ8qO68Q8PuIjuuDqSDhKc2hu08Z+FV8s+Y3Xpe5bs91mRB+Xrcn3LZ+abhvpXgefHtG
+TSwpFfrNoF7VcT1t4fu2I5PvU9pW2rdSfjhbXdumQ6nQM5nqilFqvBBPVXhK21LVFG0BA2k1t640
+h2bHqivtfUfgu8Gp9ylF5oVsVZcgo6YmqY3QsSoH0rMFOJ6efHujDa8vh+zY9OIno+Cp6eDX5BTI
+VPS0hTI7WuC17ycWrFrgthG6pAW2rw6r+sUcrNsL+6qMTpXcNkLfeBRSTu2KLKE0h9q6vIewlB3m
+VVkyZbbtRpRGaIMZSEv+z+6ScpprpGw1QpVGaFuTL22Uqaet+k78/wigY46awRGlQntax6SNgW5f
+Hb6kIMbbpgClQte0ueiShG47Gr5koAtYubAo52RlKM2hjqnTPtvj2GX9lqc+Kh1VmowggPY5Hpah
+JpaURqimaby57Eos80iTIQS89fAVNO02FArw0Fy4r9GrmSmQB2Z5dN6t7hLKhRqGwdYns/FO0JUQ
+sGVFFsNQl+mUCxVC0NokWLs4/ofutYsLLEwJhMIcFMmsp2VZbOrKseCu+NZxLkp5bOrKYVlq5+Yj
+W+hgmhafrxqm0Yo+mc6yfT7rHsY075CFDhDm0jrL5NOnR2gwo5PaYAZ80jNKnWUqzZ0lIl3bZFkW
+8+uhv3eIe+vVr95qbfTo7x1ifj3Kv+olYlkfWsjn8XyPj483sO2YI71HJYD1D+Z5eUkOXdOxnWgW
+ikGMK5gLhQKeV+RyQWfjgRTHh+TMQnY2e2x5IkOz7aHrBratdulNObEuCfc8D3dsDD/wOZq2+fBw
+PaczOsVSi0q9m/IWlv3fELCoyePtR67QMXsMTWiYloWuq5kqnorYf7QA4Lournt99OfQ3w5fn3E4
++o9O+qqGV9ZCQwQ01wV0zfV4pjXP8rl5IOzzGoaJaZpRNn8CNSEUIAgCXNfF9zz8oLKCpQkNTdcx
+TVNpp30m1MyckhDiWiUOggDP8/B9/6aCSwI1TUPX9dgl3kjNCL2R8Ktbk02bluS3npJJhEomESqZ
+RKhkEqGSSYRKJhEqmf8AkwSpr6gLA/MAAAAASUVORK5CYII=
+"
+       id="image2466"
+       x="123.75973"
+       y="-17.231112" />
+  </g>
+</svg>
