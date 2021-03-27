@@ -5,7 +5,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { AuthContext, authData } from '../contexts/AuthContext';
 
 export const Login = () => {
-    const { logIn, currentUser } = useContext(AuthContext) as authData;
+    const { logIn } = useContext(AuthContext) as authData;
     const [loading, setLoading] = useState(false);
     const history = useHistory();
 
@@ -20,8 +20,8 @@ export const Login = () => {
         } catch (error) {
             message.error('Contraseña o Correo Incorrecto');
             console.log(error);
+            setLoading(false);
         }
-        setLoading(false);
     };
 
     return (

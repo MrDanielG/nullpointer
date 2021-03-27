@@ -29,7 +29,7 @@ class FirebaseModel<T extends DocData> {
         return this.addToCollection(this.collection, data);
     }
     read(id: string): T | undefined {
-        return this.data.find(item => item.id === id);
+        return this.data.find((item) => item.id === id);
     }
     update(id: string, data: Partial<T>) {
         this.collection.doc(id).update(data);
@@ -37,10 +37,11 @@ class FirebaseModel<T extends DocData> {
     remove(id: string) {
         this.collection.doc(id).delete();
     }
-
-
-
+    createCustomDoc(data: T, id: string | any): T {
+        const doc = this.collection.doc(id);
+        doc.set(data);
+        return { ...data, id: doc.id };
+    }
 }
 
 export default FirebaseModel;
-
