@@ -48,7 +48,7 @@ export const AuthProvider = ({ children }: any): JSX.Element => {
             semestre: semester,
         };
         return new Promise((res, rej) => {
-            res(usuarioM.createCustomDoc(user, uid)), rej(undefined);
+            res(usuarioM.createCustomDoc(user, uid));
         });
     };
 
