@@ -32,7 +32,16 @@ export function convertDate(firebaseObject: any) {
     }
     return firebaseObject;
 }
+var msprovider = new firebase.auth.OAuthProvider('microsoft.com');
+msprovider.setCustomParameters({
+    login_hint: 'user@alumno.buap.mx',
+   // tenant: 'f8cdef31-a31e-4b4a-93e4-5f571e91255a',
+    prompt: 'consent'
+});
+/* msprovider.addScope('user.readbasic.all'); */
+msprovider.addScope('user.read');
 
+export const microsoftProvider = msprovider;
 // Initialize Firebase
 export const fb = firebase.initializeApp(firebaseConfig);
 export const auth = fb.auth();

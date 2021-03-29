@@ -5,7 +5,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { AuthContext, authData } from '../contexts/AuthContext';
 
 export const Login = () => {
-    const { logIn } = useContext(AuthContext) as authData;
+    const { logIn, msLogIn } = useContext(AuthContext) as authData;
     const [loading, setLoading] = useState(false);
     const history = useHistory();
 
@@ -23,7 +23,6 @@ export const Login = () => {
             setLoading(false);
         }
     };
-
     return (
         <div className="login-container">
             <Card className="card"
@@ -90,8 +89,7 @@ export const Login = () => {
                             Olvidé mi contraseña
                         </a>
                     </Form.Item>
-
-                    <Form.Item>
+                   <Form.Item>
                         <Button
                             type="primary"
                             htmlType="submit"
@@ -100,7 +98,7 @@ export const Login = () => {
                         >
                             Iniciar Sesión
                         </Button>
-                        O <Link to="/registro">Registrarse</Link>
+                        O <Link to="/registro">Registrarse</Link>                   
                     </Form.Item>
                 </Form>
             </Card>
