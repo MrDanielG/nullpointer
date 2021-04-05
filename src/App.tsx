@@ -104,13 +104,20 @@ class App extends Component<AppProps, AppState> {
                                 <Menu.Item key="/app/inicio" icon={<HomeOutlined />}>
                                     <Link to="/app/inicio">Inicio</Link>
                                 </Menu.Item>
-                                <Menu.Item key="/app/misposts" icon={<FormOutlined />}>
-                                    <Link to="/app/misposts">Mis Posts</Link>
-                                </Menu.Item>
-                                <SubMenu key="/app/ctrlpanel" icon={<SettingOutlined />} title="Panel de control">
-                                    <Menu.Item key="3">Cuentas</Menu.Item>
-                                    <Menu.Item key="4">Posts</Menu.Item>
-                                </SubMenu>
+                                {
+                                    currentUser &&
+                                    <>
+                                    <Menu.Item key="/app/misposts" icon={<FormOutlined />}>
+                                        <Link to="/app/misposts">Mis Posts</Link>
+                                    </Menu.Item>
+                                    <SubMenu key="/app/ctrlpanel" icon={<SettingOutlined />} title="Panel de control">
+                                        <Menu.Item key="3">Cuentas</Menu.Item>
+                                        <Menu.Item key="4">Posts</Menu.Item>
+                                    </SubMenu>
+                                    </>
+                                }
+
+
                             </Menu>
                         </Sider>
                         <Layout className="site-layout">
@@ -132,7 +139,11 @@ class App extends Component<AppProps, AppState> {
                 <Affix
                     style={{ position: 'fixed', bottom: 50, right: 50 }}
                 >
-                    <PreguntarBtn />
+                    {
+                        currentUser &&
+                        <PreguntarBtn />
+                    }
+
                 </Affix>
             </>
         );

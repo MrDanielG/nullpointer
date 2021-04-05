@@ -34,7 +34,7 @@ export const ListaPublicaciones = (props: Props) => {
             
         };
         return firebaseCtx.postM.subscribe(setData);
-    }, [firebaseCtx.postM]);
+    }, [firebaseCtx.postM, props.autorId]);
 
     /*  useEffect(() => {
          const setData = (data: InfoPublicacion[]) => {
@@ -43,7 +43,7 @@ export const ListaPublicaciones = (props: Props) => {
          };
          return firebaseCtx.infoPublicacionM.subscribe(setData);
      }, [firebaseCtx.infoPublicacionM]); */
-     const onTabChange = (key:string) => {
+    const onTabChange = (key: string) => {
         if(key === "1"){
             setResueltos(false);
         } else {

@@ -151,7 +151,7 @@ class EditableTagGroup extends React.Component<EditableTagGroupProps, EditableTa
                 )}
                 {!inputVisible && (
                     <Tag className="site-tag-plus" onClick={this.showInput}>
-                        <PlusOutlined /> New Tag
+                        <PlusOutlined /> Nueva etiqueta
                     </Tag>
                 )}
             </>
