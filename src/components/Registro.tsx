@@ -14,30 +14,30 @@ export const Registro = () => {
     const onFinish = async ({ username, password, email, semester }: any) => {
         try {
             setLoading(true);
-            const user = await signUp(email, password, username, semester);
-            console.log(user);
+            await signUp(email, password, username, semester);
             message.success('Usuario Registrado');
             history.push('/app/inicio');
         } catch (error) {
-            message.error('Error al Registrar Usuario');
-            console.log(error);
+            const errorMsg =
+                error.code === 'auth/email-already-in-use'
+                    ? 'La dirección de correo electrónico ya está siendo utilizada por otra cuenta.'
+                    : 'Error al Registrar Usuario';
+            message.error(errorMsg);
             setLoading(false);
         }
     };
 
-    const onSemesterChange = (value: string) => {
-        console.log(value);
-    };
-
     return (
         <div className="register-container">
-
-            <Card cover={
-                <PageHeader
-                    title="Registrarse"
-                    onBack={() => history.goBack()}
-                />}
-                className="card">
+            <Card
+                cover={
+                    <PageHeader
+                        title="Registrarse"
+                        onBack={() => history.goBack()}
+                    />
+                }
+                className="card"
+            >
                 <Form
                     name="normal_login"
                     className="login-form"
@@ -59,8 +59,9 @@ export const Registro = () => {
                             },
                             {
                                 type: 'string',
-                                message: 'Ingresar un correo institucional (correo BUAP)',
-                                pattern: new RegExp(/\.buap\.mx$/)
+                                message:
+                                    'Ingresar un correo institucional (correo BUAP)',
+                                pattern: new RegExp(/\.buap\.mx$/),
                             },
                         ]}
                     >
@@ -159,10 +160,7 @@ export const Registro = () => {
                             },
                         ]}
                     >
-                        <Select
-                            placeholder="Semestre en Curso"
-                            onChange={onSemesterChange}
-                        >
+                        <Select placeholder="Semestre en Curso">
                             <Option value="1">Primer Semestre</Option>
                             <Option value="2">Segundo Semestre</Option>
                             <Option value="3">Tercer Semestre</Option>
