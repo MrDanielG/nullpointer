@@ -1,29 +1,33 @@
 import FirebaseModel from './FirebaseModel';
-import { db, convertDate } from '../firebase';
+import { db } from '../firebase';
 
-class PostsModel  extends FirebaseModel<Post> {
-    constructor(){
+class PostsModel extends FirebaseModel<Post> {
+    constructor() {
         super('/posts');
     }
-    addComment(idPost: string, comment: Post): Post {
+    addComment(idPost: string, comment: Post) {
         const comments = db.collection('/posts/' + idPost + '/comentarios');
         return this.addToCollection(comments, comment);
     }
-    addReply(idPost: string, reply: Post): Post {
+    addReply(idPost: string, reply: Post) {
         const replies = db.collection('/posts/' + idPost + '/respuestas');
         return this.addToCollection(replies, reply);
     }
-    addReplyComment(idPost: string, idReply: string, comment: Post): Post {
+    addReplyComment(idPost: string, idReply: string, comment: Post) {
         const comments = db.collection('/posts/' + idPost + '/repuestas' + idReply + '/comentarios');
         return this.addToCollection(comments, comment);
     }
-    async getPosts() {
-        return await this.collection.get().then(data => {
-            return data.docs.map(v =>
-                convertDate(v.data()) as Post
-            )
-        });
-        
+    subscribeToPostComments(idPost: string, setData: (data: Post[]) => void) {
+        const comments = db.collection('/posts/' + idPost + '/comentarios');
+        return this.subscribe(setData, comments);
+    }
+    subscribeToPostReplies(idPost: string, setData: (data: Post[]) => void) {
+        const replies = db.collection('/posts/' + idPost + '/respuestas');
+        return this.subscribe(setData, replies);
+    }
+    subscribeToReplieComments(idPost: string, idReply: string, setData: (data: Post[]) => void) {
+        const comments = db.collection('/posts/' + idPost + '/repuestas' + idReply + '/comentarios');
+        return this.subscribe(setData, comments);
     }
 
 }

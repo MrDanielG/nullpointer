@@ -1,0 +1,13 @@
+.post-item {
+    margin-bottom: 20px;
+    width: 60vw;
+    padding: 20px;
+    text-align: justify;
+}
+
+.post-item-footer {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
