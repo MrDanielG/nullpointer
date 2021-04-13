@@ -36,7 +36,7 @@ const CrearPublicacion: React.FC<CrearPublicacionProps> = ({
                 title="Crear una nueva publicación"
                 okText="Publicar"
 
-                cancelText="Cancel"
+                cancelText="Cancelar"
                 onCancel={onCancel}
                 onOk={() => {
                     form
@@ -86,29 +86,9 @@ export const PreguntarBtn: React.FC = () => {
     const [visible, setVisible] = React.useState(false);
     const firebaseCtx = useFirebase();
     const { currentUser } = useAuth()!;
-    /*     const onCreate = (values: Store) => {
-            console.log('Received values of form: ', values);
-            let infoPublicacion: InfoPublicacion = {
-                fechaCreacion: new Date(),
-                fechaModificacion: new Date(),
-                titulo: values.titulo,
-                contenido: values.contenido,
-                autor_id: '',
-                estado: 'Abierta',
-            }
-            infoPublicacion = firebaseCtx.infoPublicacionM.create(infoPublicacion);
-            let pregunta: Pregunta = {
-                numVotos: 0,
-                resuelta: false,        
-                info_id: infoPublicacion.id ? infoPublicacion.id : '',
-            }
-            pregunta = firebaseCtx.preguntaM.create(pregunta);
-            console.log('Pregunta: ', pregunta);
-            setVisible(false);
-        }; */
     const onCreate = (values: Store) => {
-        console.log('Received values of form: ', values);
         let post: Post = {
+            id: '',
             numVotos: 0,
             resuelto: false,
             fechaCreacion: new Date(),

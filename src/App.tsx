@@ -14,7 +14,8 @@ import { AuthContext, authData } from './contexts/AuthContext';
 import { PreguntarBtn } from './components/CrearPublicacion';
 import { Link, Route } from 'react-router-dom';
 import { ListaPublicaciones } from './components/ListaPublicaciones';
-/* import { Registro } from './components/Registro'; */
+import { MostrarPost } from './components/MostrarPost';
+import { AdminCuentas } from './components/AdminCuentas'
 
 const { Header, Content, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -131,6 +132,8 @@ class App extends Component<AppProps, AppState> {
                                 {/* <Route exact path="/app/registro">
                                     <Registro />
                                 </Route> */}
+                                <Route path="/app/post/:id" component={MostrarPost} />
+                                <Route path="/app/cuentas" component={AdminCuentas} />
                             </Content>
                             {/* <Footer style={{ textAlign: 'center' }}>Nullpointer</Footer> */}
                         </Layout>
