@@ -16,7 +16,7 @@ export const Login = () => {
             setLoading(true);
             await logIn(values.email, values.password);
             message.success('Loggin Exitoso');
-            history.push('/');
+            history.goBack();
         } catch (error) {
             message.error('Contraseña o Correo Incorrecto');
             console.log(error);
