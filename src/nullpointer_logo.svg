@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="45.73mm" height="9.7079mm" version="1.1" viewBox="0 0 45.73 9.7079" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <marker id="marker3936" overflow="visible" orient="auto">
+   <path transform="matrix(-.3 0 0 -.3 .69 0)" d="m8.7186 4.0337-10.926-4.0177 10.926-4.0177c-1.7455 2.3721-1.7354 5.6175-6e-7 8.0354z" fill="#fff" fill-rule="evenodd" stroke="#fff" stroke-linejoin="round" stroke-width=".625"/>
+  </marker>
+ </defs>
+ <g transform="translate(-112.45 -145.58)">
+  <g transform="translate(64.801 116.81)">
+   <text x="47.312256" y="34.615211" fill="#ffffff" font-family="'Source Code Pro Semibold'" font-size="6.35px" letter-spacing="0px" stroke="#ffffff" stroke-width=".26458" word-spacing="0px" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan fill="#ffffff" stroke="#ffffff">*</tspan></text>
+   <rect x="51.337" y="28.772" width="16.057" height="7.4833" rx="1.1428" ry="1.1428" fill="#fff" style="paint-order:markers fill stroke"/>
+   <g transform="translate(23.334 22.427)" fill="#001529" font-family="'Source Code Pro Semibold'" font-size="6.35px" letter-spacing="0px" stroke="#001529" stroke-width=".26458" word-spacing="0px">
+    <text x="28.466097" y="12.289346" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan fill="#001529" stroke="#001529">n</tspan></text>
+    <text x="32.336845" y="12.289346" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan fill="#001529" stroke="#001529">u</tspan></text>
+    <text x="36.032967" y="12.289346" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan fill="#001529" stroke="#001529">l</tspan></text>
+    <text x="39.811642" y="12.289346" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan fill="#001529" stroke="#001529">l</tspan></text>
+   </g>
+   <g transform="translate(23.334 21.932)" fill="#ffffff" font-family="'Source Code Pro Semibold'" font-size="6.35px" letter-spacing="0px" stroke-width=".26458" word-spacing="0px">
+    <text x="44.067711" y="12.289346" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan fill="#ffffff">p</tspan></text>
+    <text x="47.938461" y="12.289346" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan fill="#ffffff">ø</tspan></text>
+    <text x="51.996536" y="12.289346" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan fill="#ffffff">i</tspan></text>
+    <text x="55.451359" y="12.289346" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan fill="#ffffff">n</tspan></text>
+    <text x="59.252254" y="12.289346" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan fill="#ffffff">t</tspan></text>
+    <text x="63.040455" y="12.289346" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan fill="#ffffff">e</tspan></text>
+    <text x="66.603226" y="12.289346" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan fill="#ffffff">r</tspan></text>
+   </g>
+   <path d="m91.136 34.022v2.6746c0 0.68171 0 1.0488-0.1453 1.2322-0.1453 0.1834-0.43616 0.1834-3.312 0.1834h-11.185c-2.8484 0-3.0845 0-3.2027-0.20568-0.1182-0.20568-0.1182-0.61729-0.1182-1.0799v-1.4899" fill="none" marker-end="url(#marker3936)" stroke="#fff" stroke-width=".73554"/>
+  </g>
+ </g>
+</svg>
