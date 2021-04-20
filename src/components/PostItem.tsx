@@ -95,29 +95,35 @@ export const PostItem = (props: Props) => {
                             ))}
                         <br />
                         <br />
-
-                        <Tooltip key="comment-basic-like" title="Like">
-                            <span onClick={like}>
-                                {React.createElement(
-                                    action === 'liked'
-                                        ? LikeFilled
-                                        : LikeOutlined
-                                )}
-                                <span className="comment-action">
-                                    {props.post.numVotos}
-                                </span>
-                            </span>
-                        </Tooltip>
-                        <Tooltip key="comment-basic-dislike" title="Dislike">
-                            <span onClick={dislike}>
-                                {React.createElement(
-                                    action === 'disliked'
-                                        ? DislikeFilled
-                                        : DislikeOutlined
-                                )}
-                                <span className="comment-action"></span>
-                            </span>
-                        </Tooltip>
+                        {currentUser && (
+                            <>
+                                <Tooltip key="comment-basic-like" title="Like">
+                                    <span onClick={like}>
+                                        {React.createElement(
+                                            action === 'liked'
+                                                ? LikeFilled
+                                                : LikeOutlined
+                                        )}
+                                        <span className="comment-action">
+                                            {props.post.numVotos}
+                                        </span>
+                                    </span>
+                                </Tooltip>
+                                <Tooltip
+                                    key="comment-basic-dislike"
+                                    title="Dislike"
+                                >
+                                    <span onClick={dislike}>
+                                        {React.createElement(
+                                            action === 'disliked'
+                                                ? DislikeFilled
+                                                : DislikeOutlined
+                                        )}
+                                        <span className="comment-action"></span>
+                                    </span>
+                                </Tooltip>
+                            </>
+                        )}
 
                         {props.canAccept && (
                             <Button
