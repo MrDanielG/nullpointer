@@ -8,7 +8,6 @@ import {
     FormOutlined,
     HomeOutlined,
     SettingOutlined,
-    FileTextOutlined,
     DownOutlined,
     UserOutlined
 } from '@ant-design/icons';
@@ -48,11 +47,10 @@ class App extends Component<AppProps, AppState> {
     }
 
     async handleLogOut() {
-        const { logOut } = this.context!;
+        const { logOut } = this.context as authData;
         try {
             await logOut();
             message.success('Sesión Terminada');
-            this.props.history.push('/');
         } catch (error) {
             message.error('Error al Cerrar Sesión');
             console.log(error);
@@ -185,7 +183,26 @@ class App extends Component<AppProps, AppState> {
         //                 <Footer style={{ textAlign: 'center' }}>
         //                     Nullpointer
         //                 </Footer>
+        
+        // entrega2
         const { currentUser } = this.context as authData;
+               
+         const menu = (
+             <Menu>
+{/*                  <Menu.Item>
+                     <a
+                         target="_blank"
+                         rel="noopener noreferrer"
+                         href="https://create-react-app.dev"
+                     >
+                         Mi perfil
+                     </a>
+                 </Menu.Item> */}
+                 <Menu.Item danger onClick={this.handleLogOut}>
+                     Cerrar Sesión
+                 </Menu.Item>
+             </Menu>
+         );
 
         return (
             <>
@@ -210,7 +227,21 @@ class App extends Component<AppProps, AppState> {
                             }
                             {
                                 currentUser &&
-                                <Button type="primary" onClick={this.handleLogOut}> Salir </Button>
+                        <Dropdown overlay={menu}>
+                            <a
+                                className="ant-dropdown-link"
+                                onClick={(e) => e.preventDefault()}
+                                href="/#"
+                            >
+                                {/* <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" /> */}
+                                <Avatar
+                                    style={{ backgroundColor: '#188dba', marginRight: 10 }}
+                                    icon={<UserOutlined />}                                    
+                                />
+                                {currentUser?.email} <DownOutlined />
+                            </a>
+                        </Dropdown>
+                               
                             }
                         </Space>
 

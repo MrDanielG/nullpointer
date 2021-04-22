@@ -48,7 +48,7 @@ class App extends Component<AppProps, AppState> {
         try {
             await logOut();
             message.success('Sesión Terminada');
-            this.props.history.push('/');
+            //this.props.history.push('/');
         } catch (error) {
             message.error('Error al Cerrar Sesión');
             console.log(error);
