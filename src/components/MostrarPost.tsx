@@ -56,7 +56,15 @@ export const MostrarPost = (props: Props) => {
     return (
         <div className="mostrar-post">
             <PageHeader title="Regresar" onBack={() => history.goBack()} />
-            {post && <PostItem post={post} isReply={false} />}
+            {post &&
+                <PostItem post={post} isReply={false} />
+            }
+            <Typography.Title level={4}>
+                {
+                    respuestas &&
+                    respuestas.length + " respuestas"
+                }
+            </Typography.Title>
             <Steps direction="vertical">
                 {post &&
                     respuestas &&

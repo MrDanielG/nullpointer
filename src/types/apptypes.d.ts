@@ -1,5 +1,5 @@
 interface DocData {
-    id?: string;
+    id: string;
 }
 interface Usuario extends DocData {
     nombre: string;

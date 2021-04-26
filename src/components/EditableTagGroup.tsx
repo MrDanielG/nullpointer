@@ -23,10 +23,20 @@ class EditableTagGroup extends React.Component<EditableTagGroupProps, EditableTa
         editInputIndex: -1,
         editInputValue: '',
     };
-
+    componentDidUpdate(prevProps: EditableTagGroupProps) {
+        if (this.props !== prevProps && this.props.value && this.state.tags.length === 0) {
+            this.setState({
+                tags: this.props.value
+            });            
+        }
+    }
     handleClose = (removedTag: string) => {
         const tags = this.state.tags.filter(tag => tag !== removedTag);
         this.setState({ tags });
+        if (this.props.onChange) {
+            this.props.onChange(tags);
+
+        }
 
     };
 
@@ -36,7 +46,7 @@ class EditableTagGroup extends React.Component<EditableTagGroupProps, EditableTa
 
     handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         this.setState({ inputValue: e.target.value });
-
+        
     };
 
     handleInputConfirm = () => {
@@ -52,7 +62,7 @@ class EditableTagGroup extends React.Component<EditableTagGroupProps, EditableTa
         });
         if (this.props.onChange) {
             this.props.onChange(tags);
- 
+
         }
 
     };
@@ -65,13 +75,13 @@ class EditableTagGroup extends React.Component<EditableTagGroupProps, EditableTa
     handleEditInputConfirm = () => {
         this.setState(({ tags, editInputIndex, editInputValue }) => {
             let newTags = [...tags];
-            if(editInputValue !== ''){
+            if (editInputValue !== '') {
                 newTags[editInputIndex] = editInputValue;
             } else {
-                
-               newTags = this.state.tags.filter(tag => tag !== newTags[editInputIndex]);
+
+                newTags = this.state.tags.filter(tag => tag !== newTags[editInputIndex]);
             }
-            
+
             if (this.props.onChange) {
                 this.props.onChange(newTags);
             }
@@ -89,54 +99,57 @@ class EditableTagGroup extends React.Component<EditableTagGroupProps, EditableTa
         const { tags, inputVisible, inputValue, editInputIndex, editInputValue } = this.state;
         return (
             <>
-                {tags.map((tag, index) => {
-                    if (editInputIndex === index) {
-                        return (
-                            <Input
-                                ref={this.editInput}
+                {
+                    tags &&
+                    tags.map((tag, index) => {
+                        if (editInputIndex === index) {
+                            return (
+                                <Input
+                                    ref={this.editInput}
+                                    key={tag}
+                                    size="small"
+                                    className="tag-input"
+                                    value={editInputValue}
+                                    onChange={this.handleEditInputChange}
+                                    onBlur={this.handleEditInputConfirm}
+                                    onPressEnter={this.handleEditInputConfirm}
+
+                                />
+                            );
+                        }
+
+                        const isLongTag = tag.length > 20;
+
+                        const tagElem = (
+                            <Tag
+                                className="edit-tag"
                                 key={tag}
-                                size="small"
-                                className="tag-input"
-                                value={editInputValue}
-                                onChange={this.handleEditInputChange}
-                                onBlur={this.handleEditInputConfirm}
-                                onPressEnter={this.handleEditInputConfirm}
-
-                            />
-                        );
-                    }
-
-                    const isLongTag = tag.length > 20;
-
-                    const tagElem = (
-                        <Tag
-                            className="edit-tag"
-                            key={tag}
-                            closable={true}
-                            onClose={() => this.handleClose(tag)}
-                        >
-                            <span
-                                onDoubleClick={e => {
-                                    if (index !== 0) {
-                                        this.setState({ editInputIndex: index, editInputValue: tag }, () => {
-                                            this.editInput.current?.focus();
-                                        });
-                                        e.preventDefault();
-                                    }
-                                }}
+                                closable={true}
+                                onClose={() => this.handleClose(tag)}
+                                color="blue"
                             >
-                                {isLongTag ? `${tag.slice(0, 20)}...` : tag}
-                            </span>
-                        </Tag>
-                    );
-                    return isLongTag ? (
-                        <Tooltip title={tag} key={tag}>
-                            {tagElem}
-                        </Tooltip>
-                    ) : (
-                            tagElem
+                                <span
+                                    onDoubleClick={e => {
+                                        if (index !== 0) {
+                                            this.setState({ editInputIndex: index, editInputValue: tag }, () => {
+                                                this.editInput.current?.focus();
+                                            });
+                                            e.preventDefault();
+                                        }
+                                    }}
+                                >
+                                    {isLongTag ? `${tag.slice(0, 20)}...` : tag}
+                                </span>
+                            </Tag>
                         );
-                })}
+                        return isLongTag ? (
+                            <Tooltip title={tag} key={tag}>
+                                {tagElem}
+                            </Tooltip>
+                        ) : (
+                                tagElem
+                            );
+                    })}
                 {inputVisible && (
                     <Input
                         ref={this.input}
@@ -150,7 +163,8 @@ class EditableTagGroup extends React.Component<EditableTagGroupProps, EditableTa
                     />
                 )}
                 {!inputVisible && (
-                    <Tag className="site-tag-plus" onClick={this.showInput}>
+                    <Tag className="site-tag-plus" onClick={this.showInput} color="blue">
+
                         <PlusOutlined /> Nueva etiqueta
                     </Tag>
                 )}

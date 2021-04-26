@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Card, Col, Row, Tag, Tooltip, Typography, Avatar, Button } from 'antd';
+
+import { Card, Col, Row, Tag, Tooltip, Typography, Avatar, Button, message } from 'antd';
+
+
 import {
     DislikeOutlined,
     LikeOutlined,
@@ -10,6 +13,10 @@ import { useFirebase } from '../contexts/FirebaseContext';
 import './PostItem.css';
 import { authData, useAuth } from '../contexts/AuthContext';
 import { CheckOutlined } from '@ant-design/icons';
+import EditarPost from './EditarPost';
+import { MarkdownEditor } from './MarkdownEditor';
+
+
 
 interface Props {
     post: Post;
@@ -19,8 +26,9 @@ interface Props {
     parentPost?: string;
 }
 
+
 export const PostItem = (props: Props) => {
-    const { usuarioM, likesM } = useFirebase();
+    const { usuarioM, likesM, postM } = useFirebase();
     const { currentUser } = useAuth() as authData;
     const [usuario, setUsuario] = useState<Usuario>();
     const [action, setAction] = useState('');
@@ -71,20 +79,57 @@ export const PostItem = (props: Props) => {
             props.acceptReply(props.post.id);
         }
     };
+    const saveContent = async (value: string) => {
+        try {
+            const path = props.isReply ? props.parentPost + '/respuestas/' + props.post.id : props.post.id;
+            await postM.update(path, {
+                contenido: value,
+                fechaModificacion: new Date()
+            });
+            message.success("Se actualizó tu respuesta")
 
+        } catch (error) {
+            console.error(error);
+            message.error("No se pudo actualizar tu respuesta");
+
+        }
+
+    }
     return (
         <>
-            <Card bordered={false} size="small" className="post-item">
+
+            <Card
+                bordered={false}
+                size="small"
+                className="post-item"
+            >
+
                 <Row gutter={16}>
                     <Col span={21}>
                         {props.post.titulo && (
                             <Typography.Title level={4}>
                                 {props.post.titulo}
+                                {
+                                    currentUser?.id === usuario?.id &&
+                                    <EditarPost post={props.post} />
+                                }
                             </Typography.Title>
                         )}
-                        <Typography.Paragraph>
-                            {props.post.contenido}
+                        <Typography.Paragraph type="secondary">
+                            {"Publicado el: " +
+                                props.post.fechaCreacion.toLocaleDateString(
+                                    'es-MX',
+                                    {
+                                        hour12: true,
+                                        hour: 'numeric',
+                                        minute: 'numeric',
+                                    }
+                                )}
                         </Typography.Paragraph>
+                        <MarkdownEditor editable={(currentUser?.id === usuario?.id)}
+                            content={props.post.contenido}
+                            onSave={saveContent} />
+
                     </Col>
                     <Col span={3}>
                         {props.post.tags &&
@@ -152,16 +197,15 @@ export const PostItem = (props: Props) => {
                         />
                     )}
                     <Typography.Text type="secondary">
-                        Publicado el:
-                        {' ' +
-                            props.post.fechaCreacion.toLocaleDateString(
-                                'es-MX',
-                                {
-                                    hour12: true,
-                                    hour: 'numeric',
-                                    minute: 'numeric',
-                                }
-                            )}
+                        {
+                            props.post.fechaCreacion.getTime() !== props.post.fechaModificacion.getTime() &&
+                            "Actualizado el: " +
+                            props.post.fechaModificacion.toLocaleDateString('es-MX', {
+                                hour12: true,
+                                hour: 'numeric',
+                                minute: 'numeric',
+                            })
+                        }
                     </Typography.Text>
                 </div>
             </Card>

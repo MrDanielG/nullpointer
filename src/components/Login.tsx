@@ -83,10 +83,7 @@ export const Login = () => {
                         >
                             <Checkbox>Recordarme</Checkbox>
                         </Form.Item>
-
-                        <a className="login-form-forgot" href="">
-                            Olvidé mi contraseña
-                        </a>
+                        <Button type="link">Olvidé mi contraseña</Button>
                     </Form.Item>
 
                     <Form.Item>

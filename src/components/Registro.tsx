@@ -167,7 +167,7 @@ export const Registro = () => {
                             <Option value="4">Cuarto Semestre</Option>
                             <Option value="5">Quinto Semestre</Option>
                             <Option value="6">Sexto Semestre</Option>
-                            <Option value="7">Septimo Semestre</Option>
+                            <Option value="7">Séptimo Semestre</Option>
                             <Option value="8">Octavo Semestre</Option>
                             <Option value="9">Noveno Semestre</Option>
                         </Select>
@@ -181,8 +181,8 @@ export const Registro = () => {
                             disabled={loading}
                         >
                             Registrarse
-                        </Button>
-                        Ya tienes cuenta? <Link to="/login">Inicia Sesión</Link>
+                        </Button>                        
+                        ¿Ya tienes cuenta? <Link to="/login">Inicia Sesión</Link>
                     </Form.Item>
                 </Form>
             </Card>

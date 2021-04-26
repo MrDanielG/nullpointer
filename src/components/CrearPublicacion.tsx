@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
     Form,
     Input,
@@ -13,38 +13,56 @@ import { Store } from 'antd/lib/form/interface';
 
 import { useFirebase } from '../contexts/FirebaseContext';
 import { useAuth } from '../contexts/AuthContext';
+import { MarkdownInput } from './MarkdownInput';
 
 
 interface CrearPublicacionProps {
     visible: boolean;
     onCreate: (values: Store) => void;
     onCancel: () => void;
+    title?: string;
+    okText?: string;
+    post?: Post;
+    edit?: boolean;
 }
 
 const CrearPublicacion: React.FC<CrearPublicacionProps> = ({
     visible,
     onCreate,
     onCancel,
+    okText,
+    title,
+    post,
+    edit = false
 }) => {
-
     const [form] = Form.useForm();
+
+    useEffect(() => {
+        if (post) {
+            form.setFieldsValue({
+                titulo: post.titulo,
+                contenido: post.contenido,
+                tags: post.tags
+            });
+        }
+    }, [form, post]);
+
     return (
         <>
 
             <Modal
                 visible={visible}
-                title="Crear una nueva publicación"
-                okText="Publicar"
-
+                title={title ? title : "Crear un nuevo Post"}
+                okText={okText ? okText : "Publicar"}
+                forceRender={true}
                 cancelText="Cancelar"
                 onCancel={onCancel}
                 onOk={() => {
                     form
                         .validateFields()
                         .then(values => {
-                            console.log('Values: ', values);
+                            onCreate(values);
                             form.resetFields();
-                            onCreate(values)
                         })
                         .catch(info => {
                             console.log('Validate Failed:', info);
@@ -62,13 +80,18 @@ const CrearPublicacion: React.FC<CrearPublicacionProps> = ({
                     >
                         <Input placeholder="Escribe tu pregunta" />
                     </Form.Item>
-                    <Form.Item
-                        name="contenido"
-                        label="Cuerpo de la publicación"
-                        rules={[{ required: true, message: 'Inserta el cuerpo de la publicación' }]}
-                    >
-                        <Input.TextArea placeholder="Explica tu pregunta" />
-                    </Form.Item>
+                    {
+                        !edit &&
+                        <Form.Item
+                            initialValue={post?.contenido}
+                            name="contenido"
+                            label="Cuerpo de la publicación"
+                            rules={[{ required: true, message: 'Inserta el cuerpo de la publicación' }]}
+                        >
+                            <MarkdownInput placeholder="Explica tu pregunta" />
+                        </Form.Item>
+                    }
+
                     <Form.Item
                         name="tags"
                         label="Etiquetas"
@@ -95,7 +118,7 @@ export const PreguntarBtn: React.FC = () => {
             fechaModificacion: new Date(),
             titulo: values.titulo,
             contenido: values.contenido,
-            autor_id: currentUser ? currentUser.uid : '',
+            autor_id: currentUser ? currentUser.id : '',
             tags: values.tags
         }
         firebaseCtx.postM.create(post);
