@@ -4,7 +4,7 @@ import { useFirebase } from '../contexts/FirebaseContext';
 import { MarkdownInput } from './MarkdownInput';
 
 
-interface Props {
+interface Props extends React.HTMLProps<HTMLFormElement> {
     idPost: string;
     idUser: string;
 }
@@ -41,7 +41,7 @@ export const EditorRespuesta = (props: Props) => {
             });
     };
     return (
-        <Form form={form} onFinish={onSubmit}>
+        <Form form={form} onFinish={onSubmit} className={props.className}>
             <Form.Item
                 name="contenido"
                 initialValue=""

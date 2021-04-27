@@ -113,6 +113,7 @@ export const MostrarPost = (props: Props) => {
                         Responde a esta pregunta
                     </Typography.Title>
                     <EditorRespuesta
+                    className="editor-respuesta"
                         idPost={params.id}
                         idUser={currentUser?.uid!}
                     />
