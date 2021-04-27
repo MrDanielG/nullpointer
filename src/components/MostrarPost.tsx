@@ -28,7 +28,7 @@ export const MostrarPost = (props: Props) => {
                     respuesta_aceptada_id: id,
                     resuelto: true,
                 });
-                message.success('Respuesta acceptada');
+                message.success('Respuesta aceptada');
             } catch (error) {
                 message.error('No se pudo actualizar el post');
                 console.error(error);
