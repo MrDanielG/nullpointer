@@ -18,6 +18,7 @@ interface Post extends DocData {
     resuelto: boolean;
     respuesta_aceptada_id?: string;
     tags?: string[];
+    cerrado?: boolean;
 }
 
 interface Like extends DocData {

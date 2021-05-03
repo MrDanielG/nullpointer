@@ -4,7 +4,7 @@ import { useFirebase } from '../contexts/FirebaseContext';
 import { useAuth } from '../contexts/AuthContext';
 import { useParams } from 'react-router-dom';
 import { PostItem } from './PostItem';
-import { Steps, Typography, PageHeader, message } from 'antd';
+import { Steps, Typography, PageHeader, message, Result } from 'antd';
 import { MessageTwoTone, CheckCircleTwoTone } from '@ant-design/icons';
 import { EditorRespuesta } from './EditorRespuesta';
 import { useHistory } from 'react-router-dom';
@@ -57,12 +57,12 @@ export const MostrarPost = (props: Props) => {
         <div className="mostrar-post">
             <PageHeader title="Regresar" onBack={() => history.goBack()} />
             {post &&
-                <PostItem post={post} isReply={false} />
+                <PostItem post={post} isReply={false} canDelete={ respuestas?.length === 0 }/>
             }
             <Typography.Title level={4}>
                 {
                     respuestas &&
-                    respuestas.length + " respuestas"
+                    respuestas.length + (respuestas.length === 1 ? " respuesta" : " respuestas")
                 }
             </Typography.Title>
             <Steps direction="vertical">
@@ -92,6 +92,7 @@ export const MostrarPost = (props: Props) => {
                                         post={respuesta}
                                         isReply={true}
                                         parentPost={post.id}
+                                        canDelete={true}
                                         canAccept={
                                             currentUser !== null &&
                                             post.autor_id === currentUser.uid &&
@@ -105,7 +106,8 @@ export const MostrarPost = (props: Props) => {
                         ) //Este paréntesis apareció en entrega 2
                     )}
             </Steps>
-            {currentUser && (
+            {currentUser && 
+            post?.cerrado  === false && (
                 <>
                     <br />
                     <br />
@@ -119,6 +121,14 @@ export const MostrarPost = (props: Props) => {
                     />
                 </>
             )}
+            {
+                post?.cerrado &&
+                <Result 
+                    title="Pregunta cerrada"
+                    subTitle="Esta pregunta ya no acepta nuevas respuestas porque ha sido cerrada por su autor."
+                    status="info"
+                />
+            }
         </div>
     );
 };

@@ -106,7 +106,7 @@ class App extends Component<AppProps, AppState> {
                                 </>
                             )}
                             {currentUser && (
-                                <Dropdown overlay={menu}>
+                                <Dropdown overlay={menu} trigger={['click']}>
                                     <a
                                         className="ant-dropdown-link"
                                         onClick={(e) => e.preventDefault()}
@@ -120,7 +120,7 @@ class App extends Component<AppProps, AppState> {
                                             }}
                                             icon={<UserOutlined />}
                                         />
-                                        {currentUser?.email} <DownOutlined />
+                                        {currentUser?.nombre} <DownOutlined />
                                     </a>
                                 </Dropdown>
                             )}

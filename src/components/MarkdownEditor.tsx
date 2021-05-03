@@ -5,47 +5,59 @@ import { MarkdownRender } from './MarkdownRender';
 import './MarkdownEditor.css';
 import { MarkdownInput } from './MarkdownInput';
 
-interface Props {
+interface Props extends React.HTMLProps<HTMLElement> {
     content: string;
     editable?: boolean;
     onSave?: (value: string) => void;
 }
 
-export const MarkdownEditor: React.FC<Props> = ({ editable = false, ...props }) => {
+export const MarkdownEditor: React.FC<Props> = ({
+    editable = false,
+    ...props
+}) => {
     const [visible, setVisible] = useState<boolean>(false);
     const [content, setContent] = useState<string>(props.content);
+
+    const button = props.disabled ? (
+        <Tooltip title="Publicación cerrada, no se puede editar">
+            <Button
+                disabled
+                type="link"
+                icon={<EditOutlined style={{ fontSize: '16px' }} />}
+            />
+        </Tooltip>
+    ) : (
+        <Tooltip title="Editar contenido del post">
+            <Button
+                onClick={() => {
+                    setVisible(true);
+                }}
+                type="link"
+                icon={<EditOutlined style={{ fontSize: '16px' }} />}
+            />
+        </Tooltip>
+    );
+    
     return (
         <>
-            {
-                editable &&
-                !visible &&
+            {editable && !visible && (
                 <div className="mde-edit-btn">
-                    <Tooltip title="Editar contenido del post">
-                        <Button onClick={() => {
-                            setVisible(true);
-                        }}
-                            type="link"
-                            icon={<EditOutlined style={{ fontSize: '16px' }} />}
-                        />
-                    </Tooltip>
+                    { button }
                 </div>
-            }
-            {
-                !visible &&
-                <MarkdownRender content={props.content} />
-            }
-            {
-                editable &&
-                visible &&
+            )}
+            {!visible && <MarkdownRender content={props.content} />}
+            {editable && visible && (
                 <div>
                     <MarkdownInput
                         value={content}
                         onChange={(value) => {
-                            setContent(value)
+                            setContent(value);
                         }}
                     />
                     <div className="mde-action-btns">
-                        <Button type="default" danger
+                        <Button
+                            type="default"
+                            danger
                             onClick={() => {
                                 setContent(props.content);
                                 setVisible(false);
@@ -53,19 +65,20 @@ export const MarkdownEditor: React.FC<Props> = ({ editable = false, ...props }) 
                         >
                             Cancelar
                         </Button>
-                        <Button type="primary" onClick={
-                            () => {
+                        <Button
+                            type="primary"
+                            onClick={() => {
                                 if (props.onSave) {
                                     props.onSave(content);
                                 }
                                 setVisible(false);
-                            }
-                        } >
+                            }}
+                        >
                             Guardar
                         </Button>
                     </div>
                 </div>
-            }
+            )}
         </>
     );
-}
+};
