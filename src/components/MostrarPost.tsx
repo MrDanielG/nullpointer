@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import './MostrarPost.css';
-import { useFirebase } from '../contexts/FirebaseContext';
+import { CheckCircleTwoTone, MessageTwoTone } from '@ant-design/icons';
+import { message, PageHeader, Result, Steps, Typography } from 'antd';
+import React, { useEffect, useState } from 'react';
+import { useHistory, useParams } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import { useParams } from 'react-router-dom';
-import { PostItem } from './PostItem';
-import { Steps, Typography, PageHeader, message, Result } from 'antd';
-import { MessageTwoTone, CheckCircleTwoTone } from '@ant-design/icons';
+import { useFirebase } from '../contexts/FirebaseContext';
 import { EditorRespuesta } from './EditorRespuesta';
-import { useHistory } from 'react-router-dom';
+import './MostrarPost.css';
+import { PostItem } from './PostItem';
 
 interface RouteInfo {
     id: string;
@@ -56,14 +55,19 @@ export const MostrarPost = (props: Props) => {
     return (
         <div className="mostrar-post">
             <PageHeader title="Regresar" onBack={() => history.goBack()} />
-            {post &&
-                <PostItem post={post} isReply={false} canDelete={ respuestas?.length === 0 }/>
-            }
+            {post && (
+                <PostItem
+                    post={post}
+                    isReply={false}
+                    canDelete={respuestas?.length === 0 || currentUser?.isAdmin}
+                />
+            )}
             <Typography.Title level={4}>
-                {
-                    respuestas &&
-                    respuestas.length + (respuestas.length === 1 ? " respuesta" : " respuestas")
-                }
+                {respuestas &&
+                    respuestas.length +
+                        (respuestas.length === 1
+                            ? ' respuesta'
+                            : ' respuestas')}
             </Typography.Title>
             <Steps direction="vertical">
                 {post &&
@@ -106,8 +110,7 @@ export const MostrarPost = (props: Props) => {
                         ) //Este paréntesis apareció en entrega 2
                     )}
             </Steps>
-            {currentUser && 
-            post?.cerrado  === false && (
+            {currentUser && post?.cerrado === false && (
                 <>
                     <br />
                     <br />
@@ -115,20 +118,19 @@ export const MostrarPost = (props: Props) => {
                         Responde a esta pregunta
                     </Typography.Title>
                     <EditorRespuesta
-                    className="editor-respuesta"
+                        className="editor-respuesta"
                         idPost={params.id}
                         idUser={currentUser?.uid!}
                     />
                 </>
             )}
-            {
-                post?.cerrado &&
-                <Result 
+            {post?.cerrado && (
+                <Result
                     title="Pregunta cerrada"
                     subTitle="Esta pregunta ya no acepta nuevas respuestas porque ha sido cerrada por su autor."
                     status="info"
                 />
-            }
+            )}
         </div>
     );
 };

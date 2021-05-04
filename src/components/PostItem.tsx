@@ -1,34 +1,33 @@
-import React, { useState, useEffect } from 'react';
-import { MenuClickEventHandler } from 'rc-menu/lib/interface';
 import {
+    CheckOutlined,
+    DislikeFilled,
+    DislikeOutlined,
+    EllipsisOutlined,
+    LikeFilled,
+    LikeOutlined,
+} from '@ant-design/icons';
+import {
+    Avatar,
+    Button,
     Card,
     Col,
+    Dropdown,
+    Menu,
+    message,
+    Modal,
     Row,
     Tag,
     Tooltip,
     Typography,
-    Avatar,
-    Menu,
-    Dropdown,
-    Modal,
-    Button,
-    message,
 } from 'antd';
-
-import {
-    DislikeOutlined,
-    LikeOutlined,
-    DislikeFilled,
-    EllipsisOutlined,
-    LikeFilled,
-} from '@ant-design/icons';
-import { useFirebase } from '../contexts/FirebaseContext';
-import './PostItem.css';
+import { MenuClickEventHandler } from 'rc-menu/lib/interface';
+import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { authData, useAuth } from '../contexts/AuthContext';
-import { CheckOutlined } from '@ant-design/icons';
+import { useFirebase } from '../contexts/FirebaseContext';
 import EditarPost from './EditarPost';
 import { MarkdownEditor } from './MarkdownEditor';
-import { useHistory } from 'react-router-dom';
+import './PostItem.css';
 
 const { confirm } = Modal;
 
@@ -64,10 +63,14 @@ export const PostItem = (props: Props) => {
             message.error(`Error al eliminar la ${postType}`);
         }
     };
-    const confirmDelete = () => {        
+    const confirmDelete = () => {
         confirm({
             title: `¿Estás seguro que deseas eliminar la ${postType}?`,
-            content: <h4 style={{paddingLeft: 50}}>Esta operación no se puede revertir.</h4>,
+            content: (
+                <h4 style={{ paddingLeft: 50 }}>
+                    Esta operación no se puede revertir.
+                </h4>
+            ),
             okText: 'Sí',
             okType: 'danger',
             cancelText: 'No',
@@ -189,7 +192,8 @@ export const PostItem = (props: Props) => {
                 size="small"
                 className="post-item"
                 extra={
-                    currentUser?.id === usuario?.id && (
+                    (currentUser?.id === usuario?.id ||
+                        currentUser?.isAdmin) && (
                         <Dropdown overlay={menu} trigger={['click']}>
                             <EllipsisOutlined
                                 onClick={(e) => e.preventDefault()}
