@@ -1,12 +1,13 @@
-import React, { useState } from 'react'
-import { Form, Button, message } from 'antd';
+import { Button, Form, message } from 'antd';
+import React, { useState } from 'react';
 import { useFirebase } from '../contexts/FirebaseContext';
 import { MarkdownInput } from './MarkdownInput';
-
 
 interface Props extends React.HTMLProps<HTMLFormElement> {
     idPost: string;
     idUser: string;
+    parentPost?: string;
+    isComment?: boolean;
 }
 
 export const EditorRespuesta = (props: Props) => {
@@ -14,10 +15,11 @@ export const EditorRespuesta = (props: Props) => {
     const [submitting, setSubmitting] = useState(false);
     const { postM } = useFirebase();
     const [form] = Form.useForm();
+    // props.isComment = false; // Por defecto no es comentario
 
     const onSubmit = () => {
         const reply: Post = {
-            id: "",
+            id: '',
             fechaCreacion: new Date(),
             fechaModificacion: new Date(),
             contenido: respuesta,
@@ -26,32 +28,56 @@ export const EditorRespuesta = (props: Props) => {
             resuelto: false,
         };
         setSubmitting(true);
-        postM
-            .addReply(props.idPost, reply)
-            .then((val) => {
-                message.success('Operación exitosa');
-                form.resetFields();
-                setRespuesta('');
-            })
-            .catch((error) => {
-                message.error(error);
-            })
-            .finally(() => {
-                setSubmitting(false);
-            });
+
+        if (!props.isComment) {
+            postM
+                .addReply(props.idPost, reply)
+                .then((val) => {
+                    message.success('Operación exitosa');
+                    form.resetFields();
+                    setRespuesta('');
+                })
+                .catch((error) => {
+                    message.error(error);
+                    message.error('Error al crear Respuesta');
+                })
+                .finally(() => {
+                    setSubmitting(false);
+                });
+        } else {
+            postM
+                .addReplyComment(props.parentPost!, props.idPost, reply)
+                .then((val) => {
+                    console.log(val);
+                    message.success('Comentario creado');
+                    form.resetFields();
+                    setRespuesta('');
+                })
+                .catch((error) => {
+                    message.error(error);
+                    message.error('Error al crear comentario');
+                })
+                .finally(() => setSubmitting(false));
+        }
     };
     return (
         <Form form={form} onFinish={onSubmit} className={props.className}>
             <Form.Item
                 name="contenido"
                 initialValue=""
-                rules={[{ required: true, message: "No puedes enviar un mensaje vacío" }]}
+                rules={[
+                    {
+                        required: true,
+                        message: 'No puedes enviar un mensaje vacío',
+                    },
+                ]}
             >
-                <MarkdownInput                                     
+                <MarkdownInput
                     placeholder="Escribe tu repuesta"
                     onChange={(value) => {
                         setRespuesta(value);
-                    }} />
+                    }}
+                />
             </Form.Item>
             <Form.Item>
                 <Button

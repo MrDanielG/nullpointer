@@ -26,6 +26,7 @@ import { useHistory } from 'react-router-dom';
 import { authData, useAuth } from '../contexts/AuthContext';
 import { useFirebase } from '../contexts/FirebaseContext';
 import EditarPost from './EditarPost';
+import EditorRespuesta from './EditorRespuesta';
 import { MarkdownEditor } from './MarkdownEditor';
 import './PostItem.css';
 
@@ -45,6 +46,7 @@ export const PostItem = (props: Props) => {
     const { currentUser } = useAuth() as authData;
     const [usuario, setUsuario] = useState<Usuario>();
     const [action, setAction] = useState('');
+    const [showReply, setShowReply] = useState<boolean>(false);
     const history = useHistory();
     const postType = props.isReply ? 'respuesta' : 'pregunta';
 
@@ -309,6 +311,30 @@ export const PostItem = (props: Props) => {
                                         minute: 'numeric',
                                     }
                                 )}
+                        {currentUser && props.isReply && (
+                            <Button
+                                type="link"
+                                onClick={() => setShowReply(!showReply)}
+                            >
+                                {showReply ? 'Cancelar' : 'Responder'}
+                            </Button>
+                        )}
+                        {currentUser && showReply && (
+                            <>
+                                <br />
+                                <br />
+                                <Typography.Title level={5}>
+                                    Añade un comentario a esta respuesta
+                                </Typography.Title>
+                                <EditorRespuesta
+                                    className="editor-respuesta"
+                                    idPost={props.post.id}
+                                    idUser={currentUser?.uid!}
+                                    isComment={true}
+                                    parentPost={props.parentPost}
+                                />
+                            </>
+                        )}
                     </Typography.Text>
                 </div>
             </Card>
