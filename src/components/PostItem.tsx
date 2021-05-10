@@ -26,6 +26,7 @@ import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { authData, useAuth } from '../contexts/AuthContext';
 import { useFirebase } from '../contexts/FirebaseContext';
+import { db } from '../firebase';
 import EditarPost from './EditarPost';
 import EditorRespuesta from './EditorRespuesta';
 import { MarkdownEditor } from './MarkdownEditor';
@@ -158,13 +159,40 @@ export const PostItem = (props: Props) => {
     };
 
     useEffect(() => {
+        const setData = (data: Post[]) => {
+            data.sort((r1, r2) => {
+                const f1 = r1.fechaCreacion.getTime();
+                const f2 = r2.fechaCreacion.getTime();
+                return f1 - f2;
+            });
+            setComments(data);
+        };
+
+        const unsubscribe = db
+            .collection(
+                `/posts/${props.parentPost}/respuestas/${props.post.id}/comentarios`
+            )
+            .onSnapshot((snapshot) => {
+                const docs = snapshot.docs.map((doc) => {
+                    return { ...doc.data(), id: doc.id } as Post;
+                });
+                setComments(docs);
+            });
+
         let isSubscribed = true;
         usuarioM.read(props.post.autor_id).then((user) => {
             if (isSubscribed) setUsuario(user);
         });
-        setComments(props.post.comentarios);
+        // setComments(props.post.comentarios);
         return () => {
             isSubscribed = false;
+            unsubscribe();
+            if (props.parentPost)
+                postM.subscribeToReplieComments(
+                    props.parentPost,
+                    props.post.id,
+                    setData
+                );
         };
     }, [usuarioM, props.post.autor_id]);
 
@@ -186,6 +214,20 @@ export const PostItem = (props: Props) => {
         } catch (error) {
             console.error(error);
             message.error('No se pudo actualizar tu respuesta');
+        }
+    };
+
+    const saveComment = async (value: string, commentId: string) => {
+        try {
+            const path = `/posts/${props.parentPost}/respuestas/${props.post.id}/comentarios/${commentId}`;
+            await postM.update(path, {
+                contenido: value,
+                fechaModificacion: new Date(),
+            });
+            message.success('Se actualizó tu comentario');
+        } catch (error) {
+            console.error(error);
+            message.error('No se pudo actualizar tu comentario');
         }
     };
     return (
@@ -345,7 +387,13 @@ export const PostItem = (props: Props) => {
                     {comments &&
                         comments.map((comentario) => (
                             <Timeline.Item key={comentario.id}>
-                                {comentario.contenido}
+                                <MarkdownEditor
+                                    editable={
+                                        currentUser?.id === comentario.autor_id
+                                    }
+                                    content={comentario.contenido}
+                                    // onSave={() => saveComment( ,comentario.id)}
+                                />
                             </Timeline.Item>
                         ))}
                 </Timeline>

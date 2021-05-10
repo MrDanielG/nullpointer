@@ -43,12 +43,6 @@ export const MostrarPost = (props: Props) => {
                 const f2 = r2.fechaCreacion.getTime();
                 return f1 - f2;
             });
-            data.map((res) => {
-                res.comentarios = firebaseCtx.postM.getComments(
-                    post?.id!,
-                    res.id
-                );
-            });
             setRespuestas(data);
         };
         const post = firebaseCtx.posts.find((val) => val.id === params.id);

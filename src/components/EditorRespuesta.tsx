@@ -48,7 +48,6 @@ export const EditorRespuesta = (props: Props) => {
             postM
                 .addReplyComment(props.parentPost!, props.idPost, reply)
                 .then((val) => {
-                    console.log(val);
                     message.success('Comentario creado');
                     form.resetFields();
                     setRespuesta('');
