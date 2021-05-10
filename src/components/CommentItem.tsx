@@ -78,7 +78,7 @@ const CommentItem = (props: Props) => {
 
     useEffect(() => {
         usuarioM.read(comment.autor_id).then((user) => setUser(user));
-    }, []);
+    }, [comment.autor_id, usuarioM]);
 
     return (
         <>

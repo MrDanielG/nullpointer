@@ -195,7 +195,7 @@ export const PostItem = (props: Props) => {
                     setData
                 );
         };
-    }, [usuarioM, props.post.autor_id]);
+    }, [usuarioM, props.post.autor_id, postM, props.parentPost, props.post.id]);
 
     const accept = () => {
         if (props.acceptReply && props.post.id) {
