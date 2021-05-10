@@ -27,6 +27,7 @@ import { useHistory } from 'react-router-dom';
 import { authData, useAuth } from '../contexts/AuthContext';
 import { useFirebase } from '../contexts/FirebaseContext';
 import { db } from '../firebase';
+import CommentItem from './CommentItem';
 import EditarPost from './EditarPost';
 import EditorRespuesta from './EditorRespuesta';
 import { MarkdownEditor } from './MarkdownEditor';
@@ -217,19 +218,6 @@ export const PostItem = (props: Props) => {
         }
     };
 
-    const saveComment = async (value: string, commentId: string) => {
-        try {
-            const path = `/posts/${props.parentPost}/respuestas/${props.post.id}/comentarios/${commentId}`;
-            await postM.update(path, {
-                contenido: value,
-                fechaModificacion: new Date(),
-            });
-            message.success('Se actualizó tu comentario');
-        } catch (error) {
-            console.error(error);
-            message.error('No se pudo actualizar tu comentario');
-        }
-    };
     return (
         <>
             <Card
@@ -387,12 +375,17 @@ export const PostItem = (props: Props) => {
                     {comments &&
                         comments.map((comentario) => (
                             <Timeline.Item key={comentario.id}>
-                                <MarkdownEditor
+                                <CommentItem
+                                    idPost={props.parentPost!}
+                                    idReply={props.post.id}
+                                    comment={comentario}
                                     editable={
                                         currentUser?.id === comentario.autor_id
                                     }
-                                    content={comentario.contenido}
-                                    // onSave={() => saveComment( ,comentario.id)}
+                                    canDelete={
+                                        currentUser?.isAdmin ||
+                                        currentUser?.id === comentario.autor_id
+                                    }
                                 />
                             </Timeline.Item>
                         ))}
