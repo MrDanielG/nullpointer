@@ -33,9 +33,26 @@ class PostsModel extends FirebaseModel<Post> {
         setData: (data: Post[]) => void
     ) {
         const comments = db.collection(
-            '/posts/' + idPost + '/respuestas' + idReply + '/comentarios'
+            '/posts/' + idPost + '/respuestas/' + idReply + '/comentarios'
         );
         return this.subscribe(setData, comments);
+    }
+
+    getComments(idPost: string, idReply: string): Post[] {
+        let myComments: Post[] = [];
+        db.collection(
+            '/posts/' + idPost + '/respuestas/' + idReply + '/comentarios'
+        )
+            .get()
+            .then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    const comment = { ...doc.data(), id: doc.id } as Post;
+                    myComments.push(comment);
+                });
+            })
+            .catch(() => console.log('Falla Comentarios'));
+
+        return myComments;
     }
 }
 

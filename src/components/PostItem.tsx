@@ -17,6 +17,7 @@ import {
     Modal,
     Row,
     Tag,
+    Timeline,
     Tooltip,
     Typography,
 } from 'antd';
@@ -47,6 +48,7 @@ export const PostItem = (props: Props) => {
     const [usuario, setUsuario] = useState<Usuario>();
     const [action, setAction] = useState('');
     const [showReply, setShowReply] = useState<boolean>(false);
+    const [comments, setComments] = useState<Post[]>();
     const history = useHistory();
     const postType = props.isReply ? 'respuesta' : 'pregunta';
 
@@ -158,10 +160,9 @@ export const PostItem = (props: Props) => {
     useEffect(() => {
         let isSubscribed = true;
         usuarioM.read(props.post.autor_id).then((user) => {
-            if (isSubscribed) {
-                setUsuario(user);
-            }
+            if (isSubscribed) setUsuario(user);
         });
+        setComments(props.post.comentarios);
         return () => {
             isSubscribed = false;
         };
@@ -337,6 +338,17 @@ export const PostItem = (props: Props) => {
                         )}
                     </Typography.Text>
                 </div>
+                <br />
+                <br />
+
+                <Timeline>
+                    {comments &&
+                        comments.map((comentario) => (
+                            <Timeline.Item key={comentario.id}>
+                                {comentario.contenido}
+                            </Timeline.Item>
+                        ))}
+                </Timeline>
             </Card>
         </>
     );

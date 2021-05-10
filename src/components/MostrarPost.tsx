@@ -43,6 +43,12 @@ export const MostrarPost = (props: Props) => {
                 const f2 = r2.fechaCreacion.getTime();
                 return f1 - f2;
             });
+            data.map((res) => {
+                res.comentarios = firebaseCtx.postM.getComments(
+                    post?.id!,
+                    res.id
+                );
+            });
             setRespuestas(data);
         };
         const post = firebaseCtx.posts.find((val) => val.id === params.id);
@@ -92,19 +98,22 @@ export const MostrarPost = (props: Props) => {
                                 key={respuesta.id}
                                 status="finish"
                                 description={
-                                    <PostItem
-                                        post={respuesta}
-                                        isReply={true}
-                                        parentPost={post.id}
-                                        canDelete={true}
-                                        canAccept={
-                                            currentUser !== null &&
-                                            post.autor_id === currentUser.uid &&
-                                            post.respuesta_aceptada_id !==
-                                                respuesta.id
-                                        }
-                                        acceptReply={acceptReply}
-                                    />
+                                    <>
+                                        <PostItem
+                                            post={respuesta}
+                                            isReply={true}
+                                            parentPost={post.id}
+                                            canDelete={true}
+                                            canAccept={
+                                                currentUser !== null &&
+                                                post.autor_id ===
+                                                    currentUser.uid &&
+                                                post.respuesta_aceptada_id !==
+                                                    respuesta.id
+                                            }
+                                            acceptReply={acceptReply}
+                                        />
+                                    </>
                                 }
                             />
                         ) //Este paréntesis apareció en entrega 2
