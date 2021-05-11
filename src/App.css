@@ -1,12 +1,23 @@
+
 .app-header {
+    /* position: fixed; */
+    /* z-index: 1; */
+    width: 100%;
     color: white;
     font-size: 24px;
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
 }
 .app-header-actions {
     margin-left: auto;
+}
+.app-header-logo-link {
+    display: inherit;
+}
+.site-layout {
+    margin: 0px 20px 35px;
 }
 .site-layout .site-layout-background {
     background: white;

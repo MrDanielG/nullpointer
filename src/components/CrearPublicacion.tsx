@@ -3,8 +3,10 @@ import {
     Form,
     Input,
     Button,
-    Modal
+    Modal,
+    Tooltip
 } from 'antd';
+import { QuestionOutlined } from '@ant-design/icons';
 import EditableTagGroup from './EditableTagGroup';
 
 import { Store } from 'antd/lib/form/interface';
@@ -93,6 +95,7 @@ const CrearPublicacion: React.FC<CrearPublicacionProps> = ({
                     <Form.Item
                         name="tags"
                         label="Etiquetas"
+                        rules={[{ required: true, message: 'Agrega al menos una etiqueta' }]}
                     >
                         <EditableTagGroup />
                     </Form.Item>
@@ -117,21 +120,35 @@ export const PreguntarBtn: React.FC = () => {
             titulo: values.titulo,
             contenido: values.contenido,
             autor_id: currentUser ? currentUser.id : '',
-            tags: values.tags
+            tags: values.tags,
+            cerrado: false
         }
         firebaseCtx.postM.create(post);
         setVisible(false);
     };
     return (
         <>
-            <Button
-                type="primary"
-                onClick={() => {
-                    setVisible(true);
-                }}
-            >
-                Preguntar
-        </Button>
+            <Tooltip title="Preguntar">
+                <Button
+                    style={{ zIndex: 1, width: 56, height: 56 }}
+                    size="large"
+                    type="primary"
+                    shape="circle"
+                    onClick={() => {
+                        setVisible(true);
+                    }}
+                    icon={<QuestionOutlined />}
+                />
+            </Tooltip>
+            {/* <Button
+                    type="primary"
+                    shape="circle"
+                    onClick={() => {
+                        setVisible(true);
+                    }}
+                >
+
+                </Button> */}
             <CrearPublicacion
                 visible={visible}
                 onCreate={onCreate}

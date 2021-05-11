@@ -38,7 +38,7 @@ class FirebaseModel<T extends DocData> {
     update(id: string, data: Partial<T>) {
         return this.collection.doc(id).update(data);
     }
-    remove(id: string) {
+    remove(id: string) {        
         return this.collection.doc(id).delete();
     }
     createCustomDoc(data: T, id: string | any): T {

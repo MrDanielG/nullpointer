@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Form, Input, Button, Card, message, Select } from 'antd';
+import { Form, Input, Button, Card, message, Select, PageHeader } from 'antd';
 import { UserOutlined, LockOutlined, MailOutlined } from '@ant-design/icons';
 import { Link, useHistory } from 'react-router-dom';
 import { AuthContext, authData } from '../contexts/AuthContext';
@@ -14,24 +14,30 @@ export const Registro = () => {
     const onFinish = async ({ username, password, email, semester }: any) => {
         try {
             setLoading(true);
-            const user = await signUp(email, password, username, semester);
-            console.log(user);
+            await signUp(email, password, username, semester);
             message.success('Usuario Registrado');
             history.push('/app/inicio');
         } catch (error) {
-            message.error('Error al Registrar Usuario');
-            console.log(error);
+            const errorMsg =
+                error.code === 'auth/email-already-in-use'
+                    ? 'La dirección de correo electrónico ya está siendo utilizada por otra cuenta.'
+                    : 'Error al Registrar Usuario';
+            message.error(errorMsg);
             setLoading(false);
         }
     };
 
-    const onSemesterChange = (value: string) => {
-        console.log(value);
-    };
-
     return (
         <div className="register-container">
-            <Card title="Registro" className="card">
+            <Card
+                cover={
+                    <PageHeader
+                        title="Registrarse"
+                        onBack={() => history.goBack()}
+                    />
+                }
+                className="card"
+            >
                 <Form
                     name="normal_login"
                     className="login-form"
@@ -50,6 +56,12 @@ export const Registro = () => {
                             {
                                 type: 'email',
                                 message: 'Ingresar un correo válido',
+                            },
+                            {
+                                type: 'string',
+                                message:
+                                    'Ingresar un correo institucional (correo BUAP)',
+                                pattern: new RegExp(/\.buap\.mx$/),
                             },
                         ]}
                     >
@@ -148,10 +160,7 @@ export const Registro = () => {
                             },
                         ]}
                     >
-                        <Select
-                            placeholder="Semestre en Curso"
-                            onChange={onSemesterChange}
-                        >
+                        <Select placeholder="Semestre en Curso">
                             <Option value="1">Primer Semestre</Option>
                             <Option value="2">Segundo Semestre</Option>
                             <Option value="3">Tercer Semestre</Option>
@@ -172,8 +181,8 @@ export const Registro = () => {
                             disabled={loading}
                         >
                             Registrarse
-                        </Button>
-                        ¿Ya tienes cuenta? <Link to="/">Inicia Sesión</Link>
+                        </Button>                        
+                        ¿Ya tienes cuenta? <Link to="/login">Inicia Sesión</Link>
                     </Form.Item>
                 </Form>
             </Card>

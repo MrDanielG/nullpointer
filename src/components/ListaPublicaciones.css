@@ -1,10 +1,14 @@
-.resultados {
-    
+.lista-publicaciones {
+    margin-top: 2rem
+}
+
+.resultados {    
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
+
 .lista-header {
     display: flex;
     flex-direction: row;
@@ -14,3 +18,4 @@
 .lista-search {
     width: 400px;
 }
+

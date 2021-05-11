@@ -2,9 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import firebase, { auth } from '../firebase';
 import { FirebaseContext } from './FirebaseContext';
 
-interface authUserData extends firebase.User, Usuario{
-
-}
+interface authUserData extends firebase.User, Usuario {}
 
 export interface authData {
     currentUser: authUserData | null;
@@ -71,14 +69,15 @@ export const AuthProvider = ({ children }: any): JSX.Element => {
 
     useEffect(() => {
         const getData = async (user: firebase.User | null) => {
-            if(user && usuarioM){
+            if (user && usuarioM) {
                 try {
                     const userData = await usuarioM.read(user.uid);
-                    setCurrentUser({...user, ...userData});
-                    
+                    setCurrentUser({ ...user, ...userData });
                 } catch (error) {
-                    console.error("Error al obtener los datos de usuario");
+                    console.error('Error al obtener los datos de usuario');
                 }
+            } else {
+                setCurrentUser(null);
             }
         };
         const unsuscribe = auth.onAuthStateChanged((user) => {

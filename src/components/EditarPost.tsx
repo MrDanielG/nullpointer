@@ -4,10 +4,10 @@ import { useFirebase } from '../contexts/FirebaseContext';
 import { Button, message, Tooltip } from 'antd';
 import CrearPublicacion from './CrearPublicacion';
 import { EditOutlined } from '@ant-design/icons';
-interface Props {
+interface Props extends React.HTMLProps<HTMLElement> {
     post: Post;
 }
-const EditarPost: React.FC<Props> = ({ post }) => {
+const EditarPost: React.FC<Props> = ({ post, ...props }) => {
     const [visible, setVisible] = React.useState(false);
     const { postM } = useFirebase();
 
@@ -16,23 +16,36 @@ const EditarPost: React.FC<Props> = ({ post }) => {
         const postData: Partial<Post> = {
             fechaModificacion: new Date(),
             titulo: values.titulo,
-            tags: values.tags
+            tags: values.tags,
         };
         try {
             await postM.update(post.id, postData);
-            message.success("Post actualizado");
+            message.success('Post actualizado');
         } catch (error) {
-            console.error(error, " Error al actualizar el post");
-            message.error("Error al actualizar el post");
+            console.error(error, ' Error al actualizar el post');
+            message.error('Error al actualizar el post');
         }
         setVisible(false);
     };
+    if (props.disabled) {
+        return (
+            <Tooltip title="Publicación cerrada, no se puede editar">
+                <Button
+                    disabled
+                    type="link"
+                    icon={<EditOutlined style={{ fontSize: '20px' }} />}
+                />
+            </Tooltip>
+        );
+    }
+
     return (
         <>
             <Tooltip title="Editar título y etiquetas del post">
-                <Button onClick={() => {
-                    setVisible(true);
-                }}
+                <Button
+                    onClick={() => {
+                        setVisible(true);
+                    }}
                     type="link"
                     icon={<EditOutlined style={{ fontSize: '20px' }} />}
                 />
@@ -51,5 +64,5 @@ const EditarPost: React.FC<Props> = ({ post }) => {
             />
         </>
     );
-}
+};
 export default EditarPost;

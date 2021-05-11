@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import { Login } from './components/Login';
@@ -13,8 +13,11 @@ ReactDOM.render(
         <AuthProvider>
             <FirebaseProvider>
                 <Switch>
-                    <Route exact path="/" component={Login} />
+                    <Route exact path="/">
+                        <Redirect to="/app/inicio" />
+                    </Route>
                     <Route path="/app" component={App} />
+                    <Route path="/login" component={Login} />
                     <Route path="/registro" component={Registro} />
                 </Switch>
             </FirebaseProvider>

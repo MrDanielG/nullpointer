@@ -55,7 +55,7 @@ export const FirebaseProvider: React.FC = (props) => {
             data.sort((r1, r2) => {
                 const f1 = r1.fechaCreacion.getTime();
                 const f2 = r2.fechaCreacion.getTime();
-                return f1 - f2;
+                return f2 - f1;
             });
             setPosts(data);
             fuseIdx.setCollection(data);
