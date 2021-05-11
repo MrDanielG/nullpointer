@@ -26,7 +26,7 @@ import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { authData, useAuth } from '../contexts/AuthContext';
 import { useFirebase } from '../contexts/FirebaseContext';
-import { db } from '../firebase';
+import { db, convertDate } from '../firebase';
 import CommentItem from './CommentItem';
 import EditarPost from './EditarPost';
 import EditorRespuesta from './EditorRespuesta';
@@ -168,16 +168,18 @@ export const PostItem = (props: Props) => {
             });
             setComments(data);
         };
-
+        const path =  props.isReply 
+                ? `/posts/${props.parentPost}/respuestas/${props.post.id}/comentarios`
+                : `/posts/${props.post.id}/comentarios`;                
         const unsubscribe = db
             .collection(
-                `/posts/${props.parentPost}/respuestas/${props.post.id}/comentarios`
+                path
             )
             .onSnapshot((snapshot) => {
                 const docs = snapshot.docs.map((doc) => {
-                    return { ...doc.data(), id: doc.id } as Post;
-                });
-                setComments(docs);
+                    return convertDate({ ...doc.data(), id: doc.id });
+                }) as Post[];
+                setData(docs);
             });
 
         let isSubscribed = true;
@@ -195,7 +197,7 @@ export const PostItem = (props: Props) => {
                     setData
                 );
         };
-    }, [usuarioM, props.post.autor_id, postM, props.parentPost, props.post.id]);
+    }, [usuarioM, props.post.autor_id, postM, props.parentPost, props.post.id, props.isReply]);
 
     const accept = () => {
         if (props.acceptReply && props.post.id) {
@@ -342,12 +344,12 @@ export const PostItem = (props: Props) => {
                                         minute: 'numeric',
                                     }
                                 )}
-                        {currentUser && props.isReply && (
+                        {currentUser && (
                             <Button
                                 type="link"
                                 onClick={() => setShowReply(!showReply)}
                             >
-                                {showReply ? 'Cancelar' : 'Responder'}
+                                {showReply ? 'Cancelar' : 'Comentar'}
                             </Button>
                         )}
                         {currentUser && showReply && (
@@ -362,7 +364,9 @@ export const PostItem = (props: Props) => {
                                     idPost={props.post.id}
                                     idUser={currentUser?.uid!}
                                     isComment={true}
+                                    isReplay={props.isReply ? true : false}
                                     parentPost={props.parentPost}
+                                    onFinish={() => setShowReply(false) }
                                 />
                             </>
                         )}
@@ -376,8 +380,9 @@ export const PostItem = (props: Props) => {
                         comments.map((comentario) => (
                             <Timeline.Item key={comentario.id}>
                                 <CommentItem
-                                    idPost={props.parentPost!}
+                                    idPost={props.isReply ? props.parentPost! : props.post.id}
                                     idReply={props.post.id}
+                                    isReply={props.isReply ? true : false}
                                     comment={comentario}
                                     editable={
                                         currentUser?.id === comentario.autor_id

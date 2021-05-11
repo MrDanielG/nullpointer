@@ -7,7 +7,9 @@ interface Props extends React.HTMLProps<HTMLFormElement> {
     idPost: string;
     idUser: string;
     parentPost?: string;
+    isReplay?: boolean;
     isComment?: boolean;
+    onFinish?: () => void;
 }
 
 export const EditorRespuesta = (props: Props) => {
@@ -27,8 +29,7 @@ export const EditorRespuesta = (props: Props) => {
             numVotos: 0,
             resuelto: false,
         };
-        setSubmitting(true);
-
+        setSubmitting(true);  
         if (!props.isComment) {
             postM
                 .addReply(props.idPost, reply)
@@ -44,7 +45,7 @@ export const EditorRespuesta = (props: Props) => {
                 .finally(() => {
                     setSubmitting(false);
                 });
-        } else {
+        } else if(props.isReplay) {
             postM
                 .addReplyComment(props.parentPost!, props.idPost, reply)
                 .then((val) => {
@@ -57,6 +58,22 @@ export const EditorRespuesta = (props: Props) => {
                     message.error('Error al crear comentario');
                 })
                 .finally(() => setSubmitting(false));
+        } else {
+            postM
+                .addComment(props.idPost, reply)
+                .then((val) => {
+                    message.success('Comentario creado');
+                    form.resetFields();
+                    setRespuesta('');
+                })
+                .catch((error) => {
+                    message.error(error);
+                    message.error('Error al crear comentario');
+                })
+                .finally(() => setSubmitting(false));
+        }   
+        if(props.onFinish) {
+            props.onFinish();
         }
     };
     return (

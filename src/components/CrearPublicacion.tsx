@@ -95,6 +95,7 @@ const CrearPublicacion: React.FC<CrearPublicacionProps> = ({
                     <Form.Item
                         name="tags"
                         label="Etiquetas"
+                        rules={[{ required: true, message: 'Agrega al menos una etiqueta' }]}
                     >
                         <EditableTagGroup />
                     </Form.Item>

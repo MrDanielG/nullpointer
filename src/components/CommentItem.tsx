@@ -13,6 +13,7 @@ import { MarkdownRender } from './MarkdownRender';
 interface Props {
     idPost: string;
     idReply: string;
+    isReply: boolean;
     comment: Post;
     editable?: boolean;
     canDelete?: boolean;
@@ -28,7 +29,9 @@ const CommentItem = (props: Props) => {
 
     const onUpdateComment = async (value: string) => {
         try {
-            const path = `${idPost}/respuestas/${idReply}/comentarios/${comment.id}`;
+            const path = props.isReply 
+            ? `${idPost}/respuestas/${idReply}/comentarios/${comment.id}`
+            : `${idPost}/comentarios/${comment.id}`;            
             await postM.update(path, {
                 contenido: value,
                 fechaModificacion: new Date(),
@@ -42,7 +45,9 @@ const CommentItem = (props: Props) => {
 
     const handleDeleteComment = async () => {
         try {
-            const path = `${idPost}/respuestas/${idReply}/comentarios/${comment.id}`;
+            const path = props.isReply 
+            ? `${idPost}/respuestas/${idReply}/comentarios/${comment.id}`
+            : `${idPost}/comentarios/${comment.id}`;        
             await postM.remove(path);
             message.success('Se elimino tu comentario');
         } catch (error) {
